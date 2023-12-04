@@ -20,6 +20,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Nodes
 
         public int CompareTo(Node<T> otroData)
         {
+ 
             // Caso 1: Ambos tipos son numericos
             if (EsNumero(Data) && EsNumero(otroData.Data))
             {

@@ -143,7 +143,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the data is at the beginning
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
                 MessageBox.Show(Head.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -151,7 +151,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 3: If the data is at the end
-            if (LastNode.CompareTo(data) == 0)
+            if (LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
                 MessageBox.Show(LastNode.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -166,7 +166,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 5: If the data exists in the list
-            if (CurrentNode.CompareTo(data) == 0)
+            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
                 MessageBox.Show(CurrentNode.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);

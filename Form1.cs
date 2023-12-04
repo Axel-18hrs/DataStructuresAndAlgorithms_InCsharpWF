@@ -35,6 +35,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             list.Add(new Person(age, txtName.Text, txtAdress.Text));
             ShowLists();
+            ClearTxtList();
 
         }
         public void ShowLists()
@@ -86,6 +87,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+           
             if (!int.TryParse(txtAge.Text, out var age))
             {
                 MessageBox.Show("Only numbers in the Age!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,6 +95,13 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             }
 
             list.Search(new Person(age, txtName.Text, txtAdress.Text));
+            ClearTxtList();
+        }
+        public void ClearTxtList()
+        {
+            txtAge.ResetText();
+            txtName.ResetText();
+            txtAdress.ResetText();
         }
     }
 }
