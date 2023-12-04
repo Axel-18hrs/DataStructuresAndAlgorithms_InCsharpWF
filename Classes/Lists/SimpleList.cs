@@ -64,7 +64,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the data is at the beginning
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 Head = Head.Next;
                 Console.WriteLine($"- Data[{data}] deleted from the list");
@@ -187,7 +187,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the first node contains the data
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 return true;
             }
@@ -200,7 +200,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: The data exists in the last element
-            if (CurrentNode.CompareTo(data) == 0)
+            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
             {
                 return true;
             }

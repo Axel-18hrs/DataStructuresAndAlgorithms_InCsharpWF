@@ -74,7 +74,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: The data is at the beginning of the list
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 Head = Head.Next;
                 LastNode.Next = Head;
@@ -90,7 +90,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: The data is at the end of the list
-            if (CurrentNode.Next == LastNode && LastNode.CompareTo(data) == 0)
+            if (CurrentNode.Next == LastNode && LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
             {
                 CurrentNode.Next = CurrentNode.Next.Next;
                 LastNode = CurrentNode;
@@ -100,7 +100,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 5: The data is at X position in the list
-            if (CurrentNode.Next.CompareTo(data) == 0)
+            if (CurrentNode.Next.CompareTo(data) == 0 && CurrentNode.Next.Equals(data))
             {
                 CurrentNode.Next = CurrentNode.Next.Next;
                 Console.WriteLine($"- Data[{data}] deleted from the list");
@@ -209,7 +209,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the data already exists at the beginning
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 return true;
             }
@@ -222,7 +222,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: If the data already exists at X position / or at the end
-            if (CurrentNode.CompareTo(data) == 0)
+            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
             {
                 return true;
             }

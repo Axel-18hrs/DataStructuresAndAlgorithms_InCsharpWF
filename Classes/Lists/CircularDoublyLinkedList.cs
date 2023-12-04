@@ -85,7 +85,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: Delete and check if there is only one element
-            if (Head.CompareTo(LastNode) == 0)
+            if (Head.CompareTo(LastNode) == 0 && Head.Equals(data))
             {
                 Clear();
                 Console.WriteLine($"- Data[{data}] deleted from the list");
@@ -93,7 +93,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 3: The data is at the beginning of the list
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 Head = Head.Next;
                 Head.Back = LastNode;
@@ -103,7 +103,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: The data is at the end of the list
-            if (LastNode.CompareTo(data) == 0)
+            if (LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
             {
                 LastNode = LastNode.Back;
                 LastNode.Next = Head;
@@ -120,7 +120,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 6: The data is at X position in the list
-            if (CurrentNode.Next.CompareTo(data) == 0)
+            if (CurrentNode.Next.CompareTo(data) == 0 && CurrentNode.Next.Equals(data))
             {
                 CurrentNode.Next.Next.Back = CurrentNode;
                 CurrentNode.Next = CurrentNode.Next.Next;
@@ -231,13 +231,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the first element already exists
-            if (Head.CompareTo(data) == 0)
+            if (Head.CompareTo(data) == 0 && Head.Equals(data))
             {
                 return true;
             }
 
             // Case 3: If the data is at the end
-            if (LastNode.CompareTo(data) == 0)
+            if (LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
             {
                 return true;
             }
@@ -250,7 +250,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 5: The entered data exists at X position
-            if (CurrentNode.CompareTo(data) == 0)
+            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
             {
                 return true;
             }
