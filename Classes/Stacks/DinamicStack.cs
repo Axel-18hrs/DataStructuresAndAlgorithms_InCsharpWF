@@ -44,11 +44,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
             return Convert.ToInt32(stackList.ToArray().Length);
         }
 
-        public void Show()
+        public IEnumerable<T> Show()
         {
             Console.WriteLine("\nElements in the stack:");
             for (int i = stackList.Count - 1; i >= 0; i--)
             {
+                yield return stackList[i];
                 Console.WriteLine(stackList[i]);
             }
         }

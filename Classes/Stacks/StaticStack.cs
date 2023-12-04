@@ -67,11 +67,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
         {
             return count;
         }
-        public void Show()
+        public IEnumerable<T> Show()
         {
             Console.WriteLine("\nElements in the stack:");
             for (int i = count - 1; i >= 0; i--)
             {
+                yield return elements[i];
                 Console.WriteLine(elements[i]);
             }
         }

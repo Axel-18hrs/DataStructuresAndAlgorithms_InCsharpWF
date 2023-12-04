@@ -53,6 +53,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             pnlStacks = new Panel();
             gbxMenuStackAll = new GroupBox();
+            btnPeek = new Button();
             btnCount = new Button();
             btnPop = new Button();
             btnPush = new Button();
@@ -131,18 +132,19 @@
             stacksToolStripMenuItem.Name = "stacksToolStripMenuItem";
             stacksToolStripMenuItem.Size = new Size(64, 24);
             stacksToolStripMenuItem.Text = "Stacks";
+            stacksToolStripMenuItem.Click += stacksToolStripMenuItem_Click;
             // 
             // staticStackToolStripMenuItem
             // 
             staticStackToolStripMenuItem.Name = "staticStackToolStripMenuItem";
-            staticStackToolStripMenuItem.Size = new Size(186, 26);
+            staticStackToolStripMenuItem.Size = new Size(224, 26);
             staticStackToolStripMenuItem.Text = "Static Stack";
             staticStackToolStripMenuItem.Click += staticStackToolStripMenuItem_Click;
             // 
             // dinamicStackToolStripMenuItem
             // 
             dinamicStackToolStripMenuItem.Name = "dinamicStackToolStripMenuItem";
-            dinamicStackToolStripMenuItem.Size = new Size(186, 26);
+            dinamicStackToolStripMenuItem.Size = new Size(224, 26);
             dinamicStackToolStripMenuItem.Text = "Dinamic Stack";
             dinamicStackToolStripMenuItem.Click += dinamicStackToolStripMenuItem_Click;
             // 
@@ -270,6 +272,7 @@
             // 
             // gbxMenuStackAll
             // 
+            gbxMenuStackAll.Controls.Add(btnPeek);
             gbxMenuStackAll.Controls.Add(btnCount);
             gbxMenuStackAll.Controls.Add(btnPop);
             gbxMenuStackAll.Controls.Add(btnPush);
@@ -277,13 +280,23 @@
             gbxMenuStackAll.Controls.Add(txtNumberStack);
             gbxMenuStackAll.Location = new Point(55, 168);
             gbxMenuStackAll.Name = "gbxMenuStackAll";
-            gbxMenuStackAll.Size = new Size(381, 244);
+            gbxMenuStackAll.Size = new Size(381, 275);
             gbxMenuStackAll.TabIndex = 23;
             gbxMenuStackAll.TabStop = false;
             // 
+            // btnPeek
+            // 
+            btnPeek.Location = new Point(40, 170);
+            btnPeek.Name = "btnPeek";
+            btnPeek.Size = new Size(159, 40);
+            btnPeek.TabIndex = 19;
+            btnPeek.Text = "Peek";
+            btnPeek.UseVisualStyleBackColor = true;
+            btnPeek.Click += btnPeek_Click;
+            // 
             // btnCount
             // 
-            btnCount.Location = new Point(40, 170);
+            btnCount.Location = new Point(40, 216);
             btnCount.Name = "btnCount";
             btnCount.Size = new Size(159, 40);
             btnCount.TabIndex = 18;
@@ -298,6 +311,7 @@
             btnPop.TabIndex = 17;
             btnPop.Text = "Pop";
             btnPop.UseVisualStyleBackColor = true;
+            btnPop.Click += btnPop_Click;
             // 
             // btnPush
             // 
@@ -442,5 +456,6 @@
         private TextBox txtLengthStacks;
         private GroupBox gbxMenuStatickStack;
         private GroupBox gbxMenuStackAll;
+        private Button btnPeek;
     }
 }

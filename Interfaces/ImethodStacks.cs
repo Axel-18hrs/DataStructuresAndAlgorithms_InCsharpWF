@@ -11,7 +11,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Interfaces
         void Push(T? element);
         T Pop();
         T Peek();
-        void Show();
+        IEnumerable<T> Show();
         int Count();
     }
 }

@@ -28,6 +28,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             pnlLists.Visible = true;
             pnlStacks.Visible = false;
+            list = new SimpleList<object>();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -133,6 +134,13 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 MessageBox.Show("Only numbers in the 'Number' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            stacks.Push(number);
+            lsbStacks.Items.Clear();
+            foreach (var stack in stacks.Show())
+            {
+                lsbStacks.Items.Add(stack);
+            }
         }
 
         private void staticStackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,8 +164,32 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void dinamicStackToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            stacks = new DinamicStack<object>();
             gbxMenuStatickStack.Visible = false;
             gbxMenuStackAll.Visible = true;
+        }
+
+        private void stacksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlLists.Visible = false;
+            pnlStacks.Visible = true;
+            gbxMenuStatickStack.Visible = false;
+            gbxMenuStackAll.Visible = false;
+        }
+
+        private void btnPop_Click(object sender, EventArgs e)
+        {
+            stacks.Pop();
+            lsbStacks.Items.Clear();
+            foreach (var stack in stacks.Show())
+            {
+                lsbStacks.Items.Add(stack);
+            }
+        }
+
+        private void btnPeek_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Element '{stacks.Peek()}' is at the top of the stack.", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
