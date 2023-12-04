@@ -125,7 +125,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
 
             // Case 5: The data does not exist
             Console.WriteLine($"- Data[{data}] does not exist in the list ");
-            MessageBox.Show("The list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Does not exist in the list!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public IEnumerable<T> Show()
