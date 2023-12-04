@@ -191,5 +191,10 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             MessageBox.Show($"Element '{stacks.Peek()}' is at the top of the stack.", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnCount_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Number of elements in the stack: {stacks.Count()}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

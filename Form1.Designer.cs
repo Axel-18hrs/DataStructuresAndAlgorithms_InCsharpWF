@@ -137,14 +137,14 @@
             // staticStackToolStripMenuItem
             // 
             staticStackToolStripMenuItem.Name = "staticStackToolStripMenuItem";
-            staticStackToolStripMenuItem.Size = new Size(224, 26);
+            staticStackToolStripMenuItem.Size = new Size(186, 26);
             staticStackToolStripMenuItem.Text = "Static Stack";
             staticStackToolStripMenuItem.Click += staticStackToolStripMenuItem_Click;
             // 
             // dinamicStackToolStripMenuItem
             // 
             dinamicStackToolStripMenuItem.Name = "dinamicStackToolStripMenuItem";
-            dinamicStackToolStripMenuItem.Size = new Size(224, 26);
+            dinamicStackToolStripMenuItem.Size = new Size(186, 26);
             dinamicStackToolStripMenuItem.Text = "Dinamic Stack";
             dinamicStackToolStripMenuItem.Click += dinamicStackToolStripMenuItem_Click;
             // 
@@ -302,6 +302,7 @@
             btnCount.TabIndex = 18;
             btnCount.Text = "Count";
             btnCount.UseVisualStyleBackColor = true;
+            btnCount.Click += btnCount_Click;
             // 
             // btnPop
             // 
