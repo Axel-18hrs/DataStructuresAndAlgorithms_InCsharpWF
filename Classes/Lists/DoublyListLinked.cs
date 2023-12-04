@@ -118,6 +118,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             if (IsEmpty())
             {
                 Console.WriteLine("Empty list");
+                MessageBox.Show("The list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -125,6 +126,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             if (Head.CompareTo(data) == 0)
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
+                MessageBox.Show(Head.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -132,6 +134,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             if (LastNode.CompareTo(data) == 0)
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
+                MessageBox.Show(LastNode.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -146,11 +149,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             if (CurrentNode.CompareTo(data) == 0)
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
+                MessageBox.Show(CurrentNode.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             // Case 6: The data does not exist in the list
             Console.WriteLine($"- Data[{data}] Does not exist in the list ");
+            MessageBox.Show("The list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public IEnumerable<T> Show()

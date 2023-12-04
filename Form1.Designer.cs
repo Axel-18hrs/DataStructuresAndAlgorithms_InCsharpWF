@@ -31,11 +31,19 @@
             lblBeggininMessage = new Label();
             menuStrip1 = new MenuStrip();
             listsToolStripMenuItem = new ToolStripMenuItem();
+            simpleListToolStripMenuItem = new ToolStripMenuItem();
+            circularListToolStripMenuItem = new ToolStripMenuItem();
+            doublyListToolStripMenuItem = new ToolStripMenuItem();
+            circularDoublyListToolStripMenuItem = new ToolStripMenuItem();
             stacksToolStripMenuItem = new ToolStripMenuItem();
             queuesToolStripMenuItem = new ToolStripMenuItem();
             treesToolStripMenuItem = new ToolStripMenuItem();
             graphsToolStripMenuItem = new ToolStripMenuItem();
             pnlLists = new Panel();
+            btnDelete = new Button();
+            btnShowReverse = new Button();
+            btnSearch = new Button();
+            listLista = new ListBox();
             btnSend = new Button();
             lblAdress = new Label();
             lblAge = new Label();
@@ -43,7 +51,6 @@
             txtAdress = new TextBox();
             txtAge = new TextBox();
             txtName = new TextBox();
-            lsbList = new ListView();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
@@ -71,10 +78,38 @@
             // 
             // listsToolStripMenuItem
             // 
+            listsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { simpleListToolStripMenuItem, circularListToolStripMenuItem, doublyListToolStripMenuItem, circularDoublyListToolStripMenuItem });
             listsToolStripMenuItem.Name = "listsToolStripMenuItem";
             listsToolStripMenuItem.Size = new Size(51, 24);
             listsToolStripMenuItem.Text = "Lists";
             listsToolStripMenuItem.Click += listsToolStripMenuItem_Click;
+            // 
+            // simpleListToolStripMenuItem
+            // 
+            simpleListToolStripMenuItem.Name = "simpleListToolStripMenuItem";
+            simpleListToolStripMenuItem.Size = new Size(220, 26);
+            simpleListToolStripMenuItem.Text = "Simple List";
+            // 
+            // circularListToolStripMenuItem
+            // 
+            circularListToolStripMenuItem.Name = "circularListToolStripMenuItem";
+            circularListToolStripMenuItem.Size = new Size(220, 26);
+            circularListToolStripMenuItem.Text = "Circular List";
+            circularListToolStripMenuItem.Click += circularListToolStripMenuItem_Click;
+            // 
+            // doublyListToolStripMenuItem
+            // 
+            doublyListToolStripMenuItem.Name = "doublyListToolStripMenuItem";
+            doublyListToolStripMenuItem.Size = new Size(220, 26);
+            doublyListToolStripMenuItem.Text = "Doubly List";
+            doublyListToolStripMenuItem.Click += doublyListToolStripMenuItem_Click;
+            // 
+            // circularDoublyListToolStripMenuItem
+            // 
+            circularDoublyListToolStripMenuItem.Name = "circularDoublyListToolStripMenuItem";
+            circularDoublyListToolStripMenuItem.Size = new Size(220, 26);
+            circularDoublyListToolStripMenuItem.Text = "Circular Doubly List";
+            circularDoublyListToolStripMenuItem.Click += circularDoublyListToolStripMenuItem_Click;
             // 
             // stacksToolStripMenuItem
             // 
@@ -102,6 +137,10 @@
             // 
             // pnlLists
             // 
+            pnlLists.Controls.Add(btnDelete);
+            pnlLists.Controls.Add(btnShowReverse);
+            pnlLists.Controls.Add(btnSearch);
+            pnlLists.Controls.Add(listLista);
             pnlLists.Controls.Add(btnSend);
             pnlLists.Controls.Add(lblAdress);
             pnlLists.Controls.Add(lblAge);
@@ -109,12 +148,51 @@
             pnlLists.Controls.Add(txtAdress);
             pnlLists.Controls.Add(txtAge);
             pnlLists.Controls.Add(txtName);
-            pnlLists.Controls.Add(lsbList);
             pnlLists.Location = new Point(2, 31);
             pnlLists.Name = "pnlLists";
             pnlLists.Size = new Size(1125, 498);
             pnlLists.TabIndex = 13;
             pnlLists.Visible = false;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(93, 372);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(159, 40);
+            btnDelete.TabIndex = 11;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnShowReverse
+            // 
+            btnShowReverse.Location = new Point(643, 417);
+            btnShowReverse.Name = "btnShowReverse";
+            btnShowReverse.Size = new Size(159, 40);
+            btnShowReverse.TabIndex = 10;
+            btnShowReverse.Text = "Reverse";
+            btnShowReverse.UseVisualStyleBackColor = true;
+            btnShowReverse.Click += btnShowReverse_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(93, 326);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(159, 40);
+            btnSearch.TabIndex = 9;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // listLista
+            // 
+            listLista.Font = new Font("Segoe UI", 12F);
+            listLista.FormattingEnabled = true;
+            listLista.ItemHeight = 28;
+            listLista.Location = new Point(643, 70);
+            listLista.Margin = new Padding(3, 4, 3, 4);
+            listLista.Name = "listLista";
+            listLista.Size = new Size(394, 340);
+            listLista.TabIndex = 8;
             // 
             // btnSend
             // 
@@ -177,14 +255,6 @@
             txtName.Size = new Size(253, 27);
             txtName.TabIndex = 1;
             // 
-            // lsbList
-            // 
-            lsbList.Location = new Point(758, 70);
-            lsbList.Name = "lsbList";
-            lsbList.Size = new Size(279, 342);
-            lsbList.TabIndex = 0;
-            lsbList.UseCompatibleStateImageBehavior = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -219,7 +289,6 @@
         private ToolStripMenuItem treesToolStripMenuItem;
         private ToolStripMenuItem graphsToolStripMenuItem;
         private Panel pnlLists;
-        private ListView lsbList;
         private Label lblName;
         private TextBox txtAdress;
         private TextBox txtAge;
@@ -228,5 +297,13 @@
         private Label lblAdress;
         private Label lblAge;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ListBox listLista;
+        private Button btnShowReverse;
+        private Button btnSearch;
+        private Button btnDelete;
+        private ToolStripMenuItem circularListToolStripMenuItem;
+        private ToolStripMenuItem doublyListToolStripMenuItem;
+        private ToolStripMenuItem circularDoublyListToolStripMenuItem;
+        private ToolStripMenuItem simpleListToolStripMenuItem;
     }
 }

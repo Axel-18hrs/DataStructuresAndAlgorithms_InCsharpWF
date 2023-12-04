@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Nodes
 {
@@ -11,6 +12,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Nodes
         {
             Data = d;
             Next = null;
+        }
+        public override string ToString()
+        {
+            return $"Data: {Data}";
         }
 
         public int CompareTo(Node<T> otroData)
