@@ -6,8 +6,8 @@
         void Delete(T data);
         void Search(T data);
         bool Exist(T data);
-        void Show();
-        void ShowRevers();
+        IEnumerable<T> Show();
+        IEnumerable<T> ShowRevers();
         bool IsEmpty();
         void Clear();
     }

@@ -153,13 +153,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             Console.WriteLine($"- Data[{data}] Does not exist in the list ");
         }
 
-        public void Show()
+        public IEnumerable<T> Show()
         {
             // Case 1: If the list is empty
             if (IsEmpty())
             {
                 Console.WriteLine("Empty list");
-                return;
+                yield break;
             }
 
             // Case 2: Traverse the list
@@ -169,18 +169,19 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             while (CurrentNode != null)
             {
                 Console.WriteLine($"- Node[{i}] and data: " + CurrentNode.Data is Person ? CurrentNode.Data.ToString() : CurrentNode.Data);
+                yield return CurrentNode.Data;
                 CurrentNode = CurrentNode.Next;
                 i++;
             }
         }
 
-        public void ShowRevers()
+        public IEnumerable<T> ShowRevers()
         {
             // Case 1: If the list is empty
             if (IsEmpty())
             {
                 Console.WriteLine("Empty list");
-                return;
+                yield break;
             }
 
             // Case 2: Traverse the list
@@ -190,6 +191,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             do
             {
                 Console.WriteLine($"- Node[{i}] and data: " + CurrentNode.Data is Person ? CurrentNode.Data.ToString() : CurrentNode.Data);
+                yield return CurrentNode.Data;
                 CurrentNode = CurrentNode.Back;
                 i++;
             } while (CurrentNode != null);

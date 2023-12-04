@@ -145,13 +145,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             Console.WriteLine($"- Data[{data}] does not exist in the list ");
         }
 
-        public void Show()
+        public IEnumerable<T> Show()
         {
             // Case 1: Check if the list is empty
             if (IsEmpty())
             {
                 Console.WriteLine("Empty list");
-                return;
+                yield break;
             }
 
             // Case 2: Traverse the list
@@ -161,13 +161,21 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             do
             {
                 Console.WriteLine($"- Node[{i}] and data: " + (CurrentNode.Data is Person ? CurrentNode.Data.ToString() : CurrentNode.Data));
+                yield return CurrentNode.Data;
                 CurrentNode = CurrentNode.Next;
                 i++;
             } while (CurrentNode != Head);
         }
 
-        public void ShowRevers()
+        public IEnumerable<T> ShowRevers()
         {
+            // Case 1: Check if the list is empty
+            if (IsEmpty())
+            {
+                Console.WriteLine("Empty list");
+                yield break;
+            }
+
             Stack<T> stack = new Stack<T>();
             Node<T> CurrentNode = Head;
             int i = 0;
@@ -175,6 +183,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             {
                 i++;
                 stack.Push(CurrentNode.Data);
+                yield return CurrentNode.Data;
                 CurrentNode = CurrentNode.Next;
             } while (CurrentNode != Head);
 
