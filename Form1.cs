@@ -1,17 +1,22 @@
 using DataStructuresAndAlgorithms_InCSharp.Classes;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Lists;
+using DataStructuresAndAlgorithms_InCSharp.Classes.Stacks;
+using DataStructuresAndAlgorithms_InCSharp.Interfaces;
 using Listas.Interfaces;
 using System.DirectoryServices.ActiveDirectory;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DataStructuresAndAlgorithms_InCsharpWF
 {
     public partial class Form1 : Form
     {
         private ImethodLists<object> list;
+        private ImethodStacks<object> stacks;
         public Form1()
         {
             InitializeComponent();
-            list = new SimpleList<object>();
+            pnlLists.Visible = false;
+            pnlStacks.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -22,30 +27,30 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private void listsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlLists.Visible = true;
+            pnlStacks.Visible = false;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
 
-            if (!int.TryParse(txtAge.Text, out int age))
+            if (!int.TryParse(txtNumbers.Text, out int age))
             {
                 MessageBox.Show("Only numbers in the Age!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            list.Add(new Person(age, txtName.Text, txtAdress.Text));
+            list.Add(int.Parse(txtNumbers.Text));
             ShowLists();
             ClearTxtList();
 
         }
         public void ShowLists()
         {
+            listLista.Items.Clear();
             foreach (var n in list.Show())
             {
-                // Suponiendo que Person tiene una propiedad llamada Name
-                string personName = ((Person)n).ToString();
 
-                listLista.Items.Add(personName);
+                listLista.Items.Add(n);
             }
         }
 
@@ -57,13 +62,11 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
-            Console.Clear();
+            listLista.Items.Clear();
             foreach (var n in list.ShowRevers())
             {
-                // Suponiendo que Person tiene una propiedad llamada Name
-                string personName = ((Person)n).ToString();
 
-                listLista.Items.Add(personName);
+                listLista.Items.Add(n);
             }
         }
 
@@ -87,21 +90,74 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
-            if (!int.TryParse(txtAge.Text, out var age))
+
+            if (!int.TryParse(txtNumbers.Text, out var age))
             {
                 MessageBox.Show("Only numbers in the Age!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            list.Search(new Person(age, txtName.Text, txtAdress.Text));
+            list.Search(int.Parse(txtNumbers.Text));
             ClearTxtList();
         }
         public void ClearTxtList()
         {
-            txtAge.ResetText();
-            txtName.ResetText();
-            txtAdress.ResetText();
+            txtNumbers.ResetText();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            listLista.Items.Clear();
+            list.Clear();
+            ShowLists();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            if (!int.TryParse(txtNumbers.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'Number' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            list.Delete(int.Parse(txtNumbers.Text));
+            listLista.Items.Clear();
+            ShowLists();
+        }
+
+        private void btnPush_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtNumberStack.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'Number' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void staticStackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gbxMenuStackAll.Visible = false;
+            gbxMenuStatickStack.Visible = true;
+        }
+
+        private void btnLengthStack_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'Lenght of static stack' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            stacks = new StaticStack<object>(number);
+            gbxMenuStatickStack.Visible = false;
+            gbxMenuStackAll.Visible = true;
+        }
+
+        private void dinamicStackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gbxMenuStatickStack.Visible = false;
+            gbxMenuStackAll.Visible = true;
         }
     }
 }

@@ -32,6 +32,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             // Case 2: Prevent duplicate data
             if (Exist(NewNode.Data))
             {
+                MessageBox.Show($"{NewNode.Data} exist in the list", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -74,7 +75,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: The data is at the beginning of the list
-            if (Head.CompareTo(data) == 0 && Head.Equals(data))
+            if (Head.CompareTo(data) == 0)
             {
                 Head = Head.Next;
                 LastNode.Next = Head;
@@ -90,7 +91,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: The data is at the end of the list
-            if (CurrentNode.Next == LastNode && LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
+            if (CurrentNode.Next == LastNode && LastNode.CompareTo(data) == 0)
             {
                 CurrentNode.Next = CurrentNode.Next.Next;
                 LastNode = CurrentNode;
@@ -100,7 +101,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 5: The data is at X position in the list
-            if (CurrentNode.Next.CompareTo(data) == 0 && CurrentNode.Next.Equals(data))
+            if (CurrentNode.Next.CompareTo(data) == 0)
             {
                 CurrentNode.Next = CurrentNode.Next.Next;
                 Console.WriteLine($"- Data[{data}] deleted from the list");
@@ -137,7 +138,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: The entered data exists at X position
-            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
+            if (CurrentNode.CompareTo(data) == 0)
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
                 MessageBox.Show(CurrentNode.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -164,7 +165,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             Console.WriteLine("=== My Circular List ===");
             do
             {
-                Console.WriteLine($"- Node[{i}] and data: " + (CurrentNode.Data is Person ? CurrentNode.Data.ToString() : CurrentNode.Data));
+                Console.WriteLine($"- Node[{i}] and data: " + CurrentNode.Data);
                 yield return CurrentNode.Data;
                 CurrentNode = CurrentNode.Next;
                 i++;
@@ -187,7 +188,6 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             {
                 i++;
                 stack.Push(CurrentNode.Data);
-                yield return CurrentNode.Data;
                 CurrentNode = CurrentNode.Next;
             } while (CurrentNode != Head);
 
@@ -196,7 +196,8 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
 
             foreach (T node in stackArray)
             {
-                Console.WriteLine($"- Node[{--i}] and data: " + node.ToString());
+                yield return node;
+                Console.WriteLine($"- Node[{--i}] and data: " + node);
             }
         }
 
@@ -209,7 +210,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the data already exists at the beginning
-            if (Head.CompareTo(data) == 0 && Head.Equals(data))
+            if (Head.CompareTo(data) == 0)
             {
                 return true;
             }
@@ -222,7 +223,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: If the data already exists at X position / or at the end
-            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
+            if (CurrentNode.CompareTo(data) == 0)
             {
                 return true;
             }

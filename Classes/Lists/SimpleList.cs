@@ -101,7 +101,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the data is at the beginning
-            if (Head.CompareTo(data) == 0 && Head.Equals(data))
+            if (Head.CompareTo(data) == 0)
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
                 MessageBox.Show(Head.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,7 +116,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: If the data is at X position
-            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
+            if (CurrentNode.CompareTo(data) == 0)
             {
                 Console.WriteLine($"- Data[{data}] exists in the list");
                 MessageBox.Show(Head.ToString(), "Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,12 +161,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
 
             Stack<T> stack = new Stack<T>();
             Node<T> CurrentNode = Head;
+
             int i = 0;
             while (CurrentNode != null)
             {
                 i++;
                 stack.Push(CurrentNode.Data);
-                yield return CurrentNode.Data;
+                
                 CurrentNode = CurrentNode.Next;
             }
 
@@ -174,6 +175,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
 
             foreach (T node in stackArray)
             {
+                yield return node;
                 Console.WriteLine($"- Node[{--i}] and data: " + node.ToString());
             }
         }
@@ -187,7 +189,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the first node contains the data
-            if (Head.CompareTo(data) == 0 && Head.Equals(data))
+            if (Head.CompareTo(data) == 0)
             {
                 return true;
             }
@@ -200,7 +202,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 4: The data exists in the last element
-            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
+            if (CurrentNode.CompareTo(data) == 0)
             {
                 return true;
             }

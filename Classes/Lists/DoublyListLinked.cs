@@ -75,7 +75,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: The data to delete is at the beginning of the list
-            if (Head.CompareTo(data) == 0 && Head.Equals(data))
+            if (Head.CompareTo(data) == 0)
             {
                 Head = Head.Next;
                 Head.Back = null;
@@ -84,7 +84,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 3: The data to delete is at the end of the list
-            if (LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
+            if (LastNode.CompareTo(data) == 0)
             {
                 LastNode = LastNode.Back;
                 LastNode.Next = null;
@@ -100,7 +100,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 5: The data is at X position in the list
-            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
+            if (CurrentNode.CompareTo(data) == 0 )
             {
                 CurrentNode.Back.Next = CurrentNode.Next;
                 CurrentNode.Next.Back = CurrentNode.Back;
@@ -212,13 +212,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 2: If the first element already exists
-            if (Head.CompareTo(data) == 0 && Head.Equals(data))
+            if (Head.CompareTo(data) == 0)
             {
                 return true;
             }
 
             // Case 3: If the data is at the end
-            if (LastNode.CompareTo(data) == 0 && LastNode.Equals(data))
+            if (LastNode.CompareTo(data) == 0)
             {
                 return true;
             }
@@ -231,7 +231,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Lists
             }
 
             // Case 5: The entered data exists at X position
-            if (CurrentNode.CompareTo(data) == 0 && CurrentNode.Equals(data))
+            if (CurrentNode.CompareTo(data) == 0)
             {
                 return true;
             }

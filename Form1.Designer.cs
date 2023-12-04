@@ -36,24 +36,38 @@
             doublyListToolStripMenuItem = new ToolStripMenuItem();
             circularDoublyListToolStripMenuItem = new ToolStripMenuItem();
             stacksToolStripMenuItem = new ToolStripMenuItem();
+            staticStackToolStripMenuItem = new ToolStripMenuItem();
+            dinamicStackToolStripMenuItem = new ToolStripMenuItem();
             queuesToolStripMenuItem = new ToolStripMenuItem();
             treesToolStripMenuItem = new ToolStripMenuItem();
             graphsToolStripMenuItem = new ToolStripMenuItem();
             pnlLists = new Panel();
+            btnClear = new Button();
             btnDelete = new Button();
             btnShowReverse = new Button();
             btnSearch = new Button();
             listLista = new ListBox();
             btnSend = new Button();
-            lblAdress = new Label();
-            lblAge = new Label();
-            lblName = new Label();
-            txtAdress = new TextBox();
-            txtAge = new TextBox();
-            txtName = new TextBox();
+            lblNumbers = new Label();
+            txtNumbers = new TextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            pnlStacks = new Panel();
+            gbxMenuStackAll = new GroupBox();
+            btnCount = new Button();
+            btnPop = new Button();
+            btnPush = new Button();
+            label1 = new Label();
+            txtNumberStack = new TextBox();
+            gbxMenuStatickStack = new GroupBox();
+            btnLengthStack = new Button();
+            lblLenghtStack = new Label();
+            txtLengthStacks = new TextBox();
+            lsbStacks = new ListBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
+            pnlStacks.SuspendLayout();
+            gbxMenuStackAll.SuspendLayout();
+            gbxMenuStatickStack.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -113,9 +127,24 @@
             // 
             // stacksToolStripMenuItem
             // 
+            stacksToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { staticStackToolStripMenuItem, dinamicStackToolStripMenuItem });
             stacksToolStripMenuItem.Name = "stacksToolStripMenuItem";
             stacksToolStripMenuItem.Size = new Size(64, 24);
             stacksToolStripMenuItem.Text = "Stacks";
+            // 
+            // staticStackToolStripMenuItem
+            // 
+            staticStackToolStripMenuItem.Name = "staticStackToolStripMenuItem";
+            staticStackToolStripMenuItem.Size = new Size(186, 26);
+            staticStackToolStripMenuItem.Text = "Static Stack";
+            staticStackToolStripMenuItem.Click += staticStackToolStripMenuItem_Click;
+            // 
+            // dinamicStackToolStripMenuItem
+            // 
+            dinamicStackToolStripMenuItem.Name = "dinamicStackToolStripMenuItem";
+            dinamicStackToolStripMenuItem.Size = new Size(186, 26);
+            dinamicStackToolStripMenuItem.Text = "Dinamic Stack";
+            dinamicStackToolStripMenuItem.Click += dinamicStackToolStripMenuItem_Click;
             // 
             // queuesToolStripMenuItem
             // 
@@ -137,22 +166,29 @@
             // 
             // pnlLists
             // 
+            pnlLists.Controls.Add(btnClear);
             pnlLists.Controls.Add(btnDelete);
             pnlLists.Controls.Add(btnShowReverse);
             pnlLists.Controls.Add(btnSearch);
             pnlLists.Controls.Add(listLista);
             pnlLists.Controls.Add(btnSend);
-            pnlLists.Controls.Add(lblAdress);
-            pnlLists.Controls.Add(lblAge);
-            pnlLists.Controls.Add(lblName);
-            pnlLists.Controls.Add(txtAdress);
-            pnlLists.Controls.Add(txtAge);
-            pnlLists.Controls.Add(txtName);
+            pnlLists.Controls.Add(lblNumbers);
+            pnlLists.Controls.Add(txtNumbers);
             pnlLists.Location = new Point(2, 31);
             pnlLists.Name = "pnlLists";
             pnlLists.Size = new Size(1125, 498);
             pnlLists.TabIndex = 13;
             pnlLists.Visible = false;
+            // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(808, 417);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(159, 40);
+            btnClear.TabIndex = 12;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -162,6 +198,7 @@
             btnDelete.TabIndex = 11;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnShowReverse
             // 
@@ -204,56 +241,139 @@
             btnSend.UseVisualStyleBackColor = true;
             btnSend.Click += btnSend_Click;
             // 
-            // lblAdress
+            // lblNumbers
             // 
-            lblAdress.AutoSize = true;
-            lblAdress.Location = new Point(93, 198);
-            lblAdress.Name = "lblAdress";
-            lblAdress.Size = new Size(53, 20);
-            lblAdress.TabIndex = 6;
-            lblAdress.Text = "Adress";
+            lblNumbers.AutoSize = true;
+            lblNumbers.Location = new Point(93, 127);
+            lblNumbers.Name = "lblNumbers";
+            lblNumbers.Size = new Size(63, 20);
+            lblNumbers.TabIndex = 5;
+            lblNumbers.Text = "Number";
             // 
-            // lblAge
+            // txtNumbers
             // 
-            lblAge.AutoSize = true;
-            lblAge.Location = new Point(93, 127);
-            lblAge.Name = "lblAge";
-            lblAge.Size = new Size(36, 20);
-            lblAge.TabIndex = 5;
-            lblAge.Text = "Age";
+            txtNumbers.ImeMode = ImeMode.NoControl;
+            txtNumbers.Location = new Point(93, 150);
+            txtNumbers.Name = "txtNumbers";
+            txtNumbers.Size = new Size(253, 27);
+            txtNumbers.TabIndex = 2;
             // 
-            // lblName
+            // pnlStacks
             // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(93, 61);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(49, 20);
-            lblName.TabIndex = 4;
-            lblName.Text = "Name";
+            pnlStacks.Controls.Add(gbxMenuStackAll);
+            pnlStacks.Controls.Add(gbxMenuStatickStack);
+            pnlStacks.Controls.Add(lsbStacks);
+            pnlStacks.Location = new Point(0, 31);
+            pnlStacks.Name = "pnlStacks";
+            pnlStacks.Size = new Size(1127, 498);
+            pnlStacks.TabIndex = 14;
             // 
-            // txtAdress
+            // gbxMenuStackAll
             // 
-            txtAdress.ImeMode = ImeMode.NoControl;
-            txtAdress.Location = new Point(93, 221);
-            txtAdress.Name = "txtAdress";
-            txtAdress.Size = new Size(253, 27);
-            txtAdress.TabIndex = 3;
+            gbxMenuStackAll.Controls.Add(btnCount);
+            gbxMenuStackAll.Controls.Add(btnPop);
+            gbxMenuStackAll.Controls.Add(btnPush);
+            gbxMenuStackAll.Controls.Add(label1);
+            gbxMenuStackAll.Controls.Add(txtNumberStack);
+            gbxMenuStackAll.Location = new Point(55, 168);
+            gbxMenuStackAll.Name = "gbxMenuStackAll";
+            gbxMenuStackAll.Size = new Size(381, 244);
+            gbxMenuStackAll.TabIndex = 23;
+            gbxMenuStackAll.TabStop = false;
             // 
-            // txtAge
+            // btnCount
             // 
-            txtAge.ImeMode = ImeMode.NoControl;
-            txtAge.Location = new Point(93, 150);
-            txtAge.Name = "txtAge";
-            txtAge.Size = new Size(253, 27);
-            txtAge.TabIndex = 2;
+            btnCount.Location = new Point(40, 170);
+            btnCount.Name = "btnCount";
+            btnCount.Size = new Size(159, 40);
+            btnCount.TabIndex = 18;
+            btnCount.Text = "Count";
+            btnCount.UseVisualStyleBackColor = true;
             // 
-            // txtName
+            // btnPop
             // 
-            txtName.ImeMode = ImeMode.NoControl;
-            txtName.Location = new Point(93, 84);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(253, 27);
-            txtName.TabIndex = 1;
+            btnPop.Location = new Point(40, 124);
+            btnPop.Name = "btnPop";
+            btnPop.Size = new Size(159, 40);
+            btnPop.TabIndex = 17;
+            btnPop.Text = "Pop";
+            btnPop.UseVisualStyleBackColor = true;
+            // 
+            // btnPush
+            // 
+            btnPush.Location = new Point(40, 78);
+            btnPush.Name = "btnPush";
+            btnPush.Size = new Size(159, 40);
+            btnPush.TabIndex = 16;
+            btnPush.Text = "Push";
+            btnPush.UseVisualStyleBackColor = true;
+            btnPush.Click += btnPush_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 20);
+            label1.TabIndex = 15;
+            label1.Text = "Number";
+            // 
+            // txtNumberStack
+            // 
+            txtNumberStack.ImeMode = ImeMode.NoControl;
+            txtNumberStack.Location = new Point(40, 39);
+            txtNumberStack.Name = "txtNumberStack";
+            txtNumberStack.Size = new Size(253, 27);
+            txtNumberStack.TabIndex = 14;
+            // 
+            // gbxMenuStatickStack
+            // 
+            gbxMenuStatickStack.Controls.Add(btnLengthStack);
+            gbxMenuStatickStack.Controls.Add(lblLenghtStack);
+            gbxMenuStatickStack.Controls.Add(txtLengthStacks);
+            gbxMenuStatickStack.Location = new Point(64, 40);
+            gbxMenuStatickStack.Name = "gbxMenuStatickStack";
+            gbxMenuStatickStack.Size = new Size(318, 131);
+            gbxMenuStatickStack.TabIndex = 22;
+            gbxMenuStatickStack.TabStop = false;
+            // 
+            // btnLengthStack
+            // 
+            btnLengthStack.Location = new Point(31, 82);
+            btnLengthStack.Name = "btnLengthStack";
+            btnLengthStack.Size = new Size(159, 40);
+            btnLengthStack.TabIndex = 21;
+            btnLengthStack.Text = "Start";
+            btnLengthStack.UseVisualStyleBackColor = true;
+            btnLengthStack.Click += btnLengthStack_Click;
+            // 
+            // lblLenghtStack
+            // 
+            lblLenghtStack.AutoSize = true;
+            lblLenghtStack.Location = new Point(31, 22);
+            lblLenghtStack.Name = "lblLenghtStack";
+            lblLenghtStack.Size = new Size(148, 20);
+            lblLenghtStack.TabIndex = 20;
+            lblLenghtStack.Text = "Lenght of static stack";
+            // 
+            // txtLengthStacks
+            // 
+            txtLengthStacks.ImeMode = ImeMode.NoControl;
+            txtLengthStacks.Location = new Point(31, 45);
+            txtLengthStacks.Name = "txtLengthStacks";
+            txtLengthStacks.Size = new Size(253, 27);
+            txtLengthStacks.TabIndex = 19;
+            // 
+            // lsbStacks
+            // 
+            lsbStacks.Font = new Font("Segoe UI", 12F);
+            lsbStacks.FormattingEnabled = true;
+            lsbStacks.ItemHeight = 28;
+            lsbStacks.Location = new Point(627, 85);
+            lsbStacks.Margin = new Padding(3, 4, 3, 4);
+            lsbStacks.Name = "lsbStacks";
+            lsbStacks.Size = new Size(394, 340);
+            lsbStacks.TabIndex = 13;
             // 
             // Form1
             // 
@@ -261,6 +381,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1127, 527);
+            Controls.Add(pnlStacks);
             Controls.Add(pnlLists);
             Controls.Add(menuStrip1);
             Controls.Add(lblBeggininMessage);
@@ -275,6 +396,11 @@
             menuStrip1.PerformLayout();
             pnlLists.ResumeLayout(false);
             pnlLists.PerformLayout();
+            pnlStacks.ResumeLayout(false);
+            gbxMenuStackAll.ResumeLayout(false);
+            gbxMenuStackAll.PerformLayout();
+            gbxMenuStatickStack.ResumeLayout(false);
+            gbxMenuStatickStack.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -289,13 +415,9 @@
         private ToolStripMenuItem treesToolStripMenuItem;
         private ToolStripMenuItem graphsToolStripMenuItem;
         private Panel pnlLists;
-        private Label lblName;
-        private TextBox txtAdress;
-        private TextBox txtAge;
-        private TextBox txtName;
+        private TextBox txtNumbers;
         private Button btnSend;
-        private Label lblAdress;
-        private Label lblAge;
+        private Label lblNumbers;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ListBox listLista;
         private Button btnShowReverse;
@@ -305,5 +427,20 @@
         private ToolStripMenuItem doublyListToolStripMenuItem;
         private ToolStripMenuItem circularDoublyListToolStripMenuItem;
         private ToolStripMenuItem simpleListToolStripMenuItem;
+        private Button btnClear;
+        private Panel pnlStacks;
+        private ListBox lsbStacks;
+        private Button btnCount;
+        private Button btnPop;
+        private Button btnPush;
+        private Label label1;
+        private TextBox txtNumberStack;
+        private ToolStripMenuItem staticStackToolStripMenuItem;
+        private ToolStripMenuItem dinamicStackToolStripMenuItem;
+        private Button btnLengthStack;
+        private Label lblLenghtStack;
+        private TextBox txtLengthStacks;
+        private GroupBox gbxMenuStatickStack;
+        private GroupBox gbxMenuStackAll;
     }
 }
