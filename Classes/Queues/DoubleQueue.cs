@@ -57,6 +57,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             {
                 T frontValue = myDeque.First.Value;
                 Console.WriteLine($"Front element: {frontValue}");
+                MessageBox.Show($"Front element: {frontValue}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -70,6 +71,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             {
                 T rearValue = myDeque.Last.Value;
                 Console.WriteLine($"Rear element: {rearValue}");
+                MessageBox.Show($"Rear element: {rearValue}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

@@ -44,6 +44,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             {
                 T frontValue = myQueue.Peek();
                 Console.WriteLine($"Front element: {frontValue}");
+                MessageBox.Show($"Front element: {frontValue}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

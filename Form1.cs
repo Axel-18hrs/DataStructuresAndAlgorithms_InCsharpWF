@@ -259,24 +259,29 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             if (gbxPriorityQue.Visible == true)
             {
                 queues.Enqueue(txtNumbersQueue.Text, priority);
+                PrintQueues();
             }
 
             queues.Enqueue(txtNumbersQueue.Text);
+            PrintQueues();
         }
 
         private void btnEnqueueRear_Click(object sender, EventArgs e)
         {
             queues.EnqueueRear(txtNumbersQueue.Text);
+            PrintQueues();
         }
 
         private void btnDequeue_Click(object sender, EventArgs e)
         {
             queues.Dequeue();
+            PrintQueues();
         }
 
         private void btnDequeueRear_Click(object sender, EventArgs e)
         {
             queues.DequeueRear();
+            PrintQueues();
         }
 
         private void btnPeekQ_Click(object sender, EventArgs e)
@@ -289,6 +294,14 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             queues.PeekRear();
         }
 
+        public void PrintQueues()
+        {
+            lsbQueues.Items.Clear();
+            foreach (var n in queues.Display())
+            {
+                lsbQueues.Items.Add(n);
+            }
+        }
         private void pnlQueues_Paint(object sender, PaintEventArgs e)
         {
 

@@ -61,6 +61,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
                 var value = highestPriority.Value.Peek();
 
                 Console.WriteLine($"Front element with priority {highestPriority.Key}: {value}");
+                MessageBox.Show($"Front element with priority {highestPriority.Key}: {value}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

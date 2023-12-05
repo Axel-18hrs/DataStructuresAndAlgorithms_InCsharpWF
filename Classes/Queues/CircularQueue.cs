@@ -86,6 +86,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine($"Front element: {myCircularQueue[front]}");
+            MessageBox.Show($"Front element: {myCircularQueue[front]}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void PeekRear()
