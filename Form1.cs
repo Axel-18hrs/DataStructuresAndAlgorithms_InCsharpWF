@@ -22,6 +22,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlLists.Visible = false;
             pnlStacks.Visible = false;
             pnlQueues.Visible = false;
+            pnlTreeGraphic.Visible = false;
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
         }
@@ -314,7 +315,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlLists.Visible = false;
             pnlQueues.Visible = false;
             pnlStacks.Visible = false;
-            pnlTreeGraphic.Visible = true;
+            pnlTreeGraphic.Visible = false;
             tree = new BinaryTree();
 
         }
