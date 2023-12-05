@@ -113,6 +113,12 @@
             textBox4 = new TextBox();
             label12 = new Label();
             textBox5 = new TextBox();
+            label13 = new Label();
+            label14 = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -798,6 +804,12 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(label13);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(textBox5);
             panel1.Controls.Add(label11);
@@ -821,11 +833,11 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(29, 174);
+            label8.Location = new Point(368, 175);
             label8.Name = "label8";
-            label8.Size = new Size(109, 26);
+            label8.Size = new Size(207, 26);
             label8.TabIndex = 45;
-            label8.Text = "Preorder";
+            label8.Text = "Adjacency matrix";
             // 
             // listBox1
             // 
@@ -840,7 +852,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(770, 101);
+            button1.Location = new Point(770, 89);
             button1.Name = "button1";
             button1.Size = new Size(159, 40);
             button1.TabIndex = 48;
@@ -936,6 +948,62 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(253, 27);
             textBox5.TabIndex = 55;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(29, 175);
+            label13.Name = "label13";
+            label13.Size = new Size(83, 26);
+            label13.TabIndex = 57;
+            label13.Text = "Graph";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.Location = new Point(810, 175);
+            label14.Name = "label14";
+            label14.Size = new Size(108, 26);
+            label14.TabIndex = 58;
+            label14.Text = "DFS tour";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(935, 89);
+            button2.Name = "button2";
+            button2.Size = new Size(159, 40);
+            button2.TabIndex = 59;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(306, 101);
+            button3.Name = "button3";
+            button3.Size = new Size(159, 40);
+            button3.TabIndex = 60;
+            button3.Text = "Add edge";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(471, 101);
+            button4.Name = "button4";
+            button4.Size = new Size(159, 40);
+            button4.TabIndex = 61;
+            button4.Text = "Find way";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(565, 46);
+            button5.Name = "button5";
+            button5.Size = new Size(159, 40);
+            button5.TabIndex = 62;
+            button5.Text = "Find way";
+            button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1068,5 +1136,11 @@
         private TextBox textBox4;
         private Label label12;
         private TextBox textBox5;
+        private Label label14;
+        private Label label13;
+        private Button button5;
+        private Button button4;
+        private Button button3;
+        private Button button2;
     }
 }
