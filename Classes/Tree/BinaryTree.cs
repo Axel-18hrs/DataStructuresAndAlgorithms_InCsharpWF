@@ -7,6 +7,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Tree
     {
         public BinaryNode Root { get; set; }
 
+        
         public void PrintTree()
         {
             string treeGraph = GenerateTreeGraph();

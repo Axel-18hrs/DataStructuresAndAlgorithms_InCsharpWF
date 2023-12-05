@@ -328,6 +328,15 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             tree.Add(number);
             ToursOfTree();
+            int Data = 0;
+            try { Data = int.Parse(txtNumberBinaryTree.Text); } catch { }
+
+            tree.Add(Data);
+
+            VisualizarArbol(tree.Root, null, treeView.Nodes);
+
+            txtNumberBinaryTree.Clear();
+            txtNumberBinaryTree.Focus();
         }
 
         private void btnDeleteTreeN_Click(object sender, EventArgs e)
@@ -375,15 +384,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void Add_BinaryTree_Click(object sender, EventArgs e)
         {
-            int Data = 0;
-            try { Data = int.Parse(txtNumberBinaryTree.Text); } catch { }
-
-            tree.Add(Data);
-
-            VisualizarArbol(tree.Root, null, treeView.Nodes);
-
-            txtNumberBinaryTree.Clear();
-            txtNumberBinaryTree.Focus();
+            
         }
 
 

@@ -86,6 +86,7 @@
             txtNumbersQueue = new TextBox();
             lsbQueues = new ListBox();
             pnlTree = new Panel();
+            treeView = new TreeView();
             btnSearchTreeN = new Button();
             btnDeleteTreeN = new Button();
             label7 = new Label();
@@ -98,7 +99,6 @@
             btnAdd = new Button();
             label4 = new Label();
             txtNumberBinaryTree = new TextBox();
-            treeView = new TreeView();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -652,6 +652,14 @@
             pnlTree.Size = new Size(1134, 496);
             pnlTree.TabIndex = 16;
             // 
+            // treeView
+            // 
+            treeView.AllowDrop = true;
+            treeView.Location = new Point(54, 68);
+            treeView.Name = "treeView";
+            treeView.Size = new Size(318, 409);
+            treeView.TabIndex = 50;
+            // 
             // btnSearchTreeN
             // 
             btnSearchTreeN.Location = new Point(828, 279);
@@ -771,13 +779,6 @@
             txtNumberBinaryTree.Name = "txtNumberBinaryTree";
             txtNumberBinaryTree.Size = new Size(253, 27);
             txtNumberBinaryTree.TabIndex = 38;
-            // 
-            // treeView
-            // 
-            treeView.Location = new Point(54, 68);
-            treeView.Name = "treeView";
-            treeView.Size = new Size(318, 409);
-            treeView.TabIndex = 50;
             // 
             // Form1
             // 
