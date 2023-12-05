@@ -104,20 +104,20 @@
             listBox1 = new ListBox();
             button1 = new Button();
             label9 = new Label();
-            textBox2 = new TextBox();
+            txtNumberGraph = new TextBox();
             listBox2 = new ListBox();
             listBox3 = new ListBox();
             label10 = new Label();
-            textBox3 = new TextBox();
+            txtDestinationGraph = new TextBox();
             label11 = new Label();
-            textBox4 = new TextBox();
+            txtWeightGraph = new TextBox();
             label12 = new Label();
-            textBox5 = new TextBox();
+            txtOriginGraph = new TextBox();
             label13 = new Label();
             label14 = new Label();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
+            btnToursDFSGraph = new Button();
             button5 = new Button();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
@@ -805,22 +805,22 @@
             // panel1
             // 
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(btnToursDFSGraph);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(label12);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(txtOriginGraph);
             panel1.Controls.Add(label11);
-            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(txtWeightGraph);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtDestinationGraph);
             panel1.Controls.Add(listBox3);
             panel1.Controls.Add(listBox2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(txtNumberGraph);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(listBox1);
             panel1.Location = new Point(0, 31);
@@ -868,13 +868,13 @@
             label9.TabIndex = 47;
             label9.Text = "Number";
             // 
-            // textBox2
+            // txtNumberGraph
             // 
-            textBox2.ImeMode = ImeMode.NoControl;
-            textBox2.Location = new Point(770, 56);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(253, 27);
-            textBox2.TabIndex = 46;
+            txtNumberGraph.ImeMode = ImeMode.NoControl;
+            txtNumberGraph.Location = new Point(770, 56);
+            txtNumberGraph.Name = "txtNumberGraph";
+            txtNumberGraph.Size = new Size(253, 27);
+            txtNumberGraph.TabIndex = 46;
             // 
             // listBox2
             // 
@@ -907,13 +907,13 @@
             label10.TabIndex = 52;
             label10.Text = "Destination";
             // 
-            // textBox3
+            // txtDestinationGraph
             // 
-            textBox3.ImeMode = ImeMode.NoControl;
-            textBox3.Location = new Point(29, 56);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(253, 27);
-            textBox3.TabIndex = 51;
+            txtDestinationGraph.ImeMode = ImeMode.NoControl;
+            txtDestinationGraph.Location = new Point(29, 56);
+            txtDestinationGraph.Name = "txtDestinationGraph";
+            txtDestinationGraph.Size = new Size(253, 27);
+            txtDestinationGraph.TabIndex = 51;
             // 
             // label11
             // 
@@ -924,13 +924,13 @@
             label11.TabIndex = 54;
             label11.Text = "Weight";
             // 
-            // textBox4
+            // txtWeightGraph
             // 
-            textBox4.ImeMode = ImeMode.NoControl;
-            textBox4.Location = new Point(29, 112);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(253, 27);
-            textBox4.TabIndex = 53;
+            txtWeightGraph.ImeMode = ImeMode.NoControl;
+            txtWeightGraph.Location = new Point(29, 112);
+            txtWeightGraph.Name = "txtWeightGraph";
+            txtWeightGraph.Size = new Size(253, 27);
+            txtWeightGraph.TabIndex = 53;
             // 
             // label12
             // 
@@ -941,13 +941,13 @@
             label12.TabIndex = 56;
             label12.Text = "Origin";
             // 
-            // textBox5
+            // txtOriginGraph
             // 
-            textBox5.ImeMode = ImeMode.NoControl;
-            textBox5.Location = new Point(306, 56);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(253, 27);
-            textBox5.TabIndex = 55;
+            txtOriginGraph.ImeMode = ImeMode.NoControl;
+            txtOriginGraph.Location = new Point(306, 56);
+            txtOriginGraph.Name = "txtOriginGraph";
+            txtOriginGraph.Size = new Size(253, 27);
+            txtOriginGraph.TabIndex = 55;
             // 
             // label13
             // 
@@ -987,14 +987,14 @@
             button3.Text = "Add edge";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnToursDFSGraph
             // 
-            button4.Location = new Point(471, 101);
-            button4.Name = "button4";
-            button4.Size = new Size(159, 40);
-            button4.TabIndex = 61;
-            button4.Text = "Find way";
-            button4.UseVisualStyleBackColor = true;
+            btnToursDFSGraph.Location = new Point(471, 101);
+            btnToursDFSGraph.Name = "btnToursDFSGraph";
+            btnToursDFSGraph.Size = new Size(159, 40);
+            btnToursDFSGraph.TabIndex = 61;
+            btnToursDFSGraph.Text = "Tours DFS";
+            btnToursDFSGraph.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -1127,19 +1127,19 @@
         private ListBox listBox2;
         private Button button1;
         private Label label9;
-        private TextBox textBox2;
+        private TextBox txtNumberGraph;
         private Label label8;
         private ListBox listBox1;
         private Label label10;
-        private TextBox textBox3;
+        private TextBox txtDestinationGraph;
         private Label label11;
-        private TextBox textBox4;
+        private TextBox txtWeightGraph;
         private Label label12;
-        private TextBox textBox5;
+        private TextBox txtOriginGraph;
         private Label label14;
         private Label label13;
         private Button button5;
-        private Button button4;
+        private Button btnToursDFSGraph;
         private Button button3;
         private Button button2;
     }
