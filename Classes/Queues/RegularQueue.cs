@@ -56,11 +56,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 
         }
 
-        public void Display()
+        public IEnumerable<T> Display()
         {
             Console.Write("Queue elements: ");
             foreach (var item in myQueue)
             {
+                yield return item;
                 Console.Write($"{item} ");
             }
             Console.WriteLine();

@@ -75,13 +75,14 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 
         }
 
-        public void Display()
+        public IEnumerable<string> Display()
         {
             Console.Write("Priority Queue elements: ");
             foreach (var priorityGroup in myPriorityQueue)
             {
                 foreach (var item in priorityGroup.Value)
                 {
+                    yield return $"{item} (Priority {priorityGroup.Key}) ";
                     Console.Write($"{item} (Priority {priorityGroup.Key}) ");
                 }
             }

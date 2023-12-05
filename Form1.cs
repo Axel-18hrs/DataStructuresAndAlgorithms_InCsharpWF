@@ -199,5 +199,40 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             MessageBox.Show($"Number of elements in the stack: {stacks.Count()}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void regularQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gbxPriorityQue.Visible = false;
+            gbxCircularQ.Visible = false;
+        }
+
+        private void doubleQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gbxPriorityQue.Visible = false;
+            gbxCircularQ.Visible = false;
+            gbxPriorityQue.Visible = false;
+            gbxCircularQ.Visible = false;
+        }
+
+        private void queuesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlLists.Visible = false;
+            pnlStacks.Visible = false;
+            pnlQueues.Visible = true;
+            gbxPriorityQue.Visible = false;
+            gbxCircularQ.Visible = false;
+        }
+
+        private void priorityQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gbxPriorityQue.Visible = true;
+            gbxCircularQ.Visible = false;
+        }
+
+        private void circularQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gbxPriorityQue.Visible = false;
+            gbxCircularQ.Visible = true;
+        }
     }
 }
