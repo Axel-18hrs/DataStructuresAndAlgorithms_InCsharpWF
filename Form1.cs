@@ -1,4 +1,5 @@
 using DataStructuresAndAlgorithms_InCSharp.Classes.Lists;
+using DataStructuresAndAlgorithms_InCSharp.Classes.Nodes;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Queues;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Stacks;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Tree;
@@ -370,6 +371,38 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             }
 
             tree.Search(number);
+        }
+
+        private void Add_BinaryTree_Click(object sender, EventArgs e)
+        {
+            int Data = 0;
+            try { Data = int.Parse(txtNumberBinaryTree.Text); } catch { }
+
+            tree.Add(Data);
+
+            VisualizarArbol(tree.Root, null, treeView.Nodes);
+
+            txtNumberBinaryTree.Clear();
+            txtNumberBinaryTree.Focus();
+        }
+
+
+        static void VisualizarArbol(BinaryNode Tree, TreeNode parentNode, TreeNodeCollection nodes)
+        {
+            if (Tree != null)
+            {
+                var NewNode = new TreeNode(Tree.Data.ToString());
+                if (parentNode != null)
+                {
+                    parentNode.Nodes.Add(NewNode);
+                }
+                else
+                {
+                    nodes.Add(NewNode);
+                }
+                VisualizarArbol(Tree.Left, NewNode, NewNode.Nodes);
+                VisualizarArbol(Tree.Right, NewNode, NewNode.Nodes);
+            }
         }
     }
 }

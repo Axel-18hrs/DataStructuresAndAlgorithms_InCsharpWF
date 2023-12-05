@@ -98,7 +98,7 @@
             btnAdd = new Button();
             label4 = new Label();
             txtNumberBinaryTree = new TextBox();
-            lsbBinaryTree = new ListBox();
+            treeView = new TreeView();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -634,6 +634,7 @@
             // 
             // pnlTree
             // 
+            pnlTree.Controls.Add(treeView);
             pnlTree.Controls.Add(btnSearchTreeN);
             pnlTree.Controls.Add(btnDeleteTreeN);
             pnlTree.Controls.Add(label7);
@@ -646,7 +647,6 @@
             pnlTree.Controls.Add(btnAdd);
             pnlTree.Controls.Add(label4);
             pnlTree.Controls.Add(txtNumberBinaryTree);
-            pnlTree.Controls.Add(lsbBinaryTree);
             pnlTree.Location = new Point(0, 33);
             pnlTree.Name = "pnlTree";
             pnlTree.Size = new Size(1134, 496);
@@ -772,16 +772,12 @@
             txtNumberBinaryTree.Size = new Size(253, 27);
             txtNumberBinaryTree.TabIndex = 38;
             // 
-            // lsbBinaryTree
+            // treeView
             // 
-            lsbBinaryTree.Font = new Font("Segoe UI", 12F);
-            lsbBinaryTree.FormattingEnabled = true;
-            lsbBinaryTree.ItemHeight = 28;
-            lsbBinaryTree.Location = new Point(54, 69);
-            lsbBinaryTree.Margin = new Padding(3, 4, 3, 4);
-            lsbBinaryTree.Name = "lsbBinaryTree";
-            lsbBinaryTree.Size = new Size(340, 396);
-            lsbBinaryTree.TabIndex = 37;
+            treeView.Location = new Point(54, 68);
+            treeView.Name = "treeView";
+            treeView.Size = new Size(318, 409);
+            treeView.TabIndex = 50;
             // 
             // Form1
             // 
@@ -896,6 +892,6 @@
         private Button btnAdd;
         private Label label4;
         private TextBox txtNumberBinaryTree;
-        private ListBox lsbBinaryTree;
+        private TreeView treeView;
     }
 }

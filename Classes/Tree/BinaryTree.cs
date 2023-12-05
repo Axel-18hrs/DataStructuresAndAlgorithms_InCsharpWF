@@ -5,7 +5,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Tree
 {
     public class BinaryTree
     {
-        private BinaryNode Root { get; set; }
+        public BinaryNode Root { get; set; }
 
         public void PrintTree()
         {
