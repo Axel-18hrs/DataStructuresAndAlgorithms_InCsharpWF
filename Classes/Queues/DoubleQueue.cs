@@ -31,6 +31,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Deque is empty. Unable to dequeue from the front.");
+            MessageBox.Show("Deque is empty. Unable to dequeue from the front.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void DequeueRear()
@@ -44,6 +45,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Deque is empty. Unable to dequeue from the rear.");
+            MessageBox.Show("Deque is empty. Unable to dequeue from the front.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void Peek()
@@ -56,6 +58,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Deque is empty. No elements at the front to peek.");
+            MessageBox.Show("Deque is empty. No elements at the front to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void PeekRear()
@@ -68,13 +71,15 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Deque is empty. No elements at the rear to peek.");
+            MessageBox.Show("Deque is empty. No elements at the rear to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Display()
+        public IEnumerable<T> Display()
         {
             Console.Write("Deque elements: ");
             foreach (var item in myDeque)
             {
+                yield return item;
                 Console.Write($"{item} ");
             }
             Console.WriteLine();

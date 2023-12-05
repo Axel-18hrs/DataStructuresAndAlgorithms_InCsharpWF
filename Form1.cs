@@ -17,6 +17,9 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             InitializeComponent();
             pnlLists.Visible = false;
             pnlStacks.Visible = false;
+            pnlQueues.Visible = false;
+            gbxCircularQ.Visible = false;
+            gbxPriorityQue.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)

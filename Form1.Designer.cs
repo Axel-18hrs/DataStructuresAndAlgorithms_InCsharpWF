@@ -75,6 +75,13 @@
             btnPeekQ = new Button();
             btnPeekQRear = new Button();
             gbxCircularQ = new GroupBox();
+            label3 = new Label();
+            txtPriorityQ = new TextBox();
+            gbxPriorityQue = new GroupBox();
+            regularQueueToolStripMenuItem = new ToolStripMenuItem();
+            doubleQueueToolStripMenuItem = new ToolStripMenuItem();
+            priorityQueueToolStripMenuItem = new ToolStripMenuItem();
+            circularQueueToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -82,6 +89,7 @@
             gbxMenuStatickStack.SuspendLayout();
             pnlQueues.SuspendLayout();
             gbxCircularQ.SuspendLayout();
+            gbxPriorityQue.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -115,27 +123,27 @@
             // simpleListToolStripMenuItem
             // 
             simpleListToolStripMenuItem.Name = "simpleListToolStripMenuItem";
-            simpleListToolStripMenuItem.Size = new Size(220, 26);
+            simpleListToolStripMenuItem.Size = new Size(224, 26);
             simpleListToolStripMenuItem.Text = "Simple List";
             // 
             // circularListToolStripMenuItem
             // 
             circularListToolStripMenuItem.Name = "circularListToolStripMenuItem";
-            circularListToolStripMenuItem.Size = new Size(220, 26);
+            circularListToolStripMenuItem.Size = new Size(224, 26);
             circularListToolStripMenuItem.Text = "Circular List";
             circularListToolStripMenuItem.Click += circularListToolStripMenuItem_Click;
             // 
             // doublyListToolStripMenuItem
             // 
             doublyListToolStripMenuItem.Name = "doublyListToolStripMenuItem";
-            doublyListToolStripMenuItem.Size = new Size(220, 26);
+            doublyListToolStripMenuItem.Size = new Size(224, 26);
             doublyListToolStripMenuItem.Text = "Doubly List";
             doublyListToolStripMenuItem.Click += doublyListToolStripMenuItem_Click;
             // 
             // circularDoublyListToolStripMenuItem
             // 
             circularDoublyListToolStripMenuItem.Name = "circularDoublyListToolStripMenuItem";
-            circularDoublyListToolStripMenuItem.Size = new Size(220, 26);
+            circularDoublyListToolStripMenuItem.Size = new Size(224, 26);
             circularDoublyListToolStripMenuItem.Text = "Circular Doubly List";
             circularDoublyListToolStripMenuItem.Click += circularDoublyListToolStripMenuItem_Click;
             // 
@@ -150,19 +158,20 @@
             // staticStackToolStripMenuItem
             // 
             staticStackToolStripMenuItem.Name = "staticStackToolStripMenuItem";
-            staticStackToolStripMenuItem.Size = new Size(186, 26);
+            staticStackToolStripMenuItem.Size = new Size(224, 26);
             staticStackToolStripMenuItem.Text = "Static Stack";
             staticStackToolStripMenuItem.Click += staticStackToolStripMenuItem_Click;
             // 
             // dinamicStackToolStripMenuItem
             // 
             dinamicStackToolStripMenuItem.Name = "dinamicStackToolStripMenuItem";
-            dinamicStackToolStripMenuItem.Size = new Size(186, 26);
+            dinamicStackToolStripMenuItem.Size = new Size(224, 26);
             dinamicStackToolStripMenuItem.Text = "Dinamic Stack";
             dinamicStackToolStripMenuItem.Click += dinamicStackToolStripMenuItem_Click;
             // 
             // queuesToolStripMenuItem
             // 
+            queuesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { regularQueueToolStripMenuItem, doubleQueueToolStripMenuItem, priorityQueueToolStripMenuItem, circularQueueToolStripMenuItem });
             queuesToolStripMenuItem.Name = "queuesToolStripMenuItem";
             queuesToolStripMenuItem.Size = new Size(72, 24);
             queuesToolStripMenuItem.Text = "Queues";
@@ -405,6 +414,7 @@
             // 
             // pnlQueues
             // 
+            pnlQueues.Controls.Add(gbxPriorityQue);
             pnlQueues.Controls.Add(gbxCircularQ);
             pnlQueues.Controls.Add(btnPeekQ);
             pnlQueues.Controls.Add(btnDequeue);
@@ -430,7 +440,7 @@
             // 
             // btnEnqueue
             // 
-            btnEnqueue.Location = new Point(131, 155);
+            btnEnqueue.Location = new Point(131, 163);
             btnEnqueue.Name = "btnEnqueue";
             btnEnqueue.Size = new Size(159, 40);
             btnEnqueue.TabIndex = 24;
@@ -465,7 +475,7 @@
             // 
             // btnDequeue
             // 
-            btnDequeue.Location = new Point(131, 207);
+            btnDequeue.Location = new Point(131, 215);
             btnDequeue.Name = "btnDequeue";
             btnDequeue.Size = new Size(159, 40);
             btnDequeue.TabIndex = 26;
@@ -483,7 +493,7 @@
             // 
             // btnPeekQ
             // 
-            btnPeekQ.Location = new Point(131, 259);
+            btnPeekQ.Location = new Point(131, 267);
             btnPeekQ.Name = "btnPeekQ";
             btnPeekQ.Size = new Size(159, 40);
             btnPeekQ.TabIndex = 28;
@@ -505,11 +515,62 @@
             gbxCircularQ.Controls.Add(btnPeekQRear);
             gbxCircularQ.Controls.Add(btnDequeueRear);
             gbxCircularQ.Controls.Add(btnEnqueueRear);
-            gbxCircularQ.Location = new Point(306, 149);
+            gbxCircularQ.Location = new Point(306, 157);
             gbxCircularQ.Name = "gbxCircularQ";
             gbxCircularQ.Size = new Size(187, 176);
             gbxCircularQ.TabIndex = 30;
             gbxCircularQ.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(32, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(56, 20);
+            label3.TabIndex = 32;
+            label3.Text = "Priority";
+            // 
+            // txtPriorityQ
+            // 
+            txtPriorityQ.ImeMode = ImeMode.NoControl;
+            txtPriorityQ.Location = new Point(32, 33);
+            txtPriorityQ.Name = "txtPriorityQ";
+            txtPriorityQ.Size = new Size(253, 27);
+            txtPriorityQ.TabIndex = 31;
+            // 
+            // gbxPriorityQue
+            // 
+            gbxPriorityQue.Controls.Add(label3);
+            gbxPriorityQue.Controls.Add(txtPriorityQ);
+            gbxPriorityQue.Location = new Point(99, 26);
+            gbxPriorityQue.Name = "gbxPriorityQue";
+            gbxPriorityQue.Size = new Size(324, 69);
+            gbxPriorityQue.TabIndex = 33;
+            gbxPriorityQue.TabStop = false;
+            // 
+            // regularQueueToolStripMenuItem
+            // 
+            regularQueueToolStripMenuItem.Name = "regularQueueToolStripMenuItem";
+            regularQueueToolStripMenuItem.Size = new Size(224, 26);
+            regularQueueToolStripMenuItem.Text = "Regular Queue";
+            // 
+            // doubleQueueToolStripMenuItem
+            // 
+            doubleQueueToolStripMenuItem.Name = "doubleQueueToolStripMenuItem";
+            doubleQueueToolStripMenuItem.Size = new Size(224, 26);
+            doubleQueueToolStripMenuItem.Text = "Double Queue";
+            // 
+            // priorityQueueToolStripMenuItem
+            // 
+            priorityQueueToolStripMenuItem.Name = "priorityQueueToolStripMenuItem";
+            priorityQueueToolStripMenuItem.Size = new Size(224, 26);
+            priorityQueueToolStripMenuItem.Text = "Priority Queue";
+            // 
+            // circularQueueToolStripMenuItem
+            // 
+            circularQueueToolStripMenuItem.Name = "circularQueueToolStripMenuItem";
+            circularQueueToolStripMenuItem.Size = new Size(224, 26);
+            circularQueueToolStripMenuItem.Text = "Circular Queue";
             // 
             // Form1
             // 
@@ -541,6 +602,8 @@
             pnlQueues.ResumeLayout(false);
             pnlQueues.PerformLayout();
             gbxCircularQ.ResumeLayout(false);
+            gbxPriorityQue.ResumeLayout(false);
+            gbxPriorityQue.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -594,5 +657,12 @@
         private Button btnPeekQ;
         private GroupBox gbxCircularQ;
         private Button btnPeekQRear;
+        private Label label3;
+        private TextBox txtPriorityQ;
+        private ToolStripMenuItem regularQueueToolStripMenuItem;
+        private ToolStripMenuItem doubleQueueToolStripMenuItem;
+        private ToolStripMenuItem priorityQueueToolStripMenuItem;
+        private ToolStripMenuItem circularQueueToolStripMenuItem;
+        private GroupBox gbxPriorityQue;
     }
 }
