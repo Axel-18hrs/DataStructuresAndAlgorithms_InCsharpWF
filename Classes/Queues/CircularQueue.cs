@@ -82,11 +82,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             if (IsEmpty())
             {
                 Console.WriteLine("Circular Queue is empty. No elements to peek.");
-                MessageBox.Show("Circular Queue is full. Unable to enqueue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Circular Queue is empty. No elements to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             Console.WriteLine($"Front element: {myCircularQueue[front]}");
+            MessageBox.Show($"Front element: {myCircularQueue[front]}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void PeekRear()
@@ -99,6 +100,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             if (IsEmpty())
             {
                 Console.WriteLine("Circular Queue is empty.");
+                MessageBox.Show("Circular Queue is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
