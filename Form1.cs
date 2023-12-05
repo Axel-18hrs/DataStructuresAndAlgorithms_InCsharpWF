@@ -323,11 +323,33 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             if (!int.TryParse(txtLengthStacks.Text, out var number))
             {
-                MessageBox.Show("Only numbers in the 'Lenght of static stack' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             tree.Add(number);
+        }
+
+        private void btnDeleteTreeN_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            tree.Delete(number);
+        }
+
+        private void btnSearchTreeN_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            tree.Search(number);
         }
     }
 }

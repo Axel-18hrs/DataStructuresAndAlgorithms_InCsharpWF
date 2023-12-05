@@ -134,11 +134,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Tree
         {
             if (nodo == null)
             {
+                MessageBox.Show($"The value doesn't exist in the tree", "Doesn't exist", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
             if (valor == nodo.Data)
             {
+                MessageBox.Show($"The value exist in the list", "Founded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
 

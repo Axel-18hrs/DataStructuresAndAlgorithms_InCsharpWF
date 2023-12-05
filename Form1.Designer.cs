@@ -70,6 +70,8 @@
             lsbStacks = new ListBox();
             pnlQueues = new Panel();
             pnlTreeGraphic = new Panel();
+            btnSearchTreeN = new Button();
+            btnDeleteTreeN = new Button();
             label7 = new Label();
             InOrder = new ListBox();
             label6 = new Label();
@@ -97,8 +99,6 @@
             label2 = new Label();
             txtNumbersQueue = new TextBox();
             lsbQueues = new ListBox();
-            btnDeleteTreeN = new Button();
-            btnSearchTreeN = new Button();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -499,6 +499,26 @@
             pnlTreeGraphic.Size = new Size(1127, 498);
             pnlTreeGraphic.TabIndex = 37;
             // 
+            // btnSearchTreeN
+            // 
+            btnSearchTreeN.Location = new Point(810, 283);
+            btnSearchTreeN.Name = "btnSearchTreeN";
+            btnSearchTreeN.Size = new Size(159, 40);
+            btnSearchTreeN.TabIndex = 36;
+            btnSearchTreeN.Text = "Search";
+            btnSearchTreeN.UseVisualStyleBackColor = true;
+            btnSearchTreeN.Click += btnSearchTreeN_Click;
+            // 
+            // btnDeleteTreeN
+            // 
+            btnDeleteTreeN.Location = new Point(810, 237);
+            btnDeleteTreeN.Name = "btnDeleteTreeN";
+            btnDeleteTreeN.Size = new Size(159, 40);
+            btnDeleteTreeN.TabIndex = 35;
+            btnDeleteTreeN.Text = "Delete";
+            btnDeleteTreeN.UseVisualStyleBackColor = true;
+            btnDeleteTreeN.Click += btnDeleteTreeN_Click;
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -763,24 +783,6 @@
             lsbQueues.Name = "lsbQueues";
             lsbQueues.Size = new Size(394, 340);
             lsbQueues.TabIndex = 14;
-            // 
-            // btnDeleteTreeN
-            // 
-            btnDeleteTreeN.Location = new Point(810, 237);
-            btnDeleteTreeN.Name = "btnDeleteTreeN";
-            btnDeleteTreeN.Size = new Size(159, 40);
-            btnDeleteTreeN.TabIndex = 35;
-            btnDeleteTreeN.Text = "Delete";
-            btnDeleteTreeN.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchTreeN
-            // 
-            btnSearchTreeN.Location = new Point(810, 283);
-            btnSearchTreeN.Name = "btnSearchTreeN";
-            btnSearchTreeN.Size = new Size(159, 40);
-            btnSearchTreeN.TabIndex = 36;
-            btnSearchTreeN.Text = "Search";
-            btnSearchTreeN.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
