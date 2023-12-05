@@ -14,7 +14,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Interfaces
         void DequeueRear();
         void Peek();
         void PeekRear();
-        void Display();
+        IEnumerable<T> Display();
         int Count();
 
     }

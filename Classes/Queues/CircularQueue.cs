@@ -90,7 +90,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 
         }
 
-        public IEnumerable<T> Display()
+        public IEnumerable<string> Display()
         {
             if (IsEmpty())
             {
@@ -103,7 +103,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             int i = front;
             do
             {
-                yield return myCircularQueue[i];
+                yield return myCircularQueue[i] + "";
                 Console.Write($"{myCircularQueue[i]} ");
                 i = (i + 1) % capacity;
             } while (i != (rear + 1) % capacity);

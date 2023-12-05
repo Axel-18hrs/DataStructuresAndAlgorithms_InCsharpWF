@@ -74,12 +74,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             MessageBox.Show("Deque is empty. No elements at the rear to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public IEnumerable<T> Display()
+        public IEnumerable<string> Display()
         {
             Console.Write("Deque elements: ");
             foreach (var item in myDeque)
             {
-                yield return item;
+                yield return item + "";
                 Console.Write($"{item} ");
             }
             Console.WriteLine();

@@ -49,6 +49,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Priority Queue is empty. Unable to dequeue.");
+            MessageBox.Show("Priority Queue is empty. Unable to dequeue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void DequeueRear()
@@ -68,6 +69,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Priority Queue is empty. No elements to peek.");
+            MessageBox.Show("Priority Queue is empty. No elements to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void PeekRear()
@@ -82,7 +84,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             {
                 foreach (var item in priorityGroup.Value)
                 {
-                    yield return $"{item} (Priority {priorityGroup.Key}) ";
+                    yield return $"{item} (Priority {priorityGroup.Key}) "
                     Console.Write($"{item} (Priority {priorityGroup.Key}) ");
                 }
             }

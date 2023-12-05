@@ -1,9 +1,4 @@
 ﻿using DataStructuresAndAlgorithms_InCSharp.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 {
@@ -32,6 +27,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Queue is empty. Unable to dequeue.");
+            MessageBox.Show("Queue is empty. Unable to dequeue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void DequeueRear()
@@ -49,6 +45,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             }
 
             Console.WriteLine("Queue is empty. No elements to peek.");
+            MessageBox.Show("Queue is empty. No elements to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void PeekRear()
@@ -56,12 +53,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 
         }
 
-        public IEnumerable<T> Display()
+        public IEnumerable<string> Display()
         {
             Console.Write("Queue elements: ");
             foreach (var item in myQueue)
             {
-                yield return item;
+                yield return item + "";
                 Console.Write($"{item} ");
             }
             Console.WriteLine();
