@@ -22,7 +22,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlLists.Visible = false;
             pnlStacks.Visible = false;
             pnlQueues.Visible = false;
-            pnlTreeGraphic.Visible = false;
+            pnlTree.Visible = false;
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
         }
@@ -315,14 +315,14 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlLists.Visible = false;
             pnlQueues.Visible = false;
             pnlStacks.Visible = false;
-            pnlTreeGraphic.Visible = false;
+            pnlTree.Visible = true;
             tree = new BinaryTree();
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            if (!int.TryParse(txtNumberBinaryTree.Text, out var number))
             {
                 MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -334,7 +334,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnDeleteTreeN_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            if (!int.TryParse(txtNumberBinaryTree.Text, out var number))
             {
                 MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -366,7 +366,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         }
         private void btnSearchTreeN_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            if (!int.TryParse(txtNumberBinaryTree.Text, out var number))
             {
                 MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
