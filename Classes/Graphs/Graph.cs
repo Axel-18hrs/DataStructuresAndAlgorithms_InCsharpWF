@@ -1,195 +1,176 @@
 ﻿using DataStructuresAndAlgorithms_InCSharp.Interfaces;
+using System.Text;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Graphs
 {
-    internal class Graph<T> : ImethodGraphs<T>
+    internal class Graph<T>
     {
-        private Dictionary<T, List<T>> adjacencyList;
+        private Dictionary<T, List<(T, int)>> graph = new Dictionary<T, List<(T, int)>>();
+        private Dictionary<T, int> weights = new Dictionary<T, int>();
 
-        public Graph()
-        {
-            adjacencyList = new Dictionary<T, List<T>>();
-        }
-
-        // Add a vertex to the graph
         public void AddVertex(T vertex)
         {
-            if (!adjacencyList.ContainsKey(vertex))
+            if (!graph.ContainsKey(vertex))
             {
-                adjacencyList[vertex] = new List<T>();
-                Console.WriteLine($"Vertex {vertex} added to the graph.");
-                return;
+                graph[vertex] = new List<(T, int)>();
             }
-
-            Console.WriteLine($"Vertex {vertex} already exists in the graph.");
         }
 
-        // Remove a vertex and all associated edges
+        public void AddEdge(T source, T destination, int weight)
+        {
+            if (graph.ContainsKey(source) && graph.ContainsKey(destination))
+            {
+                graph[source].Add((destination, weight));
+            }
+        }
+
+        public void RemoveEdge(T source, T destination)
+        {
+            if (graph.ContainsKey(source))
+            {
+                graph[source].RemoveAll(edge => edge.Item1.Equals(destination));
+            }
+        }
+
+        public IEnumerable<(T, int)> GetNeighbors(T vertex)
+        {
+            if (graph.ContainsKey(vertex))
+            {
+                return graph[vertex];
+            }
+            else
+            {
+                return Enumerable.Empty<(T, int)>();
+            }
+        }
+
+        public IEnumerable<T> GetVertices()
+        {
+            return graph.Keys;
+        }
+
         public void RemoveVertex(T vertex)
         {
-            if (adjacencyList.ContainsKey(vertex))
+            if (graph.ContainsKey(vertex))
             {
-                adjacencyList.Remove(vertex);
-                Console.WriteLine($"Vertex {vertex} removed from the graph.");
+                graph.Remove(vertex);
 
-                foreach (var otherVertex in adjacencyList.Keys)
+                foreach (var key in graph.Keys)
                 {
-                    adjacencyList[otherVertex].Remove(vertex);
-                }
-                return;
-            }
-
-            Console.WriteLine($"Vertex {vertex} does not exist in the graph.");
-        }
-
-        // Add an edge between two existing vertices
-        public void AddEdge(T vertexStart, T vertexEnd)
-        {
-            if (adjacencyList.ContainsKey(vertexStart) && adjacencyList.ContainsKey(vertexEnd))
-            {
-                adjacencyList[vertexStart].Add(vertexEnd);
-                adjacencyList[vertexEnd].Add(vertexStart); // If the graph is undirected
-                Console.WriteLine($"Edge added between {vertexStart} and {vertexEnd}.");
-                return;
-            }
-            Console.WriteLine($"Vertices {vertexStart} or {vertexEnd} do not exist in the graph.");
-        }
-
-        // Remove an edge between two existing vertices
-        public void RemoveEdge(T vertexStart, T vertexEnd)
-        {
-            if (adjacencyList.ContainsKey(vertexStart) && adjacencyList.ContainsKey(vertexEnd))
-            {
-                adjacencyList[vertexStart].Remove(vertexEnd);
-                adjacencyList[vertexEnd].Remove(vertexStart); // If the graph is undirected
-                Console.WriteLine($"Edge removed between {vertexStart} and {vertexEnd}.");
-                return;
-            }
-            Console.WriteLine($"Vertices {vertexStart} or {vertexEnd} do not exist in the graph.");
-        }
-
-        // Check the existence of a vertex
-        public bool VertexExists(T vertex)
-        {
-            bool exists = adjacencyList.ContainsKey(vertex);
-            Console.WriteLine($"Vertex {vertex} exists in the graph: {exists}.");
-            return exists;
-        }
-
-        // Check the existence of an edge
-        public bool EdgeExists(T vertexStart, T vertexEnd)
-        {
-            bool exists = adjacencyList.ContainsKey(vertexStart) && adjacencyList[vertexStart].Contains(vertexEnd);
-            Console.WriteLine($"Edge between {vertexStart} and {vertexEnd} exists: {exists}.");
-            return exists;
-        }
-
-        // Get all vertices
-        public List<T> GetAllVertices()
-        {
-            List<T> vertices = new List<T>(adjacencyList.Keys);
-            Console.WriteLine("All vertices in the graph: " + string.Join(", ", vertices));
-            return vertices;
-        }
-
-        // Get all edges
-        public List<(T, T)> GetAllEdges()
-        {
-            List<(T, T)> edges = new List<(T, T)>();
-
-            foreach (var vertex in adjacencyList.Keys)
-            {
-                foreach (var neighbor in adjacencyList[vertex])
-                {
-                    edges.Add((vertex, neighbor));
+                    graph[key].RemoveAll(tuple => tuple.Item1.Equals(vertex));
                 }
             }
-
-            Console.WriteLine("All edges in the graph: " + string.Join(", ", edges));
-            return edges;
         }
 
-        // Traverse the graph using BFS
-        public List<T> TraverseBFS(T startVertex)
+        public (List<T> bestPath, List<List<T>> steps) DFS(T start, T goal)
         {
-            List<T> visited = new List<T>();
-            Queue<T> queue = new Queue<T>();
-
-            // Check if startVertex is in adjacencyList
-            if (!adjacencyList.ContainsKey(startVertex))
+            if (!graph.ContainsKey(start))
             {
-                Console.WriteLine($"Vertex {startVertex} does not exist in the graph.");
-                return visited;
+                Console.WriteLine($"The starting vertex {start} is not present in the graph.");
+                return (new List<T>(), new List<List<T>>());
             }
 
-            visited.Add(startVertex);
-            queue.Enqueue(startVertex);
+            Stack<T> stack = new Stack<T>();
+            Dictionary<T, T> parents = new Dictionary<T, T>();
+            weights.Clear();
 
-            while (queue.Count > 0)
+            stack.Push(start);
+            parents[start] = default;
+
+            List<List<T>> steps = new List<List<T>>();
+
+            while (stack.Count > 0)
             {
-                T currentVertex = queue.Dequeue();
+                T currentVertex = stack.Pop();
+                List<T> currentStep = new List<T> { currentVertex };
 
-                // Check if currentVertex is in adjacencyList
-                if (adjacencyList.ContainsKey(currentVertex))
+                foreach ((T neighbor, int weight) in graph[currentVertex])
                 {
-                    foreach (var neighbor in adjacencyList[currentVertex])
+                    if (!parents.ContainsKey(neighbor))
                     {
-                        if (!visited.Contains(neighbor))
+                        stack.Push(neighbor);
+                        parents[neighbor] = currentVertex;
+                        weights[neighbor] = weight;
+
+                        // Add the vertex to the current step
+                        currentStep.Add(neighbor);
+                    }
+                    else
+                    {
+                        if (weight < weights[neighbor])
                         {
-                            visited.Add(neighbor);
-                            queue.Enqueue(neighbor);
+                            weights[neighbor] = weight;
+                            parents[neighbor] = currentVertex;
                         }
                     }
                 }
+
+                // Add the current step to the list of steps
+                steps.Add(new List<T>(currentStep));
             }
 
-            Console.WriteLine("BFS traversal result: " + string.Join(", ", visited));
-            return visited;
+            List<T> bestPath = BuildPath(parents, goal);
+            return (bestPath, steps);
         }
 
-        // Calculate the degree of a vertex
-        public int CalculateDegree(T vertex)
+        private void PrintDFSSteps(List<List<T>> steps)
         {
-            int degree = adjacencyList.ContainsKey(vertex) ? adjacencyList[vertex].Count : -1;
-            Console.WriteLine($"Degree of vertex {vertex}: {degree}.");
-            return degree;
-        }
-
-        // Calculate the breadth of the graph and the level of a node
-        public Dictionary<T, int> CalculateBFSLevels(T startVertex)
-        {
-            Dictionary<T, int> levels = new Dictionary<T, int>();
-            Queue<T> queue = new Queue<T>();
-
-            if (!adjacencyList.ContainsKey(startVertex))
+            Console.WriteLine("Depth-First Search (DFS) Steps:");
+            for (int i = 0; i < steps.Count; i++)
             {
-                Console.WriteLine($"Vertex {startVertex} does not exist in the graph.");
-                return levels;
+                Console.WriteLine($"Step {i + 1}: {string.Join(" -> ", steps[i])}");
             }
+        }
 
-            levels[startVertex] = 0;
-            queue.Enqueue(startVertex);
+        private List<T> BuildPath(Dictionary<T, T> parents, T goal)
+        {
+            List<T> path = new List<T>();
 
-            while (queue.Count > 0)
+            T current = goal;
+            while (!EqualityComparer<T>.Default.Equals(current, default))
             {
-                T currentVertex = queue.Dequeue();
+                path.Insert(0, current);
 
-                // Verificar si currentVertex está en adjacencyList
-                if (adjacencyList.ContainsKey(currentVertex))
+                // Check if the key is present in the dictionary
+                if (parents.ContainsKey(current))
                 {
-                    foreach (var neighbor in adjacencyList[currentVertex])
-                    {
-                        if (!levels.ContainsKey(neighbor))
-                        {
-                            levels[neighbor] = levels[currentVertex] + 1;
-                            queue.Enqueue(neighbor);
-                        }
-                    }
+                    current = parents[current];
+                }
+                else
+                {
+                    // Handle the case where the key is not present
+                    break;
                 }
             }
 
-            Console.WriteLine("Niveles BFS: " + string.Join(", ", levels.Select(pair => $"{pair.Key}:{pair.Value}")));
-            return levels;
+            return path;
+        }
+
+        public List<string> GetAdjacencyMatrix()
+        {
+            List<string> matrixStrings = new List<string>();
+            int numVertices = graph.Count;
+
+            StringBuilder header = new StringBuilder("   ");
+            foreach (var vertex in graph.Keys)
+            {
+                header.Append($"{vertex} ");
+            }
+            matrixStrings.Add(header.ToString());
+
+            foreach (var vertex in graph.Keys)
+            {
+                StringBuilder row = new StringBuilder($"{vertex} ");
+                foreach (var otherVertex in graph.Keys)
+                {
+                    bool hasEdge = graph[vertex].Any(edge => edge.Item1.Equals(otherVertex));
+                    row.Append(hasEdge ? "1 " : "0 ");
+                }
+                matrixStrings.Add(row.ToString().Trim());
+            }
+
+            return matrixStrings;
         }
     }
+
 }
