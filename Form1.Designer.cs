@@ -102,7 +102,7 @@
             panel1 = new Panel();
             label8 = new Label();
             listBox1 = new ListBox();
-            button1 = new Button();
+            btnAddGraph = new Button();
             label9 = new Label();
             txtNumberGraph = new TextBox();
             listBox2 = new ListBox();
@@ -115,10 +115,10 @@
             txtOriginGraph = new TextBox();
             label13 = new Label();
             label14 = new Label();
-            button2 = new Button();
-            button3 = new Button();
+            btnDeleteGraph = new Button();
+            btnAddEdgeGraph = new Button();
             btnToursDFSGraph = new Button();
-            button5 = new Button();
+            btnFindAwayGraph = new Button();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -804,10 +804,10 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button5);
+            panel1.Controls.Add(btnFindAwayGraph);
             panel1.Controls.Add(btnToursDFSGraph);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnAddEdgeGraph);
+            panel1.Controls.Add(btnDeleteGraph);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(label12);
@@ -818,7 +818,7 @@
             panel1.Controls.Add(txtDestinationGraph);
             panel1.Controls.Add(listBox3);
             panel1.Controls.Add(listBox2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnAddGraph);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(txtNumberGraph);
             panel1.Controls.Add(label8);
@@ -850,14 +850,14 @@
             listBox1.Size = new Size(295, 284);
             listBox1.TabIndex = 44;
             // 
-            // button1
+            // btnAddGraph
             // 
-            button1.Location = new Point(770, 89);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 40);
-            button1.TabIndex = 48;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            btnAddGraph.Location = new Point(770, 89);
+            btnAddGraph.Name = "btnAddGraph";
+            btnAddGraph.Size = new Size(159, 40);
+            btnAddGraph.TabIndex = 48;
+            btnAddGraph.Text = "Add";
+            btnAddGraph.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -969,23 +969,23 @@
             label14.TabIndex = 58;
             label14.Text = "DFS tour";
             // 
-            // button2
+            // btnDeleteGraph
             // 
-            button2.Location = new Point(935, 89);
-            button2.Name = "button2";
-            button2.Size = new Size(159, 40);
-            button2.TabIndex = 59;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            btnDeleteGraph.Location = new Point(935, 89);
+            btnDeleteGraph.Name = "btnDeleteGraph";
+            btnDeleteGraph.Size = new Size(159, 40);
+            btnDeleteGraph.TabIndex = 59;
+            btnDeleteGraph.Text = "Delete";
+            btnDeleteGraph.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAddEdgeGraph
             // 
-            button3.Location = new Point(306, 101);
-            button3.Name = "button3";
-            button3.Size = new Size(159, 40);
-            button3.TabIndex = 60;
-            button3.Text = "Add edge";
-            button3.UseVisualStyleBackColor = true;
+            btnAddEdgeGraph.Location = new Point(306, 101);
+            btnAddEdgeGraph.Name = "btnAddEdgeGraph";
+            btnAddEdgeGraph.Size = new Size(159, 40);
+            btnAddEdgeGraph.TabIndex = 60;
+            btnAddEdgeGraph.Text = "Add edge";
+            btnAddEdgeGraph.UseVisualStyleBackColor = true;
             // 
             // btnToursDFSGraph
             // 
@@ -996,14 +996,14 @@
             btnToursDFSGraph.Text = "Tours DFS";
             btnToursDFSGraph.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnFindAwayGraph
             // 
-            button5.Location = new Point(565, 46);
-            button5.Name = "button5";
-            button5.Size = new Size(159, 40);
-            button5.TabIndex = 62;
-            button5.Text = "Find way";
-            button5.UseVisualStyleBackColor = true;
+            btnFindAwayGraph.Location = new Point(565, 46);
+            btnFindAwayGraph.Name = "btnFindAwayGraph";
+            btnFindAwayGraph.Size = new Size(159, 40);
+            btnFindAwayGraph.TabIndex = 62;
+            btnFindAwayGraph.Text = "Find way";
+            btnFindAwayGraph.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1125,7 +1125,7 @@
         private Panel panel1;
         private ListBox listBox3;
         private ListBox listBox2;
-        private Button button1;
+        private Button btnAddGraph;
         private Label label9;
         private TextBox txtNumberGraph;
         private Label label8;
@@ -1138,9 +1138,9 @@
         private TextBox txtOriginGraph;
         private Label label14;
         private Label label13;
-        private Button button5;
+        private Button btnFindAwayGraph;
         private Button btnToursDFSGraph;
-        private Button button3;
-        private Button button2;
+        private Button btnAddEdgeGraph;
+        private Button btnDeleteGraph;
     }
 }
