@@ -69,6 +69,9 @@
             txtLengthStacks = new TextBox();
             lsbStacks = new ListBox();
             pnlQueues = new Panel();
+            gbxCircularQLenght = new GroupBox();
+            lblLenght = new Label();
+            textBox1 = new TextBox();
             gbxPriorityQue = new GroupBox();
             label3 = new Label();
             txtPriorityQ = new TextBox();
@@ -82,18 +85,28 @@
             label2 = new Label();
             txtNumbersQueue = new TextBox();
             lsbQueues = new ListBox();
-            lblLenght = new Label();
-            textBox1 = new TextBox();
-            gbxCircularQLenght = new GroupBox();
+            pnlTreeGraphic = new Panel();
+            lsbBinaryTree = new ListBox();
+            btnAdd = new Button();
+            label4 = new Label();
+            txtNumberBinaryTree = new TextBox();
+            lblBinaryTree = new Label();
+            lsbPreorder = new ListBox();
+            label5 = new Label();
+            label6 = new Label();
+            lsbPostOrder = new ListBox();
+            label7 = new Label();
+            InOrder = new ListBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
             gbxMenuStackAll.SuspendLayout();
             gbxMenuStatickStack.SuspendLayout();
             pnlQueues.SuspendLayout();
+            gbxCircularQLenght.SuspendLayout();
             gbxPriorityQue.SuspendLayout();
             gbxCircularQ.SuspendLayout();
-            gbxCircularQLenght.SuspendLayout();
+            pnlTreeGraphic.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -184,36 +197,36 @@
             // regularQueueToolStripMenuItem
             // 
             regularQueueToolStripMenuItem.Name = "regularQueueToolStripMenuItem";
-            regularQueueToolStripMenuItem.Size = new Size(224, 26);
+            regularQueueToolStripMenuItem.Size = new Size(190, 26);
             regularQueueToolStripMenuItem.Text = "Regular Queue";
             regularQueueToolStripMenuItem.Click += regularQueueToolStripMenuItem_Click;
             // 
             // doubleQueueToolStripMenuItem
             // 
             doubleQueueToolStripMenuItem.Name = "doubleQueueToolStripMenuItem";
-            doubleQueueToolStripMenuItem.Size = new Size(224, 26);
+            doubleQueueToolStripMenuItem.Size = new Size(190, 26);
             doubleQueueToolStripMenuItem.Text = "Double Queue";
             doubleQueueToolStripMenuItem.Click += doubleQueueToolStripMenuItem_Click;
             // 
             // priorityQueueToolStripMenuItem
             // 
             priorityQueueToolStripMenuItem.Name = "priorityQueueToolStripMenuItem";
-            priorityQueueToolStripMenuItem.Size = new Size(224, 26);
+            priorityQueueToolStripMenuItem.Size = new Size(190, 26);
             priorityQueueToolStripMenuItem.Text = "Priority Queue";
             priorityQueueToolStripMenuItem.Click += priorityQueueToolStripMenuItem_Click;
             // 
             // circularQueueToolStripMenuItem
             // 
             circularQueueToolStripMenuItem.Name = "circularQueueToolStripMenuItem";
-            circularQueueToolStripMenuItem.Size = new Size(224, 26);
+            circularQueueToolStripMenuItem.Size = new Size(190, 26);
             circularQueueToolStripMenuItem.Text = "Circular Queue";
             circularQueueToolStripMenuItem.Click += circularQueueToolStripMenuItem_Click;
             // 
             // treesToolStripMenuItem
             // 
             treesToolStripMenuItem.Name = "treesToolStripMenuItem";
-            treesToolStripMenuItem.Size = new Size(57, 24);
-            treesToolStripMenuItem.Text = "Trees";
+            treesToolStripMenuItem.Size = new Size(51, 24);
+            treesToolStripMenuItem.Text = "Tree";
             // 
             // graphsToolStripMenuItem
             // 
@@ -447,6 +460,7 @@
             // 
             // pnlQueues
             // 
+            pnlQueues.Controls.Add(pnlTreeGraphic);
             pnlQueues.Controls.Add(gbxCircularQLenght);
             pnlQueues.Controls.Add(gbxPriorityQue);
             pnlQueues.Controls.Add(gbxCircularQ);
@@ -461,6 +475,33 @@
             pnlQueues.Size = new Size(1127, 495);
             pnlQueues.TabIndex = 15;
             pnlQueues.Paint += pnlQueues_Paint;
+            // 
+            // gbxCircularQLenght
+            // 
+            gbxCircularQLenght.Controls.Add(lblLenght);
+            gbxCircularQLenght.Controls.Add(textBox1);
+            gbxCircularQLenght.Location = new Point(102, 38);
+            gbxCircularQLenght.Name = "gbxCircularQLenght";
+            gbxCircularQLenght.Size = new Size(314, 74);
+            gbxCircularQLenght.TabIndex = 36;
+            gbxCircularQLenght.TabStop = false;
+            // 
+            // lblLenght
+            // 
+            lblLenght.AutoSize = true;
+            lblLenght.Location = new Point(29, 18);
+            lblLenght.Name = "lblLenght";
+            lblLenght.Size = new Size(54, 20);
+            lblLenght.TabIndex = 35;
+            lblLenght.Text = "Lenght";
+            // 
+            // textBox1
+            // 
+            textBox1.ImeMode = ImeMode.NoControl;
+            textBox1.Location = new Point(29, 41);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(253, 27);
+            textBox1.TabIndex = 34;
             // 
             // gbxPriorityQue
             // 
@@ -589,32 +630,133 @@
             lsbQueues.Size = new Size(394, 340);
             lsbQueues.TabIndex = 14;
             // 
-            // lblLenght
+            // pnlTreeGraphic
             // 
-            lblLenght.AutoSize = true;
-            lblLenght.Location = new Point(29, 18);
-            lblLenght.Name = "lblLenght";
-            lblLenght.Size = new Size(54, 20);
-            lblLenght.TabIndex = 35;
-            lblLenght.Text = "Lenght";
+            pnlTreeGraphic.Controls.Add(label7);
+            pnlTreeGraphic.Controls.Add(InOrder);
+            pnlTreeGraphic.Controls.Add(label6);
+            pnlTreeGraphic.Controls.Add(lsbPostOrder);
+            pnlTreeGraphic.Controls.Add(label5);
+            pnlTreeGraphic.Controls.Add(lsbPreorder);
+            pnlTreeGraphic.Controls.Add(lblBinaryTree);
+            pnlTreeGraphic.Controls.Add(btnAdd);
+            pnlTreeGraphic.Controls.Add(label4);
+            pnlTreeGraphic.Controls.Add(txtNumberBinaryTree);
+            pnlTreeGraphic.Controls.Add(lsbBinaryTree);
+            pnlTreeGraphic.Location = new Point(0, 0);
+            pnlTreeGraphic.Name = "pnlTreeGraphic";
+            pnlTreeGraphic.Size = new Size(1127, 498);
+            pnlTreeGraphic.TabIndex = 37;
             // 
-            // textBox1
+            // lsbBinaryTree
             // 
-            textBox1.ImeMode = ImeMode.NoControl;
-            textBox1.Location = new Point(29, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(253, 27);
-            textBox1.TabIndex = 34;
+            lsbBinaryTree.Font = new Font("Segoe UI", 12F);
+            lsbBinaryTree.FormattingEnabled = true;
+            lsbBinaryTree.ItemHeight = 28;
+            lsbBinaryTree.Location = new Point(36, 73);
+            lsbBinaryTree.Margin = new Padding(3, 4, 3, 4);
+            lsbBinaryTree.Name = "lsbBinaryTree";
+            lsbBinaryTree.Size = new Size(340, 396);
+            lsbBinaryTree.TabIndex = 15;
             // 
-            // gbxCircularQLenght
+            // btnAdd
             // 
-            gbxCircularQLenght.Controls.Add(lblLenght);
-            gbxCircularQLenght.Controls.Add(textBox1);
-            gbxCircularQLenght.Location = new Point(102, 38);
-            gbxCircularQLenght.Name = "gbxCircularQLenght";
-            gbxCircularQLenght.Size = new Size(314, 74);
-            gbxCircularQLenght.TabIndex = 36;
-            gbxCircularQLenght.TabStop = false;
+            btnAdd.Location = new Point(810, 191);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(159, 40);
+            btnAdd.TabIndex = 27;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(810, 123);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 20);
+            label4.TabIndex = 26;
+            label4.Text = "Number";
+            // 
+            // txtNumberBinaryTree
+            // 
+            txtNumberBinaryTree.ImeMode = ImeMode.NoControl;
+            txtNumberBinaryTree.Location = new Point(810, 146);
+            txtNumberBinaryTree.Name = "txtNumberBinaryTree";
+            txtNumberBinaryTree.Size = new Size(253, 27);
+            txtNumberBinaryTree.TabIndex = 25;
+            // 
+            // lblBinaryTree
+            // 
+            lblBinaryTree.AutoSize = true;
+            lblBinaryTree.Font = new Font("Lucida Sans", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBinaryTree.Location = new Point(36, 31);
+            lblBinaryTree.Name = "lblBinaryTree";
+            lblBinaryTree.Size = new Size(183, 34);
+            lblBinaryTree.TabIndex = 28;
+            lblBinaryTree.Text = "Binary Tree";
+            // 
+            // lsbPreorder
+            // 
+            lsbPreorder.Font = new Font("Segoe UI", 12F);
+            lsbPreorder.FormattingEnabled = true;
+            lsbPreorder.ItemHeight = 28;
+            lsbPreorder.Location = new Point(405, 48);
+            lsbPreorder.Margin = new Padding(3, 4, 3, 4);
+            lsbPreorder.Name = "lsbPreorder";
+            lsbPreorder.Size = new Size(234, 116);
+            lsbPreorder.TabIndex = 29;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(405, 18);
+            label5.Name = "label5";
+            label5.Size = new Size(109, 26);
+            label5.TabIndex = 30;
+            label5.Text = "Preorder";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(405, 174);
+            label6.Name = "label6";
+            label6.Size = new Size(124, 26);
+            label6.TabIndex = 32;
+            label6.Text = "PostOrder";
+            // 
+            // lsbPostOrder
+            // 
+            lsbPostOrder.Font = new Font("Segoe UI", 12F);
+            lsbPostOrder.FormattingEnabled = true;
+            lsbPostOrder.ItemHeight = 28;
+            lsbPostOrder.Location = new Point(405, 204);
+            lsbPostOrder.Margin = new Padding(3, 4, 3, 4);
+            lsbPostOrder.Name = "lsbPostOrder";
+            lsbPostOrder.Size = new Size(234, 116);
+            lsbPostOrder.TabIndex = 31;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(405, 341);
+            label7.Name = "label7";
+            label7.Size = new Size(101, 26);
+            label7.TabIndex = 34;
+            label7.Text = "InOrder";
+            // 
+            // InOrder
+            // 
+            InOrder.Font = new Font("Segoe UI", 12F);
+            InOrder.FormattingEnabled = true;
+            InOrder.ItemHeight = 28;
+            InOrder.Location = new Point(405, 371);
+            InOrder.Margin = new Padding(3, 4, 3, 4);
+            InOrder.Name = "InOrder";
+            InOrder.Size = new Size(234, 116);
+            InOrder.TabIndex = 33;
             // 
             // Form1
             // 
@@ -645,11 +787,13 @@
             gbxMenuStatickStack.PerformLayout();
             pnlQueues.ResumeLayout(false);
             pnlQueues.PerformLayout();
+            gbxCircularQLenght.ResumeLayout(false);
+            gbxCircularQLenght.PerformLayout();
             gbxPriorityQue.ResumeLayout(false);
             gbxPriorityQue.PerformLayout();
             gbxCircularQ.ResumeLayout(false);
-            gbxCircularQLenght.ResumeLayout(false);
-            gbxCircularQLenght.PerformLayout();
+            pnlTreeGraphic.ResumeLayout(false);
+            pnlTreeGraphic.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -713,5 +857,17 @@
         private Label lblLenght;
         private TextBox textBox1;
         private GroupBox gbxCircularQLenght;
+        private Panel pnlTreeGraphic;
+        private Button btnAdd;
+        private Label label4;
+        private TextBox txtNumberBinaryTree;
+        private ListBox lsbBinaryTree;
+        private Label lblBinaryTree;
+        private Label label7;
+        private ListBox InOrder;
+        private Label label6;
+        private ListBox lsbPostOrder;
+        private Label label5;
+        private ListBox lsbPreorder;
     }
 }
