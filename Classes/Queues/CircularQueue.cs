@@ -95,19 +95,20 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 
         }
 
-        public void Display()
+        public IEnumerable<T> Display()
         {
             if (IsEmpty())
             {
                 Console.WriteLine("Circular Queue is empty.");
                 MessageBox.Show("Circular Queue is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                yield break;
             }
 
             Console.Write("Circular Queue elements: ");
             int i = front;
             do
             {
+                yield return myCircularQueue[i];
                 Console.Write($"{myCircularQueue[i]} ");
                 i = (i + 1) % capacity;
             } while (i != (rear + 1) % capacity);
