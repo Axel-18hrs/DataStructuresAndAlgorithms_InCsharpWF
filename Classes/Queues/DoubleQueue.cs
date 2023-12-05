@@ -12,7 +12,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             myDeque.AddFirst(value);
             Console.WriteLine($"Enqueued at the front: {value}");
         }
+        public void Enqueue(T? value, int count)
+        {
 
+        }
         public void EnqueueRear(T? value)
         {
             myDeque.AddLast(value);

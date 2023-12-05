@@ -42,7 +42,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             myCircularQueue[rear] = value;
             Console.WriteLine($"Enqueued: {value}");
         }
+        public void Enqueue(T? value, int capacity)
+        {
 
+        }
         public void EnqueueRear(T value)
         {
             

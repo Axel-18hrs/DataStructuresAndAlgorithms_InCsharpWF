@@ -548,6 +548,7 @@
             btnEnqueue.TabIndex = 24;
             btnEnqueue.Text = "Enqueue";
             btnEnqueue.UseVisualStyleBackColor = true;
+            btnEnqueue.Click += btnEnqueue_Click;
             // 
             // label2
             // 

@@ -8,15 +8,8 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
     {
         private SortedDictionary<int, Queue<T>> myPriorityQueue = new SortedDictionary<int, Queue<T>>();
 
-        public void Enqueue(T? value)
+        public void Enqueue(T? value, int priority)
         {
-            Console.WriteLine("\nDesired priority level?");
-            if (!int.TryParse(Console.ReadLine(), out int priority))
-            {
-                OperationsQueue.Deffault();
-                return;
-            }
-
             if (!myPriorityQueue.ContainsKey(priority))
             {
                 myPriorityQueue[priority] = new Queue<T>();
@@ -26,7 +19,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
 
             Console.WriteLine($"Enqueued with priority {priority}: {value}");
         }
+        public void Enqueue(T? value)
+        {
 
+        }
         public void EnqueueRear(T? priority)
         {
 
@@ -84,7 +80,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             {
                 foreach (var item in priorityGroup.Value)
                 {
-                    yield return $"{item} (Priority {priorityGroup.Key}) "
+                    yield return $"{item} (Priority {priorityGroup.Key}) ";
                     Console.Write($"{item} (Priority {priorityGroup.Key}) ");
                 }
             }

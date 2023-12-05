@@ -12,6 +12,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
     {
         private ImethodLists<object> list;
         private ImethodStacks<object> stacks;
+        private ImethodQueues<object> queues;
         public Form1()
         {
             InitializeComponent();
@@ -233,6 +234,23 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = true;
+        }
+
+        private void btnEnqueue_Click(object sender, EventArgs e)
+        {
+            int priority = 0;
+
+            if (gbxPriorityQue.Visible == true && !int.TryParse(txtPriorityQ.Text, out priority))
+            {
+                MessageBox.Show($"Need a level of priority", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (gbxPriorityQue.Visible == true)
+            {
+                queues.Enqueue(txtNumbersQueue.Text);
+            }
+
         }
     }
 }
