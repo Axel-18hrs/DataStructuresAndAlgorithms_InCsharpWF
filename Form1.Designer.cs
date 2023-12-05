@@ -73,7 +73,7 @@
             btnSearchTreeN = new Button();
             btnDeleteTreeN = new Button();
             label7 = new Label();
-            InOrder = new ListBox();
+            lsbInOrder = new ListBox();
             label6 = new Label();
             lsbPostOrder = new ListBox();
             label5 = new Label();
@@ -484,7 +484,7 @@
             pnlTreeGraphic.Controls.Add(btnSearchTreeN);
             pnlTreeGraphic.Controls.Add(btnDeleteTreeN);
             pnlTreeGraphic.Controls.Add(label7);
-            pnlTreeGraphic.Controls.Add(InOrder);
+            pnlTreeGraphic.Controls.Add(lsbInOrder);
             pnlTreeGraphic.Controls.Add(label6);
             pnlTreeGraphic.Controls.Add(lsbPostOrder);
             pnlTreeGraphic.Controls.Add(label5);
@@ -529,16 +529,16 @@
             label7.TabIndex = 34;
             label7.Text = "InOrder";
             // 
-            // InOrder
+            // lsbInOrder
             // 
-            InOrder.Font = new Font("Segoe UI", 12F);
-            InOrder.FormattingEnabled = true;
-            InOrder.ItemHeight = 28;
-            InOrder.Location = new Point(405, 371);
-            InOrder.Margin = new Padding(3, 4, 3, 4);
-            InOrder.Name = "InOrder";
-            InOrder.Size = new Size(234, 116);
-            InOrder.TabIndex = 33;
+            lsbInOrder.Font = new Font("Segoe UI", 12F);
+            lsbInOrder.FormattingEnabled = true;
+            lsbInOrder.ItemHeight = 28;
+            lsbInOrder.Location = new Point(405, 371);
+            lsbInOrder.Margin = new Padding(3, 4, 3, 4);
+            lsbInOrder.Name = "lsbInOrder";
+            lsbInOrder.Size = new Size(234, 116);
+            lsbInOrder.TabIndex = 33;
             // 
             // label6
             // 
@@ -890,7 +890,7 @@
         private ListBox lsbBinaryTree;
         private Label lblBinaryTree;
         private Label label7;
-        private ListBox InOrder;
+        private ListBox lsbInOrder;
         private Label label6;
         private ListBox lsbPostOrder;
         private Label label5;

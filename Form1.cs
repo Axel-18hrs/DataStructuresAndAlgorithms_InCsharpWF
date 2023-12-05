@@ -328,6 +328,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             }
 
             tree.Add(number);
+            ToursOfTree();
         }
 
         private void btnDeleteTreeN_Click(object sender, EventArgs e)
@@ -339,8 +340,29 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             }
 
             tree.Delete(number);
+            ToursOfTree();
         }
 
+        public void ToursOfTree()
+        {
+            lsbPreorder.Items.Clear();
+            foreach (int val in tree.GetPreOrden())
+            {
+                lsbPreorder.Items.Add(val);
+            }
+
+            lsbPostOrder.Items.Clear();
+            foreach (int val in tree.GetPostOrden())
+            {
+                lsbPostOrder.Items.Add(val);
+            }
+
+            lsbInOrder.Items.Clear();
+            foreach (int val in tree.GetPreOrden())
+            {
+                lsbInOrder.Items.Add(val);
+            }
+        }
         private void btnSearchTreeN_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(txtLengthStacks.Text, out var number))
