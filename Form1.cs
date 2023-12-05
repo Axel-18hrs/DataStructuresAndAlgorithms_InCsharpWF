@@ -382,12 +382,6 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             tree.Search(number);
         }
 
-        private void Add_BinaryTree_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
         static void VisualizarArbol(BinaryNode Tree, TreeNode parentNode, TreeNodeCollection nodes)
         {
             if (Tree != null)
