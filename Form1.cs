@@ -2,6 +2,7 @@ using DataStructuresAndAlgorithms_InCSharp.Classes;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Lists;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Queues;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Stacks;
+using DataStructuresAndAlgorithms_InCSharp.Classes.Tree;
 using DataStructuresAndAlgorithms_InCSharp.Interfaces;
 using Listas.Interfaces;
 using System.DirectoryServices.ActiveDirectory;
@@ -14,6 +15,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private ImethodLists<object> list;
         private ImethodStacks<object> stacks;
         private ImethodQueues<object> queues;
+        private BinaryTree tree;
         public Form1()
         {
             InitializeComponent();
@@ -305,6 +307,27 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private void pnlQueues_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void treesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlLists.Visible = false;
+            pnlQueues.Visible = false;
+            pnlStacks.Visible = false;
+            pnlTreeGraphic.Visible = true;
+            tree = new BinaryTree();
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtLengthStacks.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'Lenght of static stack' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            tree.Add(number);
         }
     }
 }
