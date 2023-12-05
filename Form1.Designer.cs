@@ -82,6 +82,9 @@
             label2 = new Label();
             txtNumbersQueue = new TextBox();
             lsbQueues = new ListBox();
+            lblLenght = new Label();
+            textBox1 = new TextBox();
+            gbxCircularQLenght = new GroupBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -90,6 +93,7 @@
             pnlQueues.SuspendLayout();
             gbxPriorityQue.SuspendLayout();
             gbxCircularQ.SuspendLayout();
+            gbxCircularQLenght.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -443,6 +447,7 @@
             // 
             // pnlQueues
             // 
+            pnlQueues.Controls.Add(gbxCircularQLenght);
             pnlQueues.Controls.Add(gbxPriorityQue);
             pnlQueues.Controls.Add(gbxCircularQ);
             pnlQueues.Controls.Add(btnPeekQ);
@@ -455,12 +460,13 @@
             pnlQueues.Name = "pnlQueues";
             pnlQueues.Size = new Size(1127, 495);
             pnlQueues.TabIndex = 15;
+            pnlQueues.Paint += pnlQueues_Paint;
             // 
             // gbxPriorityQue
             // 
             gbxPriorityQue.Controls.Add(label3);
             gbxPriorityQue.Controls.Add(txtPriorityQ);
-            gbxPriorityQue.Location = new Point(99, 26);
+            gbxPriorityQue.Location = new Point(99, 108);
             gbxPriorityQue.Name = "gbxPriorityQue";
             gbxPriorityQue.Size = new Size(324, 69);
             gbxPriorityQue.TabIndex = 33;
@@ -488,7 +494,7 @@
             gbxCircularQ.Controls.Add(btnPeekQRear);
             gbxCircularQ.Controls.Add(btnDequeueRear);
             gbxCircularQ.Controls.Add(btnEnqueueRear);
-            gbxCircularQ.Location = new Point(306, 157);
+            gbxCircularQ.Location = new Point(306, 237);
             gbxCircularQ.Name = "gbxCircularQ";
             gbxCircularQ.Size = new Size(187, 176);
             gbxCircularQ.TabIndex = 30;
@@ -503,6 +509,7 @@
             btnPeekQRear.Text = "Peek rear";
             btnPeekQRear.UseCompatibleTextRendering = true;
             btnPeekQRear.UseVisualStyleBackColor = true;
+            btnPeekQRear.Click += btnPeekQRear_Click;
             // 
             // btnDequeueRear
             // 
@@ -512,6 +519,7 @@
             btnDequeueRear.TabIndex = 27;
             btnDequeueRear.Text = "Dequeue rear";
             btnDequeueRear.UseVisualStyleBackColor = true;
+            btnDequeueRear.Click += btnDequeueRear_Click;
             // 
             // btnEnqueueRear
             // 
@@ -521,28 +529,31 @@
             btnEnqueueRear.TabIndex = 25;
             btnEnqueueRear.Text = "Enqueue rear";
             btnEnqueueRear.UseVisualStyleBackColor = true;
+            btnEnqueueRear.Click += btnEnqueueRear_Click;
             // 
             // btnPeekQ
             // 
-            btnPeekQ.Location = new Point(131, 267);
+            btnPeekQ.Location = new Point(131, 347);
             btnPeekQ.Name = "btnPeekQ";
             btnPeekQ.Size = new Size(159, 40);
             btnPeekQ.TabIndex = 28;
             btnPeekQ.Text = "Peek";
             btnPeekQ.UseVisualStyleBackColor = true;
+            btnPeekQ.Click += btnPeekQ_Click;
             // 
             // btnDequeue
             // 
-            btnDequeue.Location = new Point(131, 215);
+            btnDequeue.Location = new Point(131, 295);
             btnDequeue.Name = "btnDequeue";
             btnDequeue.Size = new Size(159, 40);
             btnDequeue.TabIndex = 26;
             btnDequeue.Text = "Dequeue";
             btnDequeue.UseVisualStyleBackColor = true;
+            btnDequeue.Click += btnDequeue_Click;
             // 
             // btnEnqueue
             // 
-            btnEnqueue.Location = new Point(131, 163);
+            btnEnqueue.Location = new Point(131, 243);
             btnEnqueue.Name = "btnEnqueue";
             btnEnqueue.Size = new Size(159, 40);
             btnEnqueue.TabIndex = 24;
@@ -553,7 +564,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(131, 95);
+            label2.Location = new Point(131, 175);
             label2.Name = "label2";
             label2.Size = new Size(63, 20);
             label2.TabIndex = 23;
@@ -562,7 +573,7 @@
             // txtNumbersQueue
             // 
             txtNumbersQueue.ImeMode = ImeMode.NoControl;
-            txtNumbersQueue.Location = new Point(131, 118);
+            txtNumbersQueue.Location = new Point(131, 198);
             txtNumbersQueue.Name = "txtNumbersQueue";
             txtNumbersQueue.Size = new Size(253, 27);
             txtNumbersQueue.TabIndex = 22;
@@ -577,6 +588,33 @@
             lsbQueues.Name = "lsbQueues";
             lsbQueues.Size = new Size(394, 340);
             lsbQueues.TabIndex = 14;
+            // 
+            // lblLenght
+            // 
+            lblLenght.AutoSize = true;
+            lblLenght.Location = new Point(29, 18);
+            lblLenght.Name = "lblLenght";
+            lblLenght.Size = new Size(54, 20);
+            lblLenght.TabIndex = 35;
+            lblLenght.Text = "Lenght";
+            // 
+            // textBox1
+            // 
+            textBox1.ImeMode = ImeMode.NoControl;
+            textBox1.Location = new Point(29, 41);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(253, 27);
+            textBox1.TabIndex = 34;
+            // 
+            // gbxCircularQLenght
+            // 
+            gbxCircularQLenght.Controls.Add(lblLenght);
+            gbxCircularQLenght.Controls.Add(textBox1);
+            gbxCircularQLenght.Location = new Point(102, 38);
+            gbxCircularQLenght.Name = "gbxCircularQLenght";
+            gbxCircularQLenght.Size = new Size(314, 74);
+            gbxCircularQLenght.TabIndex = 36;
+            gbxCircularQLenght.TabStop = false;
             // 
             // Form1
             // 
@@ -610,6 +648,8 @@
             gbxPriorityQue.ResumeLayout(false);
             gbxPriorityQue.PerformLayout();
             gbxCircularQ.ResumeLayout(false);
+            gbxCircularQLenght.ResumeLayout(false);
+            gbxCircularQLenght.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -670,5 +710,8 @@
         private ToolStripMenuItem priorityQueueToolStripMenuItem;
         private ToolStripMenuItem circularQueueToolStripMenuItem;
         private GroupBox gbxPriorityQue;
+        private Label lblLenght;
+        private TextBox textBox1;
+        private GroupBox gbxCircularQLenght;
     }
 }

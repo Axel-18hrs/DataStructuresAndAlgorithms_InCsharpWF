@@ -1,5 +1,6 @@
 using DataStructuresAndAlgorithms_InCSharp.Classes;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Lists;
+using DataStructuresAndAlgorithms_InCSharp.Classes.Queues;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Stacks;
 using DataStructuresAndAlgorithms_InCSharp.Interfaces;
 using Listas.Interfaces;
@@ -205,6 +206,8 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
+            gbxCircularQLenght.Visible = false;
+            queues = new RegularQueue<object>();
         }
 
         private void doubleQueueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,6 +216,8 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
+            gbxCircularQLenght.Visible = false;
+            queues = new DoubleQueue<object>();
         }
 
         private void queuesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -222,18 +227,23 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlQueues.Visible = true;
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
+            gbxCircularQLenght.Visible = false;
+            queues = new RegularQueue<object>();
         }
 
         private void priorityQueueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gbxPriorityQue.Visible = true;
             gbxCircularQ.Visible = false;
+            gbxCircularQLenght.Visible = false;
+            queues = new PriorityQueue<object>();
         }
 
         private void circularQueueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = true;
+            gbxCircularQLenght.Visible = true;
         }
 
         private void btnEnqueue_Click(object sender, EventArgs e)
@@ -248,8 +258,39 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             if (gbxPriorityQue.Visible == true)
             {
-                queues.Enqueue(txtNumbersQueue.Text);
+                queues.Enqueue(txtNumbersQueue.Text, priority);
             }
+
+            queues.Enqueue(txtNumbersQueue.Text);
+        }
+
+        private void btnEnqueueRear_Click(object sender, EventArgs e)
+        {
+            queues.EnqueueRear(txtNumbersQueue.Text);
+        }
+
+        private void btnDequeue_Click(object sender, EventArgs e)
+        {
+            queues.Dequeue();
+        }
+
+        private void btnDequeueRear_Click(object sender, EventArgs e)
+        {
+            queues.DequeueRear();
+        }
+
+        private void btnPeekQ_Click(object sender, EventArgs e)
+        {
+            queues.Peek();
+        }
+
+        private void btnPeekQRear_Click(object sender, EventArgs e)
+        {
+            queues.PeekRear();
+        }
+
+        private void pnlQueues_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
