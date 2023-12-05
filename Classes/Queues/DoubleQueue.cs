@@ -26,6 +26,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
                 T value = myDeque.First.Value;
                 myDeque.RemoveFirst();
                 Console.WriteLine($"Dequeued from the front: {value}");
+
                 return;
             }
 

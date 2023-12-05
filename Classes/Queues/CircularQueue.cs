@@ -29,18 +29,21 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
                 front = rear = 0;
                 myCircularQueue[rear] = value;
                 Console.WriteLine($"Enqueued: {value}");
+                MessageBox.Show($"Enqueued: {value}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             if ((rear + 1) % capacity == front)
             {
                 Console.WriteLine("Circular Queue is full. Unable to enqueue.");
+                MessageBox.Show("Circular Queue is full. Unable to enqueue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             rear = (rear + 1) % capacity;
             myCircularQueue[rear] = value;
             Console.WriteLine($"Enqueued: {value}");
+            MessageBox.Show($"Enqueued: {value}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void EnqueueRear(T value)
@@ -53,12 +56,14 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             if (IsEmpty())
             {
                 Console.WriteLine("Circular Queue is empty. Unable to dequeue.");
+                MessageBox.Show("Circular Queue is full. Unable to enqueue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
             if (front == rear)
             {
                 Console.WriteLine($"Dequeued: {myCircularQueue[front]}");
+                MessageBox.Show($"Dequeued: {myCircularQueue[front]}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 front = rear = -1;
                 return;
             }
@@ -77,6 +82,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             if (IsEmpty())
             {
                 Console.WriteLine("Circular Queue is empty. No elements to peek.");
+                MessageBox.Show("Circular Queue is full. Unable to enqueue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

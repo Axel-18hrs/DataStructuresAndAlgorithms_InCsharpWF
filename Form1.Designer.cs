@@ -64,11 +64,24 @@
             lblLenghtStack = new Label();
             txtLengthStacks = new TextBox();
             lsbStacks = new ListBox();
+            pnlQueues = new Panel();
+            lsbQueues = new ListBox();
+            btnEnqueue = new Button();
+            label2 = new Label();
+            txtNumbersQueue = new TextBox();
+            btnEnqueueRear = new Button();
+            btnDequeue = new Button();
+            btnDequeueRear = new Button();
+            btnPeekQ = new Button();
+            btnPeekQRear = new Button();
+            gbxCircularQ = new GroupBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
             gbxMenuStackAll.SuspendLayout();
             gbxMenuStatickStack.SuspendLayout();
+            pnlQueues.SuspendLayout();
+            gbxCircularQ.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -390,12 +403,121 @@
             lsbStacks.Size = new Size(394, 340);
             lsbStacks.TabIndex = 13;
             // 
+            // pnlQueues
+            // 
+            pnlQueues.Controls.Add(gbxCircularQ);
+            pnlQueues.Controls.Add(btnPeekQ);
+            pnlQueues.Controls.Add(btnDequeue);
+            pnlQueues.Controls.Add(btnEnqueue);
+            pnlQueues.Controls.Add(label2);
+            pnlQueues.Controls.Add(txtNumbersQueue);
+            pnlQueues.Controls.Add(lsbQueues);
+            pnlQueues.Location = new Point(0, 31);
+            pnlQueues.Name = "pnlQueues";
+            pnlQueues.Size = new Size(1127, 495);
+            pnlQueues.TabIndex = 15;
+            // 
+            // lsbQueues
+            // 
+            lsbQueues.Font = new Font("Segoe UI", 12F);
+            lsbQueues.FormattingEnabled = true;
+            lsbQueues.ItemHeight = 28;
+            lsbQueues.Location = new Point(592, 62);
+            lsbQueues.Margin = new Padding(3, 4, 3, 4);
+            lsbQueues.Name = "lsbQueues";
+            lsbQueues.Size = new Size(394, 340);
+            lsbQueues.TabIndex = 14;
+            // 
+            // btnEnqueue
+            // 
+            btnEnqueue.Location = new Point(131, 155);
+            btnEnqueue.Name = "btnEnqueue";
+            btnEnqueue.Size = new Size(159, 40);
+            btnEnqueue.TabIndex = 24;
+            btnEnqueue.Text = "Enqueue";
+            btnEnqueue.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(131, 95);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 20);
+            label2.TabIndex = 23;
+            label2.Text = "Number";
+            // 
+            // txtNumbersQueue
+            // 
+            txtNumbersQueue.ImeMode = ImeMode.NoControl;
+            txtNumbersQueue.Location = new Point(131, 118);
+            txtNumbersQueue.Name = "txtNumbersQueue";
+            txtNumbersQueue.Size = new Size(253, 27);
+            txtNumbersQueue.TabIndex = 22;
+            // 
+            // btnEnqueueRear
+            // 
+            btnEnqueueRear.Location = new Point(6, 6);
+            btnEnqueueRear.Name = "btnEnqueueRear";
+            btnEnqueueRear.Size = new Size(159, 40);
+            btnEnqueueRear.TabIndex = 25;
+            btnEnqueueRear.Text = "Enqueue rear";
+            btnEnqueueRear.UseVisualStyleBackColor = true;
+            // 
+            // btnDequeue
+            // 
+            btnDequeue.Location = new Point(131, 207);
+            btnDequeue.Name = "btnDequeue";
+            btnDequeue.Size = new Size(159, 40);
+            btnDequeue.TabIndex = 26;
+            btnDequeue.Text = "Dequeue";
+            btnDequeue.UseVisualStyleBackColor = true;
+            // 
+            // btnDequeueRear
+            // 
+            btnDequeueRear.Location = new Point(6, 58);
+            btnDequeueRear.Name = "btnDequeueRear";
+            btnDequeueRear.Size = new Size(159, 40);
+            btnDequeueRear.TabIndex = 27;
+            btnDequeueRear.Text = "Dequeue rear";
+            btnDequeueRear.UseVisualStyleBackColor = true;
+            // 
+            // btnPeekQ
+            // 
+            btnPeekQ.Location = new Point(131, 259);
+            btnPeekQ.Name = "btnPeekQ";
+            btnPeekQ.Size = new Size(159, 40);
+            btnPeekQ.TabIndex = 28;
+            btnPeekQ.Text = "Peek";
+            btnPeekQ.UseVisualStyleBackColor = true;
+            // 
+            // btnPeekQRear
+            // 
+            btnPeekQRear.Location = new Point(6, 110);
+            btnPeekQRear.Name = "btnPeekQRear";
+            btnPeekQRear.Size = new Size(159, 40);
+            btnPeekQRear.TabIndex = 29;
+            btnPeekQRear.Text = "Peek rear";
+            btnPeekQRear.UseCompatibleTextRendering = true;
+            btnPeekQRear.UseVisualStyleBackColor = true;
+            // 
+            // gbxCircularQ
+            // 
+            gbxCircularQ.Controls.Add(btnPeekQRear);
+            gbxCircularQ.Controls.Add(btnDequeueRear);
+            gbxCircularQ.Controls.Add(btnEnqueueRear);
+            gbxCircularQ.Location = new Point(306, 149);
+            gbxCircularQ.Name = "gbxCircularQ";
+            gbxCircularQ.Size = new Size(187, 176);
+            gbxCircularQ.TabIndex = 30;
+            gbxCircularQ.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1127, 527);
+            Controls.Add(pnlQueues);
             Controls.Add(pnlStacks);
             Controls.Add(pnlLists);
             Controls.Add(menuStrip1);
@@ -416,6 +538,9 @@
             gbxMenuStackAll.PerformLayout();
             gbxMenuStatickStack.ResumeLayout(false);
             gbxMenuStatickStack.PerformLayout();
+            pnlQueues.ResumeLayout(false);
+            pnlQueues.PerformLayout();
+            gbxCircularQ.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -458,5 +583,16 @@
         private GroupBox gbxMenuStatickStack;
         private GroupBox gbxMenuStackAll;
         private Button btnPeek;
+        private Panel pnlQueues;
+        private Button btnEnqueue;
+        private Label label2;
+        private TextBox txtNumbersQueue;
+        private ListBox lsbQueues;
+        private Button btnDequeue;
+        private Button btnEnqueueRear;
+        private Button btnDequeueRear;
+        private Button btnPeekQ;
+        private GroupBox gbxCircularQ;
+        private Button btnPeekQRear;
     }
 }

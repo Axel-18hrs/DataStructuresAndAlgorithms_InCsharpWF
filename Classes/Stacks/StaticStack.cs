@@ -32,6 +32,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
             else
             {
                 Console.WriteLine("The stack is full. Cannot add more elements.");
+
             }
         }
 

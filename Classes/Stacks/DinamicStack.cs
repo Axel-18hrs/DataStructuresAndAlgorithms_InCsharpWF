@@ -20,7 +20,8 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
         {
             if (stackList.Count == 0)
             {
-                throw new InvalidOperationException("The stack is empty.");
+                MessageBox.Show("The stack is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T);
             }
 
             int lastIndex = stackList.Count - 1;
@@ -34,7 +35,8 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
         {
             if (stackList.Count == 0)
             {
-                throw new InvalidOperationException("The stack is empty.");
+                MessageBox.Show("The stack is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T);
             }
 
             return stackList[stackList.Count - 1];

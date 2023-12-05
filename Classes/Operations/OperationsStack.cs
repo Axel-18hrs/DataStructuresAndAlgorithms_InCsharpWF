@@ -34,7 +34,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Operations
                             stack.Push(newElement);
                             Console.WriteLine($"Element '{newElement}' added to the stack.");
                         }
-                        catch (InvalidCastException)
+                        catch (InvalidCastException) 
                         {
                             Console.WriteLine($"Could not convert '{input}' to type {typeof(T).Name}.");
                         }
