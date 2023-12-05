@@ -399,5 +399,15 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 VisualizarArbol(Tree.Right, NewNode, NewNode.Nodes);
             }
         }
+
+        private void pnlTree_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

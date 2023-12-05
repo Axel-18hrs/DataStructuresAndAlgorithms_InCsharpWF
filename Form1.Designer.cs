@@ -99,6 +99,20 @@
             btnAdd = new Button();
             label4 = new Label();
             txtNumberBinaryTree = new TextBox();
+            panel1 = new Panel();
+            label8 = new Label();
+            listBox1 = new ListBox();
+            button1 = new Button();
+            label9 = new Label();
+            textBox2 = new TextBox();
+            listBox2 = new ListBox();
+            listBox3 = new ListBox();
+            label10 = new Label();
+            textBox3 = new TextBox();
+            label11 = new Label();
+            textBox4 = new TextBox();
+            label12 = new Label();
+            textBox5 = new TextBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -109,6 +123,7 @@
             gbxPriorityQue.SuspendLayout();
             gbxCircularQ.SuspendLayout();
             pnlTree.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -651,6 +666,7 @@
             pnlTree.Name = "pnlTree";
             pnlTree.Size = new Size(1134, 496);
             pnlTree.TabIndex = 16;
+            pnlTree.Paint += pnlTree_Paint;
             // 
             // treeView
             // 
@@ -780,12 +796,154 @@
             txtNumberBinaryTree.Size = new Size(253, 27);
             txtNumberBinaryTree.TabIndex = 38;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(listBox3);
+            panel1.Controls.Add(listBox2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(listBox1);
+            panel1.Location = new Point(0, 31);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1133, 495);
+            panel1.TabIndex = 17;
+            panel1.Paint += panel1_Paint;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(29, 174);
+            label8.Name = "label8";
+            label8.Size = new Size(109, 26);
+            label8.TabIndex = 45;
+            label8.Text = "Preorder";
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new Font("Segoe UI", 12F);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 28;
+            listBox1.Location = new Point(29, 203);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(295, 284);
+            listBox1.TabIndex = 44;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(770, 101);
+            button1.Name = "button1";
+            button1.Size = new Size(159, 40);
+            button1.TabIndex = 48;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(770, 33);
+            label9.Name = "label9";
+            label9.Size = new Size(63, 20);
+            label9.TabIndex = 47;
+            label9.Text = "Number";
+            // 
+            // textBox2
+            // 
+            textBox2.ImeMode = ImeMode.NoControl;
+            textBox2.Location = new Point(770, 56);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(253, 27);
+            textBox2.TabIndex = 46;
+            // 
+            // listBox2
+            // 
+            listBox2.Font = new Font("Segoe UI", 12F);
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 28;
+            listBox2.Location = new Point(368, 203);
+            listBox2.Margin = new Padding(3, 4, 3, 4);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(391, 284);
+            listBox2.TabIndex = 49;
+            // 
+            // listBox3
+            // 
+            listBox3.Font = new Font("Segoe UI", 12F);
+            listBox3.FormattingEnabled = true;
+            listBox3.ItemHeight = 28;
+            listBox3.Location = new Point(810, 203);
+            listBox3.Margin = new Padding(3, 4, 3, 4);
+            listBox3.Name = "listBox3";
+            listBox3.Size = new Size(295, 284);
+            listBox3.TabIndex = 50;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(29, 33);
+            label10.Name = "label10";
+            label10.Size = new Size(85, 20);
+            label10.TabIndex = 52;
+            label10.Text = "Destination";
+            // 
+            // textBox3
+            // 
+            textBox3.ImeMode = ImeMode.NoControl;
+            textBox3.Location = new Point(29, 56);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(253, 27);
+            textBox3.TabIndex = 51;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(29, 89);
+            label11.Name = "label11";
+            label11.Size = new Size(56, 20);
+            label11.TabIndex = 54;
+            label11.Text = "Weight";
+            // 
+            // textBox4
+            // 
+            textBox4.ImeMode = ImeMode.NoControl;
+            textBox4.Location = new Point(29, 112);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(253, 27);
+            textBox4.TabIndex = 53;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(306, 33);
+            label12.Name = "label12";
+            label12.Size = new Size(50, 20);
+            label12.TabIndex = 56;
+            label12.Text = "Origin";
+            // 
+            // textBox5
+            // 
+            textBox5.ImeMode = ImeMode.NoControl;
+            textBox5.Location = new Point(306, 56);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(253, 27);
+            textBox5.TabIndex = 55;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1127, 527);
+            Controls.Add(panel1);
             Controls.Add(pnlTree);
             Controls.Add(pnlQueues);
             Controls.Add(pnlStacks);
@@ -817,6 +975,8 @@
             gbxCircularQ.ResumeLayout(false);
             pnlTree.ResumeLayout(false);
             pnlTree.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -894,5 +1054,19 @@
         private Label label4;
         private TextBox txtNumberBinaryTree;
         private TreeView treeView;
+        private Panel panel1;
+        private ListBox listBox3;
+        private ListBox listBox2;
+        private Button button1;
+        private Label label9;
+        private TextBox textBox2;
+        private Label label8;
+        private ListBox listBox1;
+        private Label label10;
+        private TextBox textBox3;
+        private Label label11;
+        private TextBox textBox4;
+        private Label label12;
+        private TextBox textBox5;
     }
 }
