@@ -471,10 +471,10 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             foreach (var vertice in graph.GetVertices())
             {
-                lsbGraph.Items.Add($"Vértice: {vertice}");
+                lsbGraph.Items.Add($"Vertex: {vertice}");
                 foreach (var vecino in graph.GetVertices())
                 {
-                    lsbGraph.Items.Add($"  -> Vecino: {vecino}");
+                    lsbGraph.Items.Add($"  -> Neighbor: {vecino}");
                 }
             }
         }
@@ -580,7 +580,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             if (lsbGraph.SelectedItem == null)
             {
-                MessageBox.Show("Seleccione un vértice para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select a vertex to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -589,7 +589,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             int vertice = 0;
             if (!(partes.Length >= 2 && int.TryParse(partes[1].Trim(), out vertice)))
             {
-                MessageBox.Show("Error al extraer el vértice seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error extracting selected vertex.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
