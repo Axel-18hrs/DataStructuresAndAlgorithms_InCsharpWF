@@ -23,6 +23,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlStacks.Visible = false;
             pnlQueues.Visible = false;
             pnlTree.Visible = false;
+            pnlGraph.Visible = false;
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
         }
@@ -36,6 +37,9 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             pnlLists.Visible = true;
             pnlStacks.Visible = false;
+            pnlQueues.Visible = false;
+            pnlTree.Visible = false;
+            pnlGraph.Visible = true;
             list = new SimpleList<object>();
         }
 
@@ -181,6 +185,9 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             pnlLists.Visible = false;
             pnlStacks.Visible = true;
+            pnlQueues.Visible = false;
+            pnlTree.Visible = false;
+            pnlGraph.Visible = false;
             gbxMenuStatickStack.Visible = false;
             gbxMenuStackAll.Visible = false;
         }
@@ -228,6 +235,8 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlLists.Visible = false;
             pnlStacks.Visible = false;
             pnlQueues.Visible = true;
+            pnlTree.Visible = false;
+            pnlGraph.Visible = false;
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
@@ -448,6 +457,11 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void graphsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnlLists.Visible = false;
+            pnlQueues.Visible = false;
+            pnlStacks.Visible = false;
+            pnlTree.Visible = false;
+            pnlGraph.Visible = true;
             graph = new Graph<object>();
         }
 

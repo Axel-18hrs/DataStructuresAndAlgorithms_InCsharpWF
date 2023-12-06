@@ -99,7 +99,7 @@
             btnAdd = new Button();
             label4 = new Label();
             txtNumberBinaryTree = new TextBox();
-            panel1 = new Panel();
+            pnlGraph = new Panel();
             btnFindAwayGraph = new Button();
             btnToursDFSGraph = new Button();
             btnAddEdgeGraph = new Button();
@@ -129,7 +129,7 @@
             gbxPriorityQue.SuspendLayout();
             gbxCircularQ.SuspendLayout();
             pnlTree.SuspendLayout();
-            panel1.SuspendLayout();
+            pnlGraph.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -803,32 +803,32 @@
             txtNumberBinaryTree.Size = new Size(253, 27);
             txtNumberBinaryTree.TabIndex = 38;
             // 
-            // panel1
+            // pnlGraph
             // 
-            panel1.Controls.Add(btnFindAwayGraph);
-            panel1.Controls.Add(btnToursDFSGraph);
-            panel1.Controls.Add(btnAddEdgeGraph);
-            panel1.Controls.Add(btnDeleteGraph);
-            panel1.Controls.Add(label14);
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(label12);
-            panel1.Controls.Add(txtOriginGraph);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(txtWeightGraph);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(txtDestinationGraph);
-            panel1.Controls.Add(lsbTourGraph);
-            panel1.Controls.Add(lsbAdyacencyMatrixGraph);
-            panel1.Controls.Add(btnAddVertGraph);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(txtNumberGraph);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(lsbGraph);
-            panel1.Location = new Point(0, 31);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1133, 495);
-            panel1.TabIndex = 17;
-            panel1.Paint += panel1_Paint;
+            pnlGraph.Controls.Add(btnFindAwayGraph);
+            pnlGraph.Controls.Add(btnToursDFSGraph);
+            pnlGraph.Controls.Add(btnAddEdgeGraph);
+            pnlGraph.Controls.Add(btnDeleteGraph);
+            pnlGraph.Controls.Add(label14);
+            pnlGraph.Controls.Add(label13);
+            pnlGraph.Controls.Add(label12);
+            pnlGraph.Controls.Add(txtOriginGraph);
+            pnlGraph.Controls.Add(label11);
+            pnlGraph.Controls.Add(txtWeightGraph);
+            pnlGraph.Controls.Add(label10);
+            pnlGraph.Controls.Add(txtDestinationGraph);
+            pnlGraph.Controls.Add(lsbTourGraph);
+            pnlGraph.Controls.Add(lsbAdyacencyMatrixGraph);
+            pnlGraph.Controls.Add(btnAddVertGraph);
+            pnlGraph.Controls.Add(label9);
+            pnlGraph.Controls.Add(txtNumberGraph);
+            pnlGraph.Controls.Add(label8);
+            pnlGraph.Controls.Add(lsbGraph);
+            pnlGraph.Location = new Point(0, 31);
+            pnlGraph.Name = "pnlGraph";
+            pnlGraph.Size = new Size(1133, 495);
+            pnlGraph.TabIndex = 17;
+            pnlGraph.Paint += panel1_Paint;
             // 
             // btnFindAwayGraph
             // 
@@ -1017,7 +1017,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1127, 527);
-            Controls.Add(panel1);
+            Controls.Add(pnlGraph);
             Controls.Add(pnlTree);
             Controls.Add(pnlQueues);
             Controls.Add(pnlStacks);
@@ -1049,8 +1049,8 @@
             gbxCircularQ.ResumeLayout(false);
             pnlTree.ResumeLayout(false);
             pnlTree.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlGraph.ResumeLayout(false);
+            pnlGraph.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1128,7 +1128,7 @@
         private Label label4;
         private TextBox txtNumberBinaryTree;
         private TreeView treeView;
-        private Panel panel1;
+        private Panel pnlGraph;
         private ListBox lsbTourGraph;
         private ListBox lsbAdyacencyMatrixGraph;
         private Button btnAddVertGraph;

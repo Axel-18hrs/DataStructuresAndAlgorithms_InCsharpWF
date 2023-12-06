@@ -114,40 +114,40 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Operations
                 Console.ReadKey();
             } while (true);
         }
-        public static void MenuGraphs()
-        {
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("Types of graphs: \n"
-                  + "1. Graph \n"
-                  + "2. Directed graph \n"
-                  + "3. Exit \n");
+        //public static void MenuGraphs()
+        //{
+        //    do
+        //    {
+        //        Console.Clear();
+        //        Console.WriteLine("Types of graphs: \n"
+        //          + "1. Graph \n"
+        //          + "2. Directed graph \n"
+        //          + "3. Exit \n");
 
-                if (!int.TryParse(Console.ReadLine(), out int opt))
-                {
-                    OperationsList.Deffault();
-                    continue;
-                }
+        //        if (!int.TryParse(Console.ReadLine(), out int opt))
+        //        {
+        //            OperationsList.Deffault();
+        //            continue;
+        //        }
 
-                switch (opt)
-                {
-                    case 1:
-                        AllOperationGraph(new Graph<object>());
-                        break;
+        //        switch (opt)
+        //        {
+        //            case 1:
+        //                AllOperationGraph(new Graph<object>());
+        //                break;
 
-                    case 2:
-                        AllOperationGraph(new DirectedGraph<object>());
-                        break;
+        //            case 2:
+        //                AllOperationGraph(new DirectedGraph<object>());
+        //                break;
 
-                    case 3:
-                        return;
+        //            case 3:
+        //                return;
 
-                    default:
-                        OperationsList.Deffault();
-                        continue;
-                }
-            } while (true);
-        }
+        //            default:
+        //                OperationsList.Deffault();
+        //                continue;
+        //        }
+        //    } while (true);
+        
     }        
 }
