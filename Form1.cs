@@ -39,7 +39,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlStacks.Visible = false;
             pnlQueues.Visible = false;
             pnlTree.Visible = false;
-            pnlGraph.Visible = true;
+            pnlGraph.Visible = false;
             list = new SimpleList<object>();
         }
 
