@@ -1,3 +1,4 @@
+using DataStructuresAndAlgorithms_InCSharp.Classes.Graphs;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Lists;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Nodes;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Queues;
@@ -14,6 +15,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private ImethodStacks<object> stacks;
         private ImethodQueues<object> queues;
         private BinaryTree tree;
+        private Graph<object> graph;
         public Form1()
         {
             InitializeComponent();
@@ -408,6 +410,181 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private int CalculateTotalWeight(List<object> path)
+        {
+            int totalWeight = 0;
+
+            for (int i = 0; i < path.Count - 1; i++)
+            {
+                var source = path[i];
+                var destination = path[i + 1];
+
+                foreach ((var neighbor, int weight) in graph.GetNeighbors(source))
+                {
+                    if (Equals(neighbor, destination))
+                    {
+                        totalWeight += weight;
+                        break;
+                    }
+                }
+            }
+
+            return totalWeight;
+        }
+
+        private void MostrarMatrizAdyacencia()
+        {
+            List<string> matrizStrings = graph.GetAdjacencyMatrix();
+
+            lsbAdyacencyMatrixGraph.Items.Clear();
+
+            foreach (var row in matrizStrings)
+            {
+                lsbAdyacencyMatrixGraph.Items.Add(row);
+            }
+        }
+
+        private void graphsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            graph = new Graph<object>();
+        }
+
+        private void ActualizarListBox()
+        {
+            lsbGraph.Items.Clear();
+
+            foreach (var vertice in graph.GetVertices())
+            {
+                lsbGraph.Items.Add($"Vértice: {vertice}");
+                foreach (var vecino in graph.GetVertices())
+                {
+                    lsbGraph.Items.Add($"  -> Vecino: {vecino}");
+                }
+            }
+        }
+
+        private void btnAddVertGraph_Click(object sender, EventArgs e)
+        {
+            int vertice;
+
+            if (!int.TryParse(txtNumberGraph.Text, out vertice))
+            {
+                MessageBox.Show("Only numbers in the boxes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            graph.AddVertex(vertice);
+            ActualizarListBox();
+            MostrarMatrizAdyacencia();
+
+            txtNumberGraph.Clear();
+
+
+        }
+
+        private void btnAddEdgeGraph_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtOriginGraph.Text, out int origin)
+                || !int.TryParse(txtDestinationGraph.Text, out int destination)
+                || !int.TryParse(txtWeightGraph.Text, out int weight))
+            {
+                MessageBox.Show("Only numbers in the boxes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            graph.AddEdge(origin, destination, weight);
+
+            ActualizarListBox();
+            MostrarMatrizAdyacencia();
+            MostrarMatrizAdyacencia();
+
+            txtOriginGraph.Clear();
+            txtDestinationGraph.Clear();
+            txtWeightGraph.Clear();
+        }
+
+        private void btnToursDFSGraph_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtOriginGraph.Text, out int origen))
+            {
+                MessageBox.Show("Only numbers in the boxes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var resultadoDFS = graph.DFS(origen, -1);
+
+            if (resultadoDFS.steps.Count <= 0)
+            {
+                lsbTourGraph.Items.Clear();
+                MessageBox.Show($"No DFS traversal found from vertex {origen}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            lsbTourGraph.Items.Clear();
+            for (int i = 0; i < resultadoDFS.steps.Count; i++)
+            {
+                List<object> paso = resultadoDFS.steps[i];
+                string pasoStr = string.Join(" -> ", paso);
+                lsbTourGraph.Items.Add($"Step {i + 1}: {pasoStr}");
+            }
+
+            txtOriginGraph.Clear();
+        }
+
+        private void btnFindAwayGraph_Click(object sender, EventArgs e)
+        {
+            int destino = 0;
+            if (!int.TryParse(txtOriginGraph.Text, out int origen) && !int.TryParse(txtDestinationGraph.Text, out destino))
+            {
+                MessageBox.Show("Only numbers in the boxes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var resultadoDFS = graph.DFS(origen, destino);
+
+            // Obtener el mejor camino desde la tupla
+            List<object> mejorCamino = resultadoDFS.bestPath;
+
+            if (mejorCamino.Count <= 0)
+            {
+                MessageBox.Show($"A path was not found from vertex {origen} to vertex {destino}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string caminoStr = string.Join(" -> ", mejorCamino);
+
+
+            int pesoTotal = CalculateTotalWeight(mejorCamino);
+            MessageBox.Show($"Best path found from vertex {origen} to vertex {destino}: {caminoStr}\n" +
+                             $"Total weight of the path: {pesoTotal}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtOriginGraph.Clear();
+            txtDestinationGraph.Clear();
+        }
+
+        private void btnDeleteGraph_Click(object sender, EventArgs e)
+        {
+            if (listGrafo.SelectedItem == null)
+            {
+
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un vértice para eliminar.");
+            }
+
+            string[] partes = listGrafo.SelectedItem.ToString().Split(':');
+
+            if (partes.Length >= 2 && int.TryParse(partes[1].Trim(), out int vertice))
+            {
+                grafo.EliminarVertice(vertice);
+                ActualizarListBox();
+            }
+            else
+            {
+                MessageBox.Show("Error al extraer el vértice seleccionado.");
+            }
         }
     }
 }

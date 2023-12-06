@@ -100,25 +100,25 @@
             label4 = new Label();
             txtNumberBinaryTree = new TextBox();
             panel1 = new Panel();
-            label8 = new Label();
-            listBox1 = new ListBox();
-            btnAddGraph = new Button();
-            label9 = new Label();
-            txtNumberGraph = new TextBox();
-            listBox2 = new ListBox();
-            listBox3 = new ListBox();
-            label10 = new Label();
-            txtDestinationGraph = new TextBox();
-            label11 = new Label();
-            txtWeightGraph = new TextBox();
+            btnFindAwayGraph = new Button();
+            btnToursDFSGraph = new Button();
+            btnAddEdgeGraph = new Button();
+            btnDeleteGraph = new Button();
+            label14 = new Label();
+            label13 = new Label();
             label12 = new Label();
             txtOriginGraph = new TextBox();
-            label13 = new Label();
-            label14 = new Label();
-            btnDeleteGraph = new Button();
-            btnAddEdgeGraph = new Button();
-            btnToursDFSGraph = new Button();
-            btnFindAwayGraph = new Button();
+            label11 = new Label();
+            txtWeightGraph = new TextBox();
+            label10 = new Label();
+            txtDestinationGraph = new TextBox();
+            lsbTourGraph = new ListBox();
+            lsbAdyacencyMatrixGraph = new ListBox();
+            btnAddVertGraph = new Button();
+            label9 = new Label();
+            txtNumberGraph = new TextBox();
+            label8 = new Label();
+            lsbGraph = new ListBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -257,6 +257,7 @@
             graphsToolStripMenuItem.Name = "graphsToolStripMenuItem";
             graphsToolStripMenuItem.Size = new Size(69, 24);
             graphsToolStripMenuItem.Text = "Graphs";
+            graphsToolStripMenuItem.Click += graphsToolStripMenuItem_Click;
             // 
             // pnlLists
             // 
@@ -816,121 +817,78 @@
             panel1.Controls.Add(txtWeightGraph);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(txtDestinationGraph);
-            panel1.Controls.Add(listBox3);
-            panel1.Controls.Add(listBox2);
-            panel1.Controls.Add(btnAddGraph);
+            panel1.Controls.Add(lsbTourGraph);
+            panel1.Controls.Add(lsbAdyacencyMatrixGraph);
+            panel1.Controls.Add(btnAddVertGraph);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(txtNumberGraph);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(listBox1);
+            panel1.Controls.Add(lsbGraph);
             panel1.Location = new Point(0, 31);
             panel1.Name = "panel1";
             panel1.Size = new Size(1133, 495);
             panel1.TabIndex = 17;
             panel1.Paint += panel1_Paint;
             // 
-            // label8
+            // btnFindAwayGraph
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(368, 175);
-            label8.Name = "label8";
-            label8.Size = new Size(207, 26);
-            label8.TabIndex = 45;
-            label8.Text = "Adjacency matrix";
+            btnFindAwayGraph.Location = new Point(565, 46);
+            btnFindAwayGraph.Name = "btnFindAwayGraph";
+            btnFindAwayGraph.Size = new Size(159, 40);
+            btnFindAwayGraph.TabIndex = 62;
+            btnFindAwayGraph.Text = "Find way";
+            btnFindAwayGraph.UseVisualStyleBackColor = true;
+            btnFindAwayGraph.Click += btnFindAwayGraph_Click;
             // 
-            // listBox1
+            // btnToursDFSGraph
             // 
-            listBox1.Font = new Font("Segoe UI", 12F);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 28;
-            listBox1.Location = new Point(29, 203);
-            listBox1.Margin = new Padding(3, 4, 3, 4);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(295, 284);
-            listBox1.TabIndex = 44;
+            btnToursDFSGraph.Location = new Point(471, 101);
+            btnToursDFSGraph.Name = "btnToursDFSGraph";
+            btnToursDFSGraph.Size = new Size(159, 40);
+            btnToursDFSGraph.TabIndex = 61;
+            btnToursDFSGraph.Text = "Tours DFS";
+            btnToursDFSGraph.UseVisualStyleBackColor = true;
+            btnToursDFSGraph.Click += btnToursDFSGraph_Click;
             // 
-            // btnAddGraph
+            // btnAddEdgeGraph
             // 
-            btnAddGraph.Location = new Point(770, 89);
-            btnAddGraph.Name = "btnAddGraph";
-            btnAddGraph.Size = new Size(159, 40);
-            btnAddGraph.TabIndex = 48;
-            btnAddGraph.Text = "Add";
-            btnAddGraph.UseVisualStyleBackColor = true;
+            btnAddEdgeGraph.Location = new Point(306, 101);
+            btnAddEdgeGraph.Name = "btnAddEdgeGraph";
+            btnAddEdgeGraph.Size = new Size(159, 40);
+            btnAddEdgeGraph.TabIndex = 60;
+            btnAddEdgeGraph.Text = "Add edge";
+            btnAddEdgeGraph.UseVisualStyleBackColor = true;
+            btnAddEdgeGraph.Click += btnAddEdgeGraph_Click;
             // 
-            // label9
+            // btnDeleteGraph
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(770, 33);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 20);
-            label9.TabIndex = 47;
-            label9.Text = "Number";
+            btnDeleteGraph.Location = new Point(935, 89);
+            btnDeleteGraph.Name = "btnDeleteGraph";
+            btnDeleteGraph.Size = new Size(159, 40);
+            btnDeleteGraph.TabIndex = 59;
+            btnDeleteGraph.Text = "Delete";
+            btnDeleteGraph.UseVisualStyleBackColor = true;
+            btnDeleteGraph.Click += btnDeleteGraph_Click;
             // 
-            // txtNumberGraph
+            // label14
             // 
-            txtNumberGraph.ImeMode = ImeMode.NoControl;
-            txtNumberGraph.Location = new Point(770, 56);
-            txtNumberGraph.Name = "txtNumberGraph";
-            txtNumberGraph.Size = new Size(253, 27);
-            txtNumberGraph.TabIndex = 46;
+            label14.AutoSize = true;
+            label14.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.Location = new Point(810, 175);
+            label14.Name = "label14";
+            label14.Size = new Size(108, 26);
+            label14.TabIndex = 58;
+            label14.Text = "DFS tour";
             // 
-            // listBox2
+            // label13
             // 
-            listBox2.Font = new Font("Segoe UI", 12F);
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 28;
-            listBox2.Location = new Point(368, 203);
-            listBox2.Margin = new Padding(3, 4, 3, 4);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(391, 284);
-            listBox2.TabIndex = 49;
-            // 
-            // listBox3
-            // 
-            listBox3.Font = new Font("Segoe UI", 12F);
-            listBox3.FormattingEnabled = true;
-            listBox3.ItemHeight = 28;
-            listBox3.Location = new Point(810, 203);
-            listBox3.Margin = new Padding(3, 4, 3, 4);
-            listBox3.Name = "listBox3";
-            listBox3.Size = new Size(295, 284);
-            listBox3.TabIndex = 50;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(29, 33);
-            label10.Name = "label10";
-            label10.Size = new Size(85, 20);
-            label10.TabIndex = 52;
-            label10.Text = "Destination";
-            // 
-            // txtDestinationGraph
-            // 
-            txtDestinationGraph.ImeMode = ImeMode.NoControl;
-            txtDestinationGraph.Location = new Point(29, 56);
-            txtDestinationGraph.Name = "txtDestinationGraph";
-            txtDestinationGraph.Size = new Size(253, 27);
-            txtDestinationGraph.TabIndex = 51;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(29, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(56, 20);
-            label11.TabIndex = 54;
-            label11.Text = "Weight";
-            // 
-            // txtWeightGraph
-            // 
-            txtWeightGraph.ImeMode = ImeMode.NoControl;
-            txtWeightGraph.Location = new Point(29, 112);
-            txtWeightGraph.Name = "txtWeightGraph";
-            txtWeightGraph.Size = new Size(253, 27);
-            txtWeightGraph.TabIndex = 53;
+            label13.AutoSize = true;
+            label13.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(29, 175);
+            label13.Name = "label13";
+            label13.Size = new Size(83, 26);
+            label13.TabIndex = 57;
+            label13.Text = "Graph";
             // 
             // label12
             // 
@@ -949,61 +907,109 @@
             txtOriginGraph.Size = new Size(253, 27);
             txtOriginGraph.TabIndex = 55;
             // 
-            // label13
+            // label11
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(29, 175);
-            label13.Name = "label13";
-            label13.Size = new Size(83, 26);
-            label13.TabIndex = 57;
-            label13.Text = "Graph";
+            label11.AutoSize = true;
+            label11.Location = new Point(29, 89);
+            label11.Name = "label11";
+            label11.Size = new Size(56, 20);
+            label11.TabIndex = 54;
+            label11.Text = "Weight";
             // 
-            // label14
+            // txtWeightGraph
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(810, 175);
-            label14.Name = "label14";
-            label14.Size = new Size(108, 26);
-            label14.TabIndex = 58;
-            label14.Text = "DFS tour";
+            txtWeightGraph.ImeMode = ImeMode.NoControl;
+            txtWeightGraph.Location = new Point(29, 112);
+            txtWeightGraph.Name = "txtWeightGraph";
+            txtWeightGraph.Size = new Size(253, 27);
+            txtWeightGraph.TabIndex = 53;
             // 
-            // btnDeleteGraph
+            // label10
             // 
-            btnDeleteGraph.Location = new Point(935, 89);
-            btnDeleteGraph.Name = "btnDeleteGraph";
-            btnDeleteGraph.Size = new Size(159, 40);
-            btnDeleteGraph.TabIndex = 59;
-            btnDeleteGraph.Text = "Delete";
-            btnDeleteGraph.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Location = new Point(29, 33);
+            label10.Name = "label10";
+            label10.Size = new Size(85, 20);
+            label10.TabIndex = 52;
+            label10.Text = "Destination";
             // 
-            // btnAddEdgeGraph
+            // txtDestinationGraph
             // 
-            btnAddEdgeGraph.Location = new Point(306, 101);
-            btnAddEdgeGraph.Name = "btnAddEdgeGraph";
-            btnAddEdgeGraph.Size = new Size(159, 40);
-            btnAddEdgeGraph.TabIndex = 60;
-            btnAddEdgeGraph.Text = "Add edge";
-            btnAddEdgeGraph.UseVisualStyleBackColor = true;
+            txtDestinationGraph.ImeMode = ImeMode.NoControl;
+            txtDestinationGraph.Location = new Point(29, 56);
+            txtDestinationGraph.Name = "txtDestinationGraph";
+            txtDestinationGraph.Size = new Size(253, 27);
+            txtDestinationGraph.TabIndex = 51;
             // 
-            // btnToursDFSGraph
+            // lsbTourGraph
             // 
-            btnToursDFSGraph.Location = new Point(471, 101);
-            btnToursDFSGraph.Name = "btnToursDFSGraph";
-            btnToursDFSGraph.Size = new Size(159, 40);
-            btnToursDFSGraph.TabIndex = 61;
-            btnToursDFSGraph.Text = "Tours DFS";
-            btnToursDFSGraph.UseVisualStyleBackColor = true;
+            lsbTourGraph.Font = new Font("Segoe UI", 12F);
+            lsbTourGraph.FormattingEnabled = true;
+            lsbTourGraph.ItemHeight = 28;
+            lsbTourGraph.Location = new Point(810, 203);
+            lsbTourGraph.Margin = new Padding(3, 4, 3, 4);
+            lsbTourGraph.Name = "lsbTourGraph";
+            lsbTourGraph.Size = new Size(295, 284);
+            lsbTourGraph.TabIndex = 50;
             // 
-            // btnFindAwayGraph
+            // lsbAdyacencyMatrixGraph
             // 
-            btnFindAwayGraph.Location = new Point(565, 46);
-            btnFindAwayGraph.Name = "btnFindAwayGraph";
-            btnFindAwayGraph.Size = new Size(159, 40);
-            btnFindAwayGraph.TabIndex = 62;
-            btnFindAwayGraph.Text = "Find way";
-            btnFindAwayGraph.UseVisualStyleBackColor = true;
+            lsbAdyacencyMatrixGraph.Font = new Font("Segoe UI", 12F);
+            lsbAdyacencyMatrixGraph.FormattingEnabled = true;
+            lsbAdyacencyMatrixGraph.ItemHeight = 28;
+            lsbAdyacencyMatrixGraph.Location = new Point(368, 203);
+            lsbAdyacencyMatrixGraph.Margin = new Padding(3, 4, 3, 4);
+            lsbAdyacencyMatrixGraph.Name = "lsbAdyacencyMatrixGraph";
+            lsbAdyacencyMatrixGraph.Size = new Size(391, 284);
+            lsbAdyacencyMatrixGraph.TabIndex = 49;
+            // 
+            // btnAddVertGraph
+            // 
+            btnAddVertGraph.Location = new Point(770, 89);
+            btnAddVertGraph.Name = "btnAddVertGraph";
+            btnAddVertGraph.Size = new Size(159, 40);
+            btnAddVertGraph.TabIndex = 48;
+            btnAddVertGraph.Text = "Add";
+            btnAddVertGraph.UseVisualStyleBackColor = true;
+            btnAddVertGraph.Click += btnAddVertGraph_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(770, 33);
+            label9.Name = "label9";
+            label9.Size = new Size(63, 20);
+            label9.TabIndex = 47;
+            label9.Text = "Number";
+            // 
+            // txtNumberGraph
+            // 
+            txtNumberGraph.ImeMode = ImeMode.NoControl;
+            txtNumberGraph.Location = new Point(770, 56);
+            txtNumberGraph.Name = "txtNumberGraph";
+            txtNumberGraph.Size = new Size(253, 27);
+            txtNumberGraph.TabIndex = 46;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(368, 175);
+            label8.Name = "label8";
+            label8.Size = new Size(207, 26);
+            label8.TabIndex = 45;
+            label8.Text = "Adjacency matrix";
+            // 
+            // lsbGraph
+            // 
+            lsbGraph.Font = new Font("Segoe UI", 12F);
+            lsbGraph.FormattingEnabled = true;
+            lsbGraph.ItemHeight = 28;
+            lsbGraph.Location = new Point(29, 203);
+            lsbGraph.Margin = new Padding(3, 4, 3, 4);
+            lsbGraph.Name = "lsbGraph";
+            lsbGraph.Size = new Size(295, 284);
+            lsbGraph.TabIndex = 44;
             // 
             // Form1
             // 
@@ -1123,13 +1129,13 @@
         private TextBox txtNumberBinaryTree;
         private TreeView treeView;
         private Panel panel1;
-        private ListBox listBox3;
-        private ListBox listBox2;
-        private Button btnAddGraph;
+        private ListBox lsbTourGraph;
+        private ListBox lsbAdyacencyMatrixGraph;
+        private Button btnAddVertGraph;
         private Label label9;
         private TextBox txtNumberGraph;
         private Label label8;
-        private ListBox listBox1;
+        private ListBox lsbGraph;
         private Label label10;
         private TextBox txtDestinationGraph;
         private Label label11;
