@@ -549,12 +549,13 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnFindAwayGraph_Click(object sender, EventArgs e)
         {
-            int destino = 0;
-            if (!int.TryParse(txtOriginGraph.Text, out int origen) && !int.TryParse(txtDestinationGraph.Text, out destino))
+            int origen, destino;
+            if (!int.TryParse(txtOriginGraph.Text, out origen) || !int.TryParse(txtDestinationGraph.Text, out destino))
             {
                 MessageBox.Show("Only numbers in the boxes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             var resultadoDFS = graph.DFS(origen, destino);
 
             // Obtener el mejor camino desde la tupla
@@ -568,10 +569,10 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             string caminoStr = string.Join(" -> ", mejorCamino);
 
-
             int pesoTotal = CalculateTotalWeight(mejorCamino);
             MessageBox.Show($"Best path found from vertex {origen} to vertex {destino}: {caminoStr}\n" +
                              $"Total weight of the path: {pesoTotal}", "-*-*-*-", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             txtOriginGraph.Clear();
             txtDestinationGraph.Clear();
         }
