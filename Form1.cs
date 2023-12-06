@@ -564,27 +564,23 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnDeleteGraph_Click(object sender, EventArgs e)
         {
-            if (listGrafo.SelectedItem == null)
+            if (lsbGraph.SelectedItem == null)
             {
-
-
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un vértice para eliminar.");
+                MessageBox.Show("Seleccione un vértice para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            string[] partes = listGrafo.SelectedItem.ToString().Split(':');
+            string[] partes = lsbGraph.SelectedItem.ToString().Split(':');
 
-            if (partes.Length >= 2 && int.TryParse(partes[1].Trim(), out int vertice))
+            int vertice = 0;
+            if (!(partes.Length >= 2 && int.TryParse(partes[1].Trim(), out vertice)))
             {
-                grafo.EliminarVertice(vertice);
-                ActualizarListBox();
+                MessageBox.Show("Error al extraer el vértice seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Error al extraer el vértice seleccionado.");
-            }
+
+            graph.RemoveVertex(vertice);
+            ActualizarListBox();
         }
     }
 }
