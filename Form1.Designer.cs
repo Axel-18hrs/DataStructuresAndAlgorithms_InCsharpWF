@@ -119,6 +119,7 @@
             txtNumberGraph = new TextBox();
             label8 = new Label();
             lsbGraph = new ListBox();
+            btnStartQu = new Button();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -502,11 +503,12 @@
             // 
             // gbxCircularQLenght
             // 
+            gbxCircularQLenght.Controls.Add(btnStartQu);
             gbxCircularQLenght.Controls.Add(lblLenght);
             gbxCircularQLenght.Controls.Add(textBox1);
             gbxCircularQLenght.Location = new Point(102, 38);
             gbxCircularQLenght.Name = "gbxCircularQLenght";
-            gbxCircularQLenght.Size = new Size(314, 74);
+            gbxCircularQLenght.Size = new Size(314, 128);
             gbxCircularQLenght.TabIndex = 36;
             gbxCircularQLenght.TabStop = false;
             // 
@@ -531,7 +533,7 @@
             // 
             gbxPriorityQue.Controls.Add(label3);
             gbxPriorityQue.Controls.Add(txtPriorityQ);
-            gbxPriorityQue.Location = new Point(99, 108);
+            gbxPriorityQue.Location = new Point(99, 172);
             gbxPriorityQue.Name = "gbxPriorityQue";
             gbxPriorityQue.Size = new Size(324, 69);
             gbxPriorityQue.TabIndex = 33;
@@ -559,7 +561,7 @@
             gbxCircularQ.Controls.Add(btnPeekQRear);
             gbxCircularQ.Controls.Add(btnDequeueRear);
             gbxCircularQ.Controls.Add(btnEnqueueRear);
-            gbxCircularQ.Location = new Point(306, 237);
+            gbxCircularQ.Location = new Point(306, 301);
             gbxCircularQ.Name = "gbxCircularQ";
             gbxCircularQ.Size = new Size(187, 176);
             gbxCircularQ.TabIndex = 30;
@@ -598,7 +600,7 @@
             // 
             // btnPeekQ
             // 
-            btnPeekQ.Location = new Point(131, 347);
+            btnPeekQ.Location = new Point(131, 411);
             btnPeekQ.Name = "btnPeekQ";
             btnPeekQ.Size = new Size(159, 40);
             btnPeekQ.TabIndex = 28;
@@ -608,7 +610,7 @@
             // 
             // btnDequeue
             // 
-            btnDequeue.Location = new Point(131, 295);
+            btnDequeue.Location = new Point(131, 359);
             btnDequeue.Name = "btnDequeue";
             btnDequeue.Size = new Size(159, 40);
             btnDequeue.TabIndex = 26;
@@ -618,7 +620,7 @@
             // 
             // btnEnqueue
             // 
-            btnEnqueue.Location = new Point(131, 243);
+            btnEnqueue.Location = new Point(131, 307);
             btnEnqueue.Name = "btnEnqueue";
             btnEnqueue.Size = new Size(159, 40);
             btnEnqueue.TabIndex = 24;
@@ -629,7 +631,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(131, 175);
+            label2.Location = new Point(131, 239);
             label2.Name = "label2";
             label2.Size = new Size(63, 20);
             label2.TabIndex = 23;
@@ -638,7 +640,7 @@
             // txtNumbersQueue
             // 
             txtNumbersQueue.ImeMode = ImeMode.NoControl;
-            txtNumbersQueue.Location = new Point(131, 198);
+            txtNumbersQueue.Location = new Point(131, 262);
             txtNumbersQueue.Name = "txtNumbersQueue";
             txtNumbersQueue.Size = new Size(253, 27);
             txtNumbersQueue.TabIndex = 22;
@@ -669,9 +671,9 @@
             pnlTree.Controls.Add(btnAdd);
             pnlTree.Controls.Add(label4);
             pnlTree.Controls.Add(txtNumberBinaryTree);
-            pnlTree.Location = new Point(0, 33);
+            pnlTree.Location = new Point(617, 238);
             pnlTree.Name = "pnlTree";
-            pnlTree.Size = new Size(1134, 496);
+            pnlTree.Size = new Size(517, 291);
             pnlTree.TabIndex = 16;
             pnlTree.Paint += pnlTree_Paint;
             // 
@@ -824,9 +826,9 @@
             pnlGraph.Controls.Add(txtNumberGraph);
             pnlGraph.Controls.Add(label8);
             pnlGraph.Controls.Add(lsbGraph);
-            pnlGraph.Location = new Point(0, 31);
+            pnlGraph.Location = new Point(715, 299);
             pnlGraph.Name = "pnlGraph";
-            pnlGraph.Size = new Size(1133, 495);
+            pnlGraph.Size = new Size(418, 227);
             pnlGraph.TabIndex = 17;
             pnlGraph.Paint += panel1_Paint;
             // 
@@ -1011,6 +1013,15 @@
             lsbGraph.Size = new Size(295, 284);
             lsbGraph.TabIndex = 44;
             // 
+            // btnStartQu
+            // 
+            btnStartQu.Location = new Point(29, 74);
+            btnStartQu.Name = "btnStartQu";
+            btnStartQu.Size = new Size(159, 40);
+            btnStartQu.TabIndex = 37;
+            btnStartQu.Text = "Start";
+            btnStartQu.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1148,5 +1159,6 @@
         private Button btnToursDFSGraph;
         private Button btnAddEdgeGraph;
         private Button btnDeleteGraph;
+        private Button btnStartQu;
     }
 }

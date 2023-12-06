@@ -217,6 +217,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            lsbQueues.Items.Clear();
             queues = new RegularQueue<object>();
         }
 
@@ -227,6 +228,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            lsbQueues.Items.Clear();
             queues = new DoubleQueue<object>();
         }
 
@@ -240,6 +242,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            lsbQueues.Items.Clear();
             queues = new RegularQueue<object>();
         }
 
@@ -248,6 +251,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = true;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            lsbQueues.Items.Clear();
             queues = new PriorityQueue<object>();
         }
 
@@ -256,6 +260,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = true;
             gbxCircularQLenght.Visible = true;
+            lsbQueues.Items.Clear();
         }
 
         private void btnEnqueue_Click(object sender, EventArgs e)
