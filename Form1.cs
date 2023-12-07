@@ -217,6 +217,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            gbxQueueCircularM.Visible = true;
             lsbQueues.Items.Clear();
             queues = new RegularQueue<object>();
         }
@@ -228,6 +229,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            gbxQueueCircularM.Visible = true;
             lsbQueues.Items.Clear();
             queues = new DoubleQueue<object>();
         }
@@ -251,6 +253,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = true;
             gbxCircularQ.Visible = false;
             gbxCircularQLenght.Visible = false;
+            gbxQueueCircularM.Visible = true;
             lsbQueues.Items.Clear();
             queues = new PriorityQueue<object>();
         }
@@ -260,6 +263,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxPriorityQue.Visible = false;
             gbxCircularQ.Visible = true;
             gbxCircularQLenght.Visible = true;
+            gbxQueueCircularM.Visible = false;
             lsbQueues.Items.Clear();
         }
 
@@ -285,7 +289,13 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnEnqueueRear_Click(object sender, EventArgs e)
         {
-            queues.EnqueueRear(txtNumbersQueue.Text);
+            if (!int.TryParse(txtNumbersQueue.Text, out var number))
+            {
+                MessageBox.Show("Only numbers in the 'numbers' box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            queues.EnqueueRear(number);
             PrintQueues();
         }
 
@@ -613,6 +623,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
             gbxCircularQ.Visible = false;
+            gbxQueueCircularM.Visible = true;
             queues = new CircularQueue<object>(num);
         }
     }

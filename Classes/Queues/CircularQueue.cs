@@ -35,6 +35,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Queues
             if ((rear + 1) % capacity == front)
             {
                 Console.WriteLine("Circular Queue is full. Unable to enqueue.");
+                MessageBox.Show("Circular Queue is full. Unable to enqueue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
