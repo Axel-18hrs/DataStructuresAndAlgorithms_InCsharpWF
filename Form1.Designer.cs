@@ -70,8 +70,9 @@
             lsbStacks = new ListBox();
             pnlQueues = new Panel();
             gbxCircularQLenght = new GroupBox();
+            btnStartQu = new Button();
             lblLenght = new Label();
-            textBox1 = new TextBox();
+            txtLenghtsQu = new TextBox();
             gbxPriorityQue = new GroupBox();
             label3 = new Label();
             txtPriorityQ = new TextBox();
@@ -119,7 +120,6 @@
             txtNumberGraph = new TextBox();
             label8 = new Label();
             lsbGraph = new ListBox();
-            btnStartQu = new Button();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -505,12 +505,22 @@
             // 
             gbxCircularQLenght.Controls.Add(btnStartQu);
             gbxCircularQLenght.Controls.Add(lblLenght);
-            gbxCircularQLenght.Controls.Add(textBox1);
+            gbxCircularQLenght.Controls.Add(txtLenghtsQu);
             gbxCircularQLenght.Location = new Point(102, 38);
             gbxCircularQLenght.Name = "gbxCircularQLenght";
             gbxCircularQLenght.Size = new Size(314, 128);
             gbxCircularQLenght.TabIndex = 36;
             gbxCircularQLenght.TabStop = false;
+            // 
+            // btnStartQu
+            // 
+            btnStartQu.Location = new Point(29, 74);
+            btnStartQu.Name = "btnStartQu";
+            btnStartQu.Size = new Size(159, 40);
+            btnStartQu.TabIndex = 37;
+            btnStartQu.Text = "Start";
+            btnStartQu.UseVisualStyleBackColor = true;
+            btnStartQu.Click += btnStartQu_Click;
             // 
             // lblLenght
             // 
@@ -521,13 +531,13 @@
             lblLenght.TabIndex = 35;
             lblLenght.Text = "Lenght";
             // 
-            // textBox1
+            // txtLenghtsQu
             // 
-            textBox1.ImeMode = ImeMode.NoControl;
-            textBox1.Location = new Point(29, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(253, 27);
-            textBox1.TabIndex = 34;
+            txtLenghtsQu.ImeMode = ImeMode.NoControl;
+            txtLenghtsQu.Location = new Point(29, 41);
+            txtLenghtsQu.Name = "txtLenghtsQu";
+            txtLenghtsQu.Size = new Size(253, 27);
+            txtLenghtsQu.TabIndex = 34;
             // 
             // gbxPriorityQue
             // 
@@ -671,9 +681,9 @@
             pnlTree.Controls.Add(btnAdd);
             pnlTree.Controls.Add(label4);
             pnlTree.Controls.Add(txtNumberBinaryTree);
-            pnlTree.Location = new Point(617, 238);
+            pnlTree.Location = new Point(0, 31);
             pnlTree.Name = "pnlTree";
-            pnlTree.Size = new Size(517, 291);
+            pnlTree.Size = new Size(1134, 498);
             pnlTree.TabIndex = 16;
             pnlTree.Paint += pnlTree_Paint;
             // 
@@ -687,7 +697,7 @@
             // 
             // btnSearchTreeN
             // 
-            btnSearchTreeN.Location = new Point(828, 279);
+            btnSearchTreeN.Location = new Point(743, 279);
             btnSearchTreeN.Name = "btnSearchTreeN";
             btnSearchTreeN.Size = new Size(159, 40);
             btnSearchTreeN.TabIndex = 49;
@@ -697,7 +707,7 @@
             // 
             // btnDeleteTreeN
             // 
-            btnDeleteTreeN.Location = new Point(828, 233);
+            btnDeleteTreeN.Location = new Point(743, 233);
             btnDeleteTreeN.Name = "btnDeleteTreeN";
             btnDeleteTreeN.Size = new Size(159, 40);
             btnDeleteTreeN.TabIndex = 48;
@@ -780,7 +790,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(828, 187);
+            btnAdd.Location = new Point(743, 187);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(159, 40);
             btnAdd.TabIndex = 40;
@@ -791,7 +801,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(828, 119);
+            label4.Location = new Point(743, 119);
             label4.Name = "label4";
             label4.Size = new Size(63, 20);
             label4.TabIndex = 39;
@@ -800,7 +810,7 @@
             // txtNumberBinaryTree
             // 
             txtNumberBinaryTree.ImeMode = ImeMode.NoControl;
-            txtNumberBinaryTree.Location = new Point(828, 142);
+            txtNumberBinaryTree.Location = new Point(743, 142);
             txtNumberBinaryTree.Name = "txtNumberBinaryTree";
             txtNumberBinaryTree.Size = new Size(253, 27);
             txtNumberBinaryTree.TabIndex = 38;
@@ -826,9 +836,9 @@
             pnlGraph.Controls.Add(txtNumberGraph);
             pnlGraph.Controls.Add(label8);
             pnlGraph.Controls.Add(lsbGraph);
-            pnlGraph.Location = new Point(715, 299);
+            pnlGraph.Location = new Point(0, 31);
             pnlGraph.Name = "pnlGraph";
-            pnlGraph.Size = new Size(418, 227);
+            pnlGraph.Size = new Size(1133, 495);
             pnlGraph.TabIndex = 17;
             pnlGraph.Paint += panel1_Paint;
             // 
@@ -1013,15 +1023,6 @@
             lsbGraph.Size = new Size(295, 284);
             lsbGraph.TabIndex = 44;
             // 
-            // btnStartQu
-            // 
-            btnStartQu.Location = new Point(29, 74);
-            btnStartQu.Name = "btnStartQu";
-            btnStartQu.Size = new Size(159, 40);
-            btnStartQu.TabIndex = 37;
-            btnStartQu.Text = "Start";
-            btnStartQu.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1123,7 +1124,7 @@
         private ToolStripMenuItem circularQueueToolStripMenuItem;
         private GroupBox gbxPriorityQue;
         private Label lblLenght;
-        private TextBox textBox1;
+        private TextBox txtLenghtsQu;
         private GroupBox gbxCircularQLenght;
         private Panel pnlTree;
         private Button btnSearchTreeN;

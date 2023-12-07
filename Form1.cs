@@ -602,5 +602,18 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             graph.RemoveVertex(vertice);
             ActualizarListBox();
         }
+
+        private void btnStartQu_Click(object sender, EventArgs e)
+        {
+            int num;
+
+            if (!int.TryParse(txtLenghtsQu.Text, out num))
+            {
+                MessageBox.Show("Only numbers in the box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            gbxCircularQ.Visible = false;
+            queues = new CircularQueue<object>(num);
+        }
     }
 }
