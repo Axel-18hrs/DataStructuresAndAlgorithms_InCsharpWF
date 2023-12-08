@@ -338,60 +338,70 @@
             gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
             gnomeSortToolStripMenuItem.Size = new Size(224, 26);
             gnomeSortToolStripMenuItem.Text = "Gnome Sort";
+            gnomeSortToolStripMenuItem.Click += gnomeSortToolStripMenuItem_Click;
             // 
             // heapSortToolStripMenuItem
             // 
             heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
             heapSortToolStripMenuItem.Size = new Size(224, 26);
             heapSortToolStripMenuItem.Text = "Heap Sort";
+            heapSortToolStripMenuItem.Click += heapSortToolStripMenuItem_Click;
             // 
             // insertionSortToolStripMenuItem
             // 
             insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
             insertionSortToolStripMenuItem.Size = new Size(224, 26);
             insertionSortToolStripMenuItem.Text = "Insertion Sort";
+            insertionSortToolStripMenuItem.Click += insertionSortToolStripMenuItem_Click;
             // 
             // mergeSortToolStripMenuItem
             // 
             mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
             mergeSortToolStripMenuItem.Size = new Size(224, 26);
             mergeSortToolStripMenuItem.Text = "Merge Sort";
+            mergeSortToolStripMenuItem.Click += mergeSortToolStripMenuItem_Click;
             // 
             // pigeoholeToolStripMenuItem
             // 
             pigeoholeToolStripMenuItem.Name = "pigeoholeToolStripMenuItem";
             pigeoholeToolStripMenuItem.Size = new Size(224, 26);
             pigeoholeToolStripMenuItem.Text = "Pigeohole";
+            pigeoholeToolStripMenuItem.Click += pigeoholeToolStripMenuItem_Click;
             // 
             // quickSortToolStripMenuItem
             // 
             quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
             quickSortToolStripMenuItem.Size = new Size(224, 26);
             quickSortToolStripMenuItem.Text = "Quick Sort";
+            quickSortToolStripMenuItem.Click += quickSortToolStripMenuItem_Click;
             // 
             // radixSortToolStripMenuItem
             // 
             radixSortToolStripMenuItem.Name = "radixSortToolStripMenuItem";
             radixSortToolStripMenuItem.Size = new Size(224, 26);
             radixSortToolStripMenuItem.Text = "Radix Sort";
+            radixSortToolStripMenuItem.Click += radixSortToolStripMenuItem_Click;
             // 
             // selectionSortToolStripMenuItem
             // 
             selectionSortToolStripMenuItem.Name = "selectionSortToolStripMenuItem";
             selectionSortToolStripMenuItem.Size = new Size(224, 26);
             selectionSortToolStripMenuItem.Text = "Selection Sort";
+            selectionSortToolStripMenuItem.Click += selectionSortToolStripMenuItem_Click;
             // 
             // shellSortToolStripMenuItem
             // 
             shellSortToolStripMenuItem.Name = "shellSortToolStripMenuItem";
             shellSortToolStripMenuItem.Size = new Size(224, 26);
             shellSortToolStripMenuItem.Text = "Shell Sort";
+            shellSortToolStripMenuItem.Click += shellSortToolStripMenuItem_Click;
             // 
             // smoothSortToolStripMenuItem
             // 
             smoothSortToolStripMenuItem.Name = "smoothSortToolStripMenuItem";
             smoothSortToolStripMenuItem.Size = new Size(224, 26);
             smoothSortToolStripMenuItem.Text = "Smooth Sort";
+            smoothSortToolStripMenuItem.Click += smoothSortToolStripMenuItem_Click;
             // 
             // pnlLists
             // 

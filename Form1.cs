@@ -30,6 +30,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlQueues.Visible = false;
             pnlTree.Visible = false;
             pnlGraph.Visible = false;
+            pnlAlgorithmsOfSorting.Visible = false;
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
             lblBeggininMessage.Text = "Data structures and algorithms";
@@ -47,6 +48,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlQueues.Visible = false;
             pnlTree.Visible = false;
             pnlGraph.Visible = false;
+            pnlAlgorithmsOfSorting.Visible = false;
             list = new SimpleList<object>();
         }
 
@@ -195,6 +197,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlQueues.Visible = false;
             pnlTree.Visible = false;
             pnlGraph.Visible = false;
+            pnlAlgorithmsOfSorting.Visible = false;
             gbxMenuStatickStack.Visible = false;
             gbxMenuStackAll.Visible = false;
         }
@@ -347,6 +350,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlQueues.Visible = false;
             pnlStacks.Visible = false;
             pnlTree.Visible = true;
+            pnlAlgorithmsOfSorting.Visible = false;
             tree = new BinaryTree();
 
         }
@@ -484,6 +488,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlStacks.Visible = false;
             pnlTree.Visible = false;
             pnlGraph.Visible = true;
+            pnlAlgorithmsOfSorting.Visible = false;
             graph = new Graph<object>();
         }
 
@@ -636,7 +641,12 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnCantOfItemsAlgorithms_Click(object sender, EventArgs e)
         {
-            Console.Clear();
+            lsbAlgorithmSorting.Items.Clear();
+            if (algorithm is null)
+            {
+                MessageBox.Show("Select an algorithm to order!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Console.WriteLine("Enter the minimum range from which you want to generate your unordered array:");
             if (!int.TryParse(txtMinimumRangeAlgorithms.Text, out int minon))
             {
@@ -667,7 +677,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 algorithm.Sort(arr);
                 lsbAlgorithmSorting.Items.Add("[" + string.Join(", ", arr) + "]\r\n");
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
-                Console.WriteLine("Time: " + (DateTime.Now - startTime));
+                lsbAlgorithmSorting.Items.Add("Time: " + (DateTime.Now - startTime));
             }
             else
             {
@@ -678,7 +688,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 algorithm.Sort(arr);
                 lsbAlgorithmSorting.Items.Add("[" + string.Join(", ", arr) + "]\r\n");
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
-                Console.WriteLine("Time: " + (DateTime.Now - startTime));
+                lsbAlgorithmSorting.Items.Add("Time: " + (DateTime.Now - startTime));
             }
         }
 
@@ -715,6 +725,56 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private void countingSortToolStripMenuItem_Click(object sender, EventArgs e)
         {
             algorithm = new Countingsort();
+        }
+
+        private void gnomeSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Gnomesort();
+        }
+
+        private void heapSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Heapsort();
+        }
+
+        private void insertionSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Insertionsort();
+        }
+
+        private void mergeSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Mergesort();
+        }
+
+        private void pigeoholeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Pigeonhole();
+        }
+
+        private void quickSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new QuickSort();
+        }
+
+        private void radixSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Radixsort();
+        }
+
+        private void selectionSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Selectionsort();
+        }
+
+        private void shellSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Shellsort();
+        }
+
+        private void smoothSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new SmoothSort();
         }
     }
 }
