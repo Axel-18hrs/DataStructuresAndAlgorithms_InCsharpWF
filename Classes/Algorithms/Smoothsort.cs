@@ -30,6 +30,16 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 
         }
 
+        public void Sort(int[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sort(double[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
+
         private void SiftDown(int root, int end)
         {
             int leftChild = 2 * root + 1;

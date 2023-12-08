@@ -33,7 +33,9 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlAlgorithmsOfSorting.Visible = false;
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
-            lblBeggininMessage.Text = "Data structures and algorithms";
+            txtNumbersOfItemstoOrder.Text = "10";
+            txtMinimumRangeAlgorithms.Text = "-5";
+            txtMaximumRangeAlgorithms.Text = "5";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -351,6 +353,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlStacks.Visible = false;
             pnlTree.Visible = true;
             pnlAlgorithmsOfSorting.Visible = false;
+            pnlGraph.Visible = false
             tree = new BinaryTree();
 
         }
@@ -668,14 +671,18 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
+            if (algorithm is Countingsort && minon < 0 )
+            {
+                MessageBox.Show("Only numbers positives", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (algorithm is BucketSort)
             {
                 double[] arr = OperationsAlgorithm.GenerarVectorDouble(minon, length, values);
 
                 lsbAlgorithmSorting.Items.Add("Unordered array: " + "[ " + string.Join(", ", arr) + " ]");
                 DateTime startTime = DateTime.Now;
-                algorithm.Sort(arr);
-                lsbAlgorithmSorting.Items.Add("[" + string.Join(", ", arr) + "]\r\n");
+                algorithm.Sort(arr, lsbAlgorithmSorting);
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 lsbAlgorithmSorting.Items.Add("Time: " + (DateTime.Now - startTime));
             }
@@ -685,8 +692,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
                 lsbAlgorithmSorting.Items.Add("Unordered array: " + "[ " + string.Join(", ", arr) + " ]");
                 DateTime startTime = DateTime.Now;
-                algorithm.Sort(arr);
-                lsbAlgorithmSorting.Items.Add("[" + string.Join(", ", arr) + "]\r\n");
+                algorithm.Sort(arr, lsbAlgorithmSorting);
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 lsbAlgorithmSorting.Items.Add("Time: " + (DateTime.Now - startTime));
             }
@@ -714,12 +720,12 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void cocktailSortToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            algorithm = new BucketSort();
+            algorithm = new CocktailSort();
         }
 
         private void combSortToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            algorithm = new Cocktailsort();
+            algorithm = new Combsort();
         }
 
         private void countingSortToolStripMenuItem_Click(object sender, EventArgs e)

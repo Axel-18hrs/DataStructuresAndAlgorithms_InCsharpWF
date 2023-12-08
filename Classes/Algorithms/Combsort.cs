@@ -9,9 +9,11 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Combsort : ImethodAlgorithms
     {
+        private static int iterations = 0;
+
         public Combsort() { }
 
-        public void Sort(int[] arr)
+        public void Sort(int[] arr, ListBox listBX)
         {
             int n = arr.Length;
 
@@ -42,12 +44,22 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                         swapped = true;
                     }
                 }
+
+                // Imprimir el arreglo completo en cada intercambio
+                listBX.Items.Add("[ " + string.Join(", ", arr) + " ]");
+                iterations++; // Incrementa el número de iteraciones
             } while (gap > 1 || swapped);
+            listBX.Items.Add($"Number of iterations: {iterations}");
         }
 
         public void Sort(double[] arr)
         {
+            // Implementación para ordenar un array de doubles
+        }
 
+        public void Sort(double[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
         }
 
         private void Swap(ref int a, ref int b)
@@ -56,5 +68,16 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             a = b;
             b = temp;
         }
+
+        private void ShowStatistics()
+        {
+            Console.WriteLine($"Number of iterations: {iterations}");
+        }
+
+        public void Sort(int[] array)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

@@ -35,5 +35,15 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                 arr[j + 1] = key;
             }
         }
+
+        public void Sort(int[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sort(double[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

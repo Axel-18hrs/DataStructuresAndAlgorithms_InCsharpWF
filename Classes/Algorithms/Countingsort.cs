@@ -4,9 +4,11 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Countingsort : ImethodAlgorithms
     {
+        private static int iterations = 0;
+
         public Countingsort() { }
 
-        public void Sort(int[] arr)
+        public void Sort(int[] arr, ListBox listBX)
         {
             int n = arr.Length;
 
@@ -40,6 +42,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             {
                 output[count[arr[i]] - 1] = arr[i];
                 count[arr[i]]--;
+
+                // Imprimir el arreglo completo en cada intercambio
+                listBX.Items.Add("[ " + string.Join(", ", output) + " ]");
+                iterations++; // Incrementa el número de iteraciones
             }
 
             // Copiar el arreglo de salida de vuelta al arreglo original
@@ -47,11 +53,23 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             {
                 arr[i] = output[i];
             }
+            listBX.Items.Add($"Number of iterations: {iterations}");
         }
 
         public void Sort(double[] arr)
         {
+            // Implementación para ordenar un array de doubles
+        }
 
+
+        public void Sort(double[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sort(int[] array)
+        {
+            throw new NotImplementedException();
         }
 
         private int FindMax(int[] arr)
@@ -66,5 +84,11 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             }
             return max;
         }
+
+        private void ShowStatistics()
+        {
+            Console.WriteLine($"Number of iterations: {iterations}");
+        }
     }
+
 }

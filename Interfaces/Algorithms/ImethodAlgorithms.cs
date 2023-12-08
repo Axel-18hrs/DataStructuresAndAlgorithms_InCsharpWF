@@ -10,5 +10,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Interfaces.Algorithms
     {
         void Sort(int[] array);
         void Sort(double[] array);
+        void Sort(int[] array, ListBox listBX);
+        void Sort(double[] array, ListBox listBX);
     }
 }

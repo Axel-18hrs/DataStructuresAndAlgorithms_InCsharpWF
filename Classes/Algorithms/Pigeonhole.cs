@@ -46,5 +46,15 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                 while (pigeonholes[j]-- > 0)
                     arr[index++] = j + min;
         }
+
+        public void Sort(int[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sort(double[] array, ListBox listBX)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
