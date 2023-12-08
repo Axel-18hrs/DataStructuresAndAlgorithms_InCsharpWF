@@ -1,5 +1,4 @@
 ﻿using DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms;
-using DataStructuresAndAlgorithms_InCSharp.Classes.Operations.DataStructures;
 using DataStructuresAndAlgorithms_InCSharp.Interfaces.Algorithms;
 using System;
 using System.Collections.Generic;
@@ -191,7 +190,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Operations.Algorithms
                         Algorithm(new Shellsort());
                         break;
                     case 16:
-                        Algorithm(new Smoothsort());
+                        Algorithm(new SmoothSort());
                         break;
                     case 0:
                         return;
