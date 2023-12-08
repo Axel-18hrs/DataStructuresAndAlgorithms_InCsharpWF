@@ -148,6 +148,7 @@
             btnCantOfItemsAlgorithms = new Button();
             label15 = new Label();
             txtNumbersOfItemstoOrder = new TextBox();
+            bucketSortToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -292,7 +293,7 @@
             // 
             // sortingAlgorithmsToolStripMenuItem
             // 
-            sortingAlgorithmsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { binaryTreeSortToolStripMenuItem, bubbleSortToolStripMenuItem, cocktailSortToolStripMenuItem, combSortToolStripMenuItem, countingSortToolStripMenuItem, gnomeSortToolStripMenuItem, heapSortToolStripMenuItem, insertionSortToolStripMenuItem, mergeSortToolStripMenuItem, pigeoholeToolStripMenuItem, quickSortToolStripMenuItem, radixSortToolStripMenuItem, selectionSortToolStripMenuItem, shellSortToolStripMenuItem, smoothSortToolStripMenuItem });
+            sortingAlgorithmsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { binaryTreeSortToolStripMenuItem, bubbleSortToolStripMenuItem, bucketSortToolStripMenuItem, cocktailSortToolStripMenuItem, combSortToolStripMenuItem, countingSortToolStripMenuItem, gnomeSortToolStripMenuItem, heapSortToolStripMenuItem, insertionSortToolStripMenuItem, mergeSortToolStripMenuItem, pigeoholeToolStripMenuItem, quickSortToolStripMenuItem, radixSortToolStripMenuItem, selectionSortToolStripMenuItem, shellSortToolStripMenuItem, smoothSortToolStripMenuItem });
             sortingAlgorithmsToolStripMenuItem.Name = "sortingAlgorithmsToolStripMenuItem";
             sortingAlgorithmsToolStripMenuItem.Size = new Size(148, 24);
             sortingAlgorithmsToolStripMenuItem.Text = "Sorting Algorithms";
@@ -1284,6 +1285,13 @@
             txtNumbersOfItemstoOrder.Size = new Size(253, 27);
             txtNumbersOfItemstoOrder.TabIndex = 60;
             // 
+            // bucketSortToolStripMenuItem
+            // 
+            bucketSortToolStripMenuItem.Name = "bucketSortToolStripMenuItem";
+            bucketSortToolStripMenuItem.Size = new Size(224, 26);
+            bucketSortToolStripMenuItem.Text = "Bucket Sort";
+            bucketSortToolStripMenuItem.Click += bucketSortToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1456,5 +1464,6 @@
         private ToolStripMenuItem selectionSortToolStripMenuItem;
         private ToolStripMenuItem shellSortToolStripMenuItem;
         private ToolStripMenuItem smoothSortToolStripMenuItem;
+        private ToolStripMenuItem bucketSortToolStripMenuItem;
     }
 }

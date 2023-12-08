@@ -776,5 +776,10 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         {
             algorithm = new SmoothSort();
         }
+
+        private void bucketSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new BucketSort();
+        }
     }
 }
