@@ -45,6 +45,7 @@
             circularQueueToolStripMenuItem = new ToolStripMenuItem();
             treesToolStripMenuItem = new ToolStripMenuItem();
             graphsToolStripMenuItem = new ToolStripMenuItem();
+            sortingAlgorithmsToolStripMenuItem = new ToolStripMenuItem();
             pnlLists = new Panel();
             btnClear = new Button();
             btnDelete = new Button();
@@ -122,17 +123,31 @@
             txtNumberGraph = new TextBox();
             label8 = new Label();
             lsbGraph = new ListBox();
-            sortingAlgorithmsToolStripMenuItem = new ToolStripMenuItem();
-            panel1 = new Panel();
-            label15 = new Label();
-            txtNumbersOfItemstoOrder = new TextBox();
-            label16 = new Label();
-            lsbAlgorithmSorting = new ListBox();
-            label17 = new Label();
-            txtMinimumRangeAlgorithms = new TextBox();
-            btnCantOfItemsAlgorithms = new Button();
+            pnlAlgorithmsOfSorting = new Panel();
             label18 = new Label();
             txtMaximumRangeAlgorithms = new TextBox();
+            label17 = new Label();
+            txtMinimumRangeAlgorithms = new TextBox();
+            label16 = new Label();
+            lsbAlgorithmSorting = new ListBox();
+            btnCantOfItemsAlgorithms = new Button();
+            label15 = new Label();
+            txtNumbersOfItemstoOrder = new TextBox();
+            binaryTreeSortToolStripMenuItem = new ToolStripMenuItem();
+            bubbleSortToolStripMenuItem = new ToolStripMenuItem();
+            cocktailSortToolStripMenuItem = new ToolStripMenuItem();
+            combSortToolStripMenuItem = new ToolStripMenuItem();
+            countingSortToolStripMenuItem = new ToolStripMenuItem();
+            gnomeSortToolStripMenuItem = new ToolStripMenuItem();
+            heapSortToolStripMenuItem = new ToolStripMenuItem();
+            insertionSortToolStripMenuItem = new ToolStripMenuItem();
+            mergeSortToolStripMenuItem = new ToolStripMenuItem();
+            pigeoholeToolStripMenuItem = new ToolStripMenuItem();
+            quickSortToolStripMenuItem = new ToolStripMenuItem();
+            radixSortToolStripMenuItem = new ToolStripMenuItem();
+            selectionSortToolStripMenuItem = new ToolStripMenuItem();
+            shellSortToolStripMenuItem = new ToolStripMenuItem();
+            smoothSortToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -145,7 +160,7 @@
             gbxPriorityQue.SuspendLayout();
             pnlTree.SuspendLayout();
             pnlGraph.SuspendLayout();
-            panel1.SuspendLayout();
+            pnlAlgorithmsOfSorting.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
@@ -274,6 +289,14 @@
             graphsToolStripMenuItem.Size = new Size(69, 24);
             graphsToolStripMenuItem.Text = "Graphs";
             graphsToolStripMenuItem.Click += graphsToolStripMenuItem_Click;
+            // 
+            // sortingAlgorithmsToolStripMenuItem
+            // 
+            sortingAlgorithmsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { binaryTreeSortToolStripMenuItem, bubbleSortToolStripMenuItem, cocktailSortToolStripMenuItem, combSortToolStripMenuItem, countingSortToolStripMenuItem, gnomeSortToolStripMenuItem, heapSortToolStripMenuItem, insertionSortToolStripMenuItem, mergeSortToolStripMenuItem, pigeoholeToolStripMenuItem, quickSortToolStripMenuItem, radixSortToolStripMenuItem, selectionSortToolStripMenuItem, shellSortToolStripMenuItem, smoothSortToolStripMenuItem });
+            sortingAlgorithmsToolStripMenuItem.Name = "sortingAlgorithmsToolStripMenuItem";
+            sortingAlgorithmsToolStripMenuItem.Size = new Size(148, 24);
+            sortingAlgorithmsToolStripMenuItem.Text = "Sorting Algorithms";
+            sortingAlgorithmsToolStripMenuItem.Click += sortingAlgorithmsToolStripMenuItem_Click;
             // 
             // pnlLists
             // 
@@ -1058,44 +1081,55 @@
             lsbGraph.Size = new Size(295, 284);
             lsbGraph.TabIndex = 44;
             // 
-            // sortingAlgorithmsToolStripMenuItem
+            // pnlAlgorithmsOfSorting
             // 
-            sortingAlgorithmsToolStripMenuItem.Name = "sortingAlgorithmsToolStripMenuItem";
-            sortingAlgorithmsToolStripMenuItem.Size = new Size(148, 24);
-            sortingAlgorithmsToolStripMenuItem.Text = "Sorting Algorithms";
+            pnlAlgorithmsOfSorting.Controls.Add(label18);
+            pnlAlgorithmsOfSorting.Controls.Add(txtMaximumRangeAlgorithms);
+            pnlAlgorithmsOfSorting.Controls.Add(label17);
+            pnlAlgorithmsOfSorting.Controls.Add(txtMinimumRangeAlgorithms);
+            pnlAlgorithmsOfSorting.Controls.Add(label16);
+            pnlAlgorithmsOfSorting.Controls.Add(lsbAlgorithmSorting);
+            pnlAlgorithmsOfSorting.Controls.Add(btnCantOfItemsAlgorithms);
+            pnlAlgorithmsOfSorting.Controls.Add(label15);
+            pnlAlgorithmsOfSorting.Controls.Add(txtNumbersOfItemstoOrder);
+            pnlAlgorithmsOfSorting.Location = new Point(0, 31);
+            pnlAlgorithmsOfSorting.Name = "pnlAlgorithmsOfSorting";
+            pnlAlgorithmsOfSorting.Size = new Size(1134, 498);
+            pnlAlgorithmsOfSorting.TabIndex = 18;
             // 
-            // panel1
+            // label18
             // 
-            panel1.Controls.Add(label18);
-            panel1.Controls.Add(txtMaximumRangeAlgorithms);
-            panel1.Controls.Add(label17);
-            panel1.Controls.Add(txtMinimumRangeAlgorithms);
-            panel1.Controls.Add(label16);
-            panel1.Controls.Add(lsbAlgorithmSorting);
-            panel1.Controls.Add(btnCantOfItemsAlgorithms);
-            panel1.Controls.Add(label15);
-            panel1.Controls.Add(txtNumbersOfItemstoOrder);
-            panel1.Location = new Point(0, 31);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1134, 498);
-            panel1.TabIndex = 18;
+            label18.AutoSize = true;
+            label18.Location = new Point(86, 213);
+            label18.Name = "label18";
+            label18.Size = new Size(117, 20);
+            label18.TabIndex = 69;
+            label18.Text = "Maximum range";
             // 
-            // label15
+            // txtMaximumRangeAlgorithms
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(86, 65);
-            label15.Name = "label15";
-            label15.Size = new Size(179, 20);
-            label15.TabIndex = 61;
-            label15.Text = "Number of items to order";
+            txtMaximumRangeAlgorithms.ImeMode = ImeMode.NoControl;
+            txtMaximumRangeAlgorithms.Location = new Point(86, 236);
+            txtMaximumRangeAlgorithms.Name = "txtMaximumRangeAlgorithms";
+            txtMaximumRangeAlgorithms.Size = new Size(253, 27);
+            txtMaximumRangeAlgorithms.TabIndex = 68;
             // 
-            // txtNumbersOfItemstoOrder
+            // label17
             // 
-            txtNumbersOfItemstoOrder.ImeMode = ImeMode.NoControl;
-            txtNumbersOfItemstoOrder.Location = new Point(86, 88);
-            txtNumbersOfItemstoOrder.Name = "txtNumbersOfItemstoOrder";
-            txtNumbersOfItemstoOrder.Size = new Size(253, 27);
-            txtNumbersOfItemstoOrder.TabIndex = 60;
+            label17.AutoSize = true;
+            label17.Location = new Point(86, 137);
+            label17.Name = "label17";
+            label17.Size = new Size(114, 20);
+            label17.TabIndex = 67;
+            label17.Text = "Minimum range";
+            // 
+            // txtMinimumRangeAlgorithms
+            // 
+            txtMinimumRangeAlgorithms.ImeMode = ImeMode.NoControl;
+            txtMinimumRangeAlgorithms.Location = new Point(86, 160);
+            txtMinimumRangeAlgorithms.Name = "txtMinimumRangeAlgorithms";
+            txtMinimumRangeAlgorithms.Size = new Size(253, 27);
+            txtMinimumRangeAlgorithms.TabIndex = 66;
             // 
             // label16
             // 
@@ -1118,23 +1152,6 @@
             lsbAlgorithmSorting.Size = new Size(470, 368);
             lsbAlgorithmSorting.TabIndex = 64;
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(86, 137);
-            label17.Name = "label17";
-            label17.Size = new Size(114, 20);
-            label17.TabIndex = 67;
-            label17.Text = "Minimum range";
-            // 
-            // txtMinimumRangeAlgorithms
-            // 
-            txtMinimumRangeAlgorithms.ImeMode = ImeMode.NoControl;
-            txtMinimumRangeAlgorithms.Location = new Point(86, 160);
-            txtMinimumRangeAlgorithms.Name = "txtMinimumRangeAlgorithms";
-            txtMinimumRangeAlgorithms.Size = new Size(253, 27);
-            txtMinimumRangeAlgorithms.TabIndex = 66;
-            // 
             // btnCantOfItemsAlgorithms
             // 
             btnCantOfItemsAlgorithms.Location = new Point(86, 295);
@@ -1145,22 +1162,113 @@
             btnCantOfItemsAlgorithms.UseVisualStyleBackColor = true;
             btnCantOfItemsAlgorithms.Click += btnCantOfItemsAlgorithms_Click;
             // 
-            // label18
+            // label15
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(86, 213);
-            label18.Name = "label18";
-            label18.Size = new Size(117, 20);
-            label18.TabIndex = 69;
-            label18.Text = "Maximum range";
+            label15.AutoSize = true;
+            label15.Location = new Point(86, 65);
+            label15.Name = "label15";
+            label15.Size = new Size(179, 20);
+            label15.TabIndex = 61;
+            label15.Text = "Number of items to order";
             // 
-            // txtMaximumRangeAlgorithms
+            // txtNumbersOfItemstoOrder
             // 
-            txtMaximumRangeAlgorithms.ImeMode = ImeMode.NoControl;
-            txtMaximumRangeAlgorithms.Location = new Point(86, 236);
-            txtMaximumRangeAlgorithms.Name = "txtMaximumRangeAlgorithms";
-            txtMaximumRangeAlgorithms.Size = new Size(253, 27);
-            txtMaximumRangeAlgorithms.TabIndex = 68;
+            txtNumbersOfItemstoOrder.ImeMode = ImeMode.NoControl;
+            txtNumbersOfItemstoOrder.Location = new Point(86, 88);
+            txtNumbersOfItemstoOrder.Name = "txtNumbersOfItemstoOrder";
+            txtNumbersOfItemstoOrder.Size = new Size(253, 27);
+            txtNumbersOfItemstoOrder.TabIndex = 60;
+            // 
+            // binaryTreeSortToolStripMenuItem
+            // 
+            binaryTreeSortToolStripMenuItem.Name = "binaryTreeSortToolStripMenuItem";
+            binaryTreeSortToolStripMenuItem.Size = new Size(224, 26);
+            binaryTreeSortToolStripMenuItem.Text = "Binary Tree Sort";
+            binaryTreeSortToolStripMenuItem.Click += binaryTreeSortToolStripMenuItem_Click;
+            // 
+            // bubbleSortToolStripMenuItem
+            // 
+            bubbleSortToolStripMenuItem.Name = "bubbleSortToolStripMenuItem";
+            bubbleSortToolStripMenuItem.Size = new Size(224, 26);
+            bubbleSortToolStripMenuItem.Text = "Bubble Sort";
+            // 
+            // cocktailSortToolStripMenuItem
+            // 
+            cocktailSortToolStripMenuItem.Name = "cocktailSortToolStripMenuItem";
+            cocktailSortToolStripMenuItem.Size = new Size(224, 26);
+            cocktailSortToolStripMenuItem.Text = "Cocktail Sort";
+            // 
+            // combSortToolStripMenuItem
+            // 
+            combSortToolStripMenuItem.Name = "combSortToolStripMenuItem";
+            combSortToolStripMenuItem.Size = new Size(224, 26);
+            combSortToolStripMenuItem.Text = "Comb Sort";
+            // 
+            // countingSortToolStripMenuItem
+            // 
+            countingSortToolStripMenuItem.Name = "countingSortToolStripMenuItem";
+            countingSortToolStripMenuItem.Size = new Size(224, 26);
+            countingSortToolStripMenuItem.Text = "Counting Sort";
+            // 
+            // gnomeSortToolStripMenuItem
+            // 
+            gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
+            gnomeSortToolStripMenuItem.Size = new Size(224, 26);
+            gnomeSortToolStripMenuItem.Text = "Gnome Sort";
+            // 
+            // heapSortToolStripMenuItem
+            // 
+            heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
+            heapSortToolStripMenuItem.Size = new Size(224, 26);
+            heapSortToolStripMenuItem.Text = "Heap Sort";
+            // 
+            // insertionSortToolStripMenuItem
+            // 
+            insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
+            insertionSortToolStripMenuItem.Size = new Size(224, 26);
+            insertionSortToolStripMenuItem.Text = "Insertion Sort";
+            // 
+            // mergeSortToolStripMenuItem
+            // 
+            mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
+            mergeSortToolStripMenuItem.Size = new Size(224, 26);
+            mergeSortToolStripMenuItem.Text = "Merge Sort";
+            // 
+            // pigeoholeToolStripMenuItem
+            // 
+            pigeoholeToolStripMenuItem.Name = "pigeoholeToolStripMenuItem";
+            pigeoholeToolStripMenuItem.Size = new Size(224, 26);
+            pigeoholeToolStripMenuItem.Text = "Pigeohole";
+            // 
+            // quickSortToolStripMenuItem
+            // 
+            quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
+            quickSortToolStripMenuItem.Size = new Size(224, 26);
+            quickSortToolStripMenuItem.Text = "Quick Sort";
+            // 
+            // radixSortToolStripMenuItem
+            // 
+            radixSortToolStripMenuItem.Name = "radixSortToolStripMenuItem";
+            radixSortToolStripMenuItem.Size = new Size(224, 26);
+            radixSortToolStripMenuItem.Text = "Radix Sort";
+            // 
+            // selectionSortToolStripMenuItem
+            // 
+            selectionSortToolStripMenuItem.Name = "selectionSortToolStripMenuItem";
+            selectionSortToolStripMenuItem.Size = new Size(224, 26);
+            selectionSortToolStripMenuItem.Text = "Selection Sort";
+            // 
+            // shellSortToolStripMenuItem
+            // 
+            shellSortToolStripMenuItem.Name = "shellSortToolStripMenuItem";
+            shellSortToolStripMenuItem.Size = new Size(224, 26);
+            shellSortToolStripMenuItem.Text = "Shell Sort";
+            // 
+            // smoothSortToolStripMenuItem
+            // 
+            smoothSortToolStripMenuItem.Name = "smoothSortToolStripMenuItem";
+            smoothSortToolStripMenuItem.Size = new Size(224, 26);
+            smoothSortToolStripMenuItem.Text = "Smooth Sort";
             // 
             // Form1
             // 
@@ -1168,7 +1276,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1127, 527);
-            Controls.Add(panel1);
+            Controls.Add(pnlAlgorithmsOfSorting);
             Controls.Add(pnlGraph);
             Controls.Add(pnlTree);
             Controls.Add(pnlQueues);
@@ -1205,8 +1313,8 @@
             pnlTree.PerformLayout();
             pnlGraph.ResumeLayout(false);
             pnlGraph.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlAlgorithmsOfSorting.ResumeLayout(false);
+            pnlAlgorithmsOfSorting.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1308,7 +1416,7 @@
         private GroupBox gbxQueueCircularM;
         private Label lblQueue;
         private ToolStripMenuItem sortingAlgorithmsToolStripMenuItem;
-        private Panel panel1;
+        private Panel pnlAlgorithmsOfSorting;
         private Label label16;
         private ListBox lsbAlgorithmSorting;
         private Button button1;
@@ -1319,5 +1427,20 @@
         private Button btnCantOfItemsAlgorithms;
         private Label label18;
         private TextBox txtMaximumRangeAlgorithms;
+        private ToolStripMenuItem binaryTreeSortToolStripMenuItem;
+        private ToolStripMenuItem bubbleSortToolStripMenuItem;
+        private ToolStripMenuItem cocktailSortToolStripMenuItem;
+        private ToolStripMenuItem combSortToolStripMenuItem;
+        private ToolStripMenuItem countingSortToolStripMenuItem;
+        private ToolStripMenuItem gnomeSortToolStripMenuItem;
+        private ToolStripMenuItem heapSortToolStripMenuItem;
+        private ToolStripMenuItem insertionSortToolStripMenuItem;
+        private ToolStripMenuItem mergeSortToolStripMenuItem;
+        private ToolStripMenuItem pigeoholeToolStripMenuItem;
+        private ToolStripMenuItem quickSortToolStripMenuItem;
+        private ToolStripMenuItem radixSortToolStripMenuItem;
+        private ToolStripMenuItem selectionSortToolStripMenuItem;
+        private ToolStripMenuItem shellSortToolStripMenuItem;
+        private ToolStripMenuItem smoothSortToolStripMenuItem;
     }
 }

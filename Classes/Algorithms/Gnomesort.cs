@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Gnomesort : ImethodAlgorithms
+    public class Gnomesort : ImethodAlgorithms
     {
         public Gnomesort() { }
 

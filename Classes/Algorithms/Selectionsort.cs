@@ -2,7 +2,7 @@
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Selectionsort : ImethodAlgorithms
+    public class Selectionsort : ImethodAlgorithms
     {
         public Selectionsort() { }
 

@@ -665,6 +665,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 lsbAlgorithmSorting.Items.Add("Unordered array: " + "[ " + string.Join(", ", arr) + " ]");
                 DateTime startTime = DateTime.Now;
                 algorithm.Sort(arr);
+                lsbAlgorithmSorting.Items.Add("[" + string.Join(", ", arr) + "]\r\n");
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 Console.WriteLine("Time: " + (DateTime.Now - startTime));
             }
@@ -675,9 +676,25 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 lsbAlgorithmSorting.Items.Add("Unordered array: " + "[ " + string.Join(", ", arr) + " ]");
                 DateTime startTime = DateTime.Now;
                 algorithm.Sort(arr);
+                lsbAlgorithmSorting.Items.Add("[" + string.Join(", ", arr) + "]\r\n");
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 Console.WriteLine("Time: " + (DateTime.Now - startTime));
             }
+        }
+
+        private void sortingAlgorithmsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlGraph.Visible = false;
+            pnlLists.Visible = false;
+            pnlQueues.Visible = false;
+            pnlStacks.Visible = false;
+            pnlTree.Visible = false;
+            pnlAlgorithmsOfSorting.Visible = true;
+        }
+
+        private void binaryTreeSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = Binarytreesort();
         }
     }
 }

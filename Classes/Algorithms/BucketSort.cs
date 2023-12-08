@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class BucketSort : ImethodAlgorithms
+    public class BucketSort : ImethodAlgorithms
     {
 
         public BucketSort() { }

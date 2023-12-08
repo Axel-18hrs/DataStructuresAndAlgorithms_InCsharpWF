@@ -2,7 +2,7 @@
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Countingsort : ImethodAlgorithms
+    public class Countingsort : ImethodAlgorithms
     {
         public Countingsort() { }
 

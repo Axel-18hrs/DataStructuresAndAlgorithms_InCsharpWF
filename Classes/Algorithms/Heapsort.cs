@@ -2,7 +2,7 @@
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Heapsort : ImethodAlgorithms
+    public class Heapsort : ImethodAlgorithms
     {
         public Heapsort() { }
 

@@ -3,7 +3,7 @@ using System;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Insertionsort : ImethodAlgorithms
+    public class Insertionsort : ImethodAlgorithms
     {
         public Insertionsort() { }
 

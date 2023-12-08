@@ -3,7 +3,7 @@ using System;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Pigeonhole : ImethodAlgorithms
+    public class Pigeonhole : ImethodAlgorithms
     {
         public Pigeonhole() { }
 

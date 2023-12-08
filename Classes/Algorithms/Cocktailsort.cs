@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Cocktailsort : ImethodAlgorithms
+    public class Cocktailsort : ImethodAlgorithms
     {
         public Cocktailsort() { }
 

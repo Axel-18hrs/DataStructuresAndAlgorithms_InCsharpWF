@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class QuickSort : ImethodAlgorithms
+    public class QuickSort : ImethodAlgorithms
     {
         private static Random _Random = new Random();
 
@@ -95,14 +95,9 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             }
         }
 
-        public void Print(ref int[] arr)
+        public string Print(ref int[] arr)
         {
-            Quicksort(ref arr, 0, arr.Length - 1);
-            Console.Write("\nResult: [ " + string.Join(", ", arr) + " ]");
-            Console.WriteLine("\nSwaps: " + _ContainExchange + "\nPartitions: " + _ContainPartition + "\nRecursion: " + _ContainRecursive);
-            _ContainExchange = 0;
-            _ContainPartition = 0;
-            _ContainRecursive = 0;
+            return "\nResult: [ " + string.Join(", ", arr) + " ]" + "\nSwaps: " + _ContainExchange + "\nPartitions: " + _ContainPartition + "\nRecursion: " + _ContainRecursive;
         }
 
         private void PrintSwap(ref int[] array, int Left, int Right)

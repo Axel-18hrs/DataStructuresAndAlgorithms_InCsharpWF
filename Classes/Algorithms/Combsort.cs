@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Combsort : ImethodAlgorithms
+    public class Combsort : ImethodAlgorithms
     {
         public Combsort() { }
 

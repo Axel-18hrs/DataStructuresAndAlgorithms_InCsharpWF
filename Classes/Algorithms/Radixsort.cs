@@ -2,7 +2,7 @@
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Radixsort : ImethodAlgorithms
+    public class Radixsort : ImethodAlgorithms
     {
         public Radixsort() { }
 

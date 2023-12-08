@@ -2,7 +2,7 @@
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class BubbleSort : ImethodAlgorithms
+    public class BubbleSort : ImethodAlgorithms
     {
         public BubbleSort() { }
 

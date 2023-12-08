@@ -3,7 +3,7 @@ using System;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Mergesort : ImethodAlgorithms
+    public class Mergesort : ImethodAlgorithms
     {
         public Mergesort() { }
 

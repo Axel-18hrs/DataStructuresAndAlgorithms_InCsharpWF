@@ -3,7 +3,7 @@ using System;
 
 namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
-    internal class Shellsort : ImethodAlgorithms
+    public class Shellsort : ImethodAlgorithms
     {
         public Shellsort() { }
 
