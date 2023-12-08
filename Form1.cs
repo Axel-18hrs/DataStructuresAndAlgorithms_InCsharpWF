@@ -662,24 +662,20 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             {
                 double[] arr = OperationsAlgorithm.GenerarVectorDouble(minon, length, values);
 
-                Console.WriteLine("\nUnordered array: ");
-                Console.Write("[ " + string.Join(", ", arr) + " ]");
+                lsbAlgorithmSorting.Items.Add("Unordered array: " + "[ " + string.Join(", ", arr) + " ]");
                 DateTime startTime = DateTime.Now;
                 algorithm.Sort(arr);
-                Console.WriteLine("\nSorted array: ");
-                Console.WriteLine("[ " + string.Join(", ", arr) + " ]");
+                lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 Console.WriteLine("Time: " + (DateTime.Now - startTime));
             }
             else
             {
                 int[] arr = OperationsAlgorithm.GenerarVector(minon, length, values);
 
-                Console.WriteLine("\nUnordered array: ");
-                Console.Write("[ " + string.Join(", ", arr) + " ]");
+                lsbAlgorithmSorting.Items.Add("Unordered array: " + "[ " + string.Join(", ", arr) + " ]");
                 DateTime startTime = DateTime.Now;
                 algorithm.Sort(arr);
-                Console.WriteLine("\nSorted array: ");
-                Console.WriteLine("[ " + string.Join(", ", arr) + " ]");
+                lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 Console.WriteLine("Time: " + (DateTime.Now - startTime));
             }
         }
