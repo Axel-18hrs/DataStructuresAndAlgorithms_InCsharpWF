@@ -1,11 +1,16 @@
+using DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Graphs;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Lists;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Nodes;
+using DataStructuresAndAlgorithms_InCSharp.Classes.Operations;
+using DataStructuresAndAlgorithms_InCSharp.Classes.Operations.Algorithms;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Queues;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Stacks;
 using DataStructuresAndAlgorithms_InCSharp.Classes.Tree;
 using DataStructuresAndAlgorithms_InCSharp.Interfaces;
+using DataStructuresAndAlgorithms_InCSharp.Interfaces.Algorithms;
 using Listas.Interfaces;
+using System.Security.Cryptography;
 
 namespace DataStructuresAndAlgorithms_InCsharpWF
 {
@@ -14,6 +19,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         private ImethodLists<object> list;
         private ImethodStacks<object> stacks;
         private ImethodQueues<object> queues;
+        private ImethodAlgorithms algorithm;
         private BinaryTree tree;
         private Graph<object> graph;
         public Form1()
@@ -630,7 +636,52 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnCantOfItemsAlgorithms_Click(object sender, EventArgs e)
         {
+            Console.Clear();
+            Console.WriteLine("Enter the minimum range from which you want to generate your unordered array:");
+            if (!int.TryParse(txtMinimumRangeAlgorithms.Text, out int minon))
+            {
+                OperationsList.Deffault();
+                return;
+            }
 
+            Console.WriteLine("\nEnter the maximum range or limit where you want to generate your unordered array:");
+            if (!int.TryParse(txtMaximumRangeAlgorithms.Text, out int length))
+            {
+                OperationsList.Deffault();
+                return;
+            }
+
+            Console.WriteLine("\nEnter the number of values you want in your array:");
+            if (!int.TryParse(txtNumbersOfItemstoOrder.Text, out int values))
+            {
+                OperationsList.Deffault();
+                return;
+            }
+
+            if (algorithm is BucketSort)
+            {
+                double[] arr = OperationsAlgorithm.GenerarVectorDouble(minon, length, values);
+
+                Console.WriteLine("\nUnordered array: ");
+                Console.Write("[ " + string.Join(", ", arr) + " ]");
+                DateTime startTime = DateTime.Now;
+                algorithm.Sort(arr);
+                Console.WriteLine("\nSorted array: ");
+                Console.WriteLine("[ " + string.Join(", ", arr) + " ]");
+                Console.WriteLine("Time: " + (DateTime.Now - startTime));
+            }
+            else
+            {
+                int[] arr = OperationsAlgorithm.GenerarVector(minon, length, values);
+
+                Console.WriteLine("\nUnordered array: ");
+                Console.Write("[ " + string.Join(", ", arr) + " ]");
+                DateTime startTime = DateTime.Now;
+                algorithm.Sort(arr);
+                Console.WriteLine("\nSorted array: ");
+                Console.WriteLine("[ " + string.Join(", ", arr) + " ]");
+                Console.WriteLine("Time: " + (DateTime.Now - startTime));
+            }
         }
     }
 }
