@@ -69,6 +69,7 @@
             txtLengthStacks = new TextBox();
             lsbStacks = new ListBox();
             pnlQueues = new Panel();
+            lblQueue = new Label();
             gbxQueueCircularM = new GroupBox();
             btnPeekQ = new Button();
             btnDequeue = new Button();
@@ -121,7 +122,17 @@
             txtNumberGraph = new TextBox();
             label8 = new Label();
             lsbGraph = new ListBox();
-            lblQueue = new Label();
+            sortingAlgorithmsToolStripMenuItem = new ToolStripMenuItem();
+            panel1 = new Panel();
+            label15 = new Label();
+            txtNumbersOfItemstoOrder = new TextBox();
+            label16 = new Label();
+            lsbAlgorithmSorting = new ListBox();
+            label17 = new Label();
+            txtMinimumRangeAlgorithms = new TextBox();
+            btnCantOfItemsAlgorithms = new Button();
+            label18 = new Label();
+            txtMaximumRangeAlgorithms = new TextBox();
             menuStrip1.SuspendLayout();
             pnlLists.SuspendLayout();
             pnlStacks.SuspendLayout();
@@ -134,22 +145,23 @@
             gbxPriorityQue.SuspendLayout();
             pnlTree.SuspendLayout();
             pnlGraph.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblBeggininMessage
             // 
             lblBeggininMessage.AutoSize = true;
             lblBeggininMessage.Font = new Font("Yu Gothic UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBeggininMessage.Location = new Point(385, 153);
+            lblBeggininMessage.Location = new Point(224, 168);
             lblBeggininMessage.Name = "lblBeggininMessage";
-            lblBeggininMessage.Size = new Size(329, 60);
+            lblBeggininMessage.Size = new Size(652, 60);
             lblBeggininMessage.TabIndex = 11;
-            lblBeggininMessage.Text = "Data structures";
+            lblBeggininMessage.Text = "Data structures and Algorithms";
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { listsToolStripMenuItem, stacksToolStripMenuItem, queuesToolStripMenuItem, treesToolStripMenuItem, graphsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { listsToolStripMenuItem, stacksToolStripMenuItem, queuesToolStripMenuItem, treesToolStripMenuItem, graphsToolStripMenuItem, sortingAlgorithmsToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1127, 28);
@@ -224,28 +236,28 @@
             // regularQueueToolStripMenuItem
             // 
             regularQueueToolStripMenuItem.Name = "regularQueueToolStripMenuItem";
-            regularQueueToolStripMenuItem.Size = new Size(224, 26);
+            regularQueueToolStripMenuItem.Size = new Size(190, 26);
             regularQueueToolStripMenuItem.Text = "Regular Queue";
             regularQueueToolStripMenuItem.Click += regularQueueToolStripMenuItem_Click;
             // 
             // doubleQueueToolStripMenuItem
             // 
             doubleQueueToolStripMenuItem.Name = "doubleQueueToolStripMenuItem";
-            doubleQueueToolStripMenuItem.Size = new Size(224, 26);
+            doubleQueueToolStripMenuItem.Size = new Size(190, 26);
             doubleQueueToolStripMenuItem.Text = "Double Queue";
             doubleQueueToolStripMenuItem.Click += doubleQueueToolStripMenuItem_Click;
             // 
             // priorityQueueToolStripMenuItem
             // 
             priorityQueueToolStripMenuItem.Name = "priorityQueueToolStripMenuItem";
-            priorityQueueToolStripMenuItem.Size = new Size(224, 26);
+            priorityQueueToolStripMenuItem.Size = new Size(190, 26);
             priorityQueueToolStripMenuItem.Text = "Priority Queue";
             priorityQueueToolStripMenuItem.Click += priorityQueueToolStripMenuItem_Click;
             // 
             // circularQueueToolStripMenuItem
             // 
             circularQueueToolStripMenuItem.Name = "circularQueueToolStripMenuItem";
-            circularQueueToolStripMenuItem.Size = new Size(224, 26);
+            circularQueueToolStripMenuItem.Size = new Size(190, 26);
             circularQueueToolStripMenuItem.Text = "Circular Queue";
             circularQueueToolStripMenuItem.Click += circularQueueToolStripMenuItem_Click;
             // 
@@ -273,9 +285,9 @@
             pnlLists.Controls.Add(btnSend);
             pnlLists.Controls.Add(lblNumbers);
             pnlLists.Controls.Add(txtNumbers);
-            pnlLists.Location = new Point(2, 31);
+            pnlLists.Location = new Point(0, 31);
             pnlLists.Name = "pnlLists";
-            pnlLists.Size = new Size(1125, 498);
+            pnlLists.Size = new Size(1127, 498);
             pnlLists.TabIndex = 13;
             pnlLists.Visible = false;
             // 
@@ -362,9 +374,9 @@
             pnlStacks.Controls.Add(gbxMenuStackAll);
             pnlStacks.Controls.Add(gbxMenuStatickStack);
             pnlStacks.Controls.Add(lsbStacks);
-            pnlStacks.Location = new Point(0, 31);
+            pnlStacks.Location = new Point(3, 34);
             pnlStacks.Name = "pnlStacks";
-            pnlStacks.Size = new Size(1127, 498);
+            pnlStacks.Size = new Size(1124, 495);
             pnlStacks.TabIndex = 14;
             // 
             // gbxMenuStackAll
@@ -494,11 +506,21 @@
             pnlQueues.Controls.Add(gbxCircularQLenght);
             pnlQueues.Controls.Add(gbxPriorityQue);
             pnlQueues.Controls.Add(lsbQueues);
-            pnlQueues.Location = new Point(0, 31);
+            pnlQueues.Location = new Point(0, 37);
             pnlQueues.Name = "pnlQueues";
-            pnlQueues.Size = new Size(1127, 495);
+            pnlQueues.Size = new Size(1127, 489);
             pnlQueues.TabIndex = 15;
             pnlQueues.Paint += pnlQueues_Paint;
+            // 
+            // lblQueue
+            // 
+            lblQueue.AutoSize = true;
+            lblQueue.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblQueue.Location = new Point(594, 32);
+            lblQueue.Name = "lblQueue";
+            lblQueue.Size = new Size(84, 26);
+            lblQueue.TabIndex = 63;
+            lblQueue.Text = "Queue";
             // 
             // gbxQueueCircularM
             // 
@@ -694,9 +716,9 @@
             pnlTree.Controls.Add(btnAdd);
             pnlTree.Controls.Add(label4);
             pnlTree.Controls.Add(txtNumberBinaryTree);
-            pnlTree.Location = new Point(0, 31);
+            pnlTree.Location = new Point(0, 34);
             pnlTree.Name = "pnlTree";
-            pnlTree.Size = new Size(1134, 498);
+            pnlTree.Size = new Size(1134, 495);
             pnlTree.TabIndex = 16;
             pnlTree.Paint += pnlTree_Paint;
             // 
@@ -1036,15 +1058,109 @@
             lsbGraph.Size = new Size(295, 284);
             lsbGraph.TabIndex = 44;
             // 
-            // lblQueue
+            // sortingAlgorithmsToolStripMenuItem
             // 
-            lblQueue.AutoSize = true;
-            lblQueue.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblQueue.Location = new Point(594, 32);
-            lblQueue.Name = "lblQueue";
-            lblQueue.Size = new Size(84, 26);
-            lblQueue.TabIndex = 63;
-            lblQueue.Text = "Queue";
+            sortingAlgorithmsToolStripMenuItem.Name = "sortingAlgorithmsToolStripMenuItem";
+            sortingAlgorithmsToolStripMenuItem.Size = new Size(148, 24);
+            sortingAlgorithmsToolStripMenuItem.Text = "Sorting Algorithms";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(txtMaximumRangeAlgorithms);
+            panel1.Controls.Add(label17);
+            panel1.Controls.Add(txtMinimumRangeAlgorithms);
+            panel1.Controls.Add(label16);
+            panel1.Controls.Add(lsbAlgorithmSorting);
+            panel1.Controls.Add(btnCantOfItemsAlgorithms);
+            panel1.Controls.Add(label15);
+            panel1.Controls.Add(txtNumbersOfItemstoOrder);
+            panel1.Location = new Point(0, 31);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1134, 498);
+            panel1.TabIndex = 18;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(86, 65);
+            label15.Name = "label15";
+            label15.Size = new Size(179, 20);
+            label15.TabIndex = 61;
+            label15.Text = "Number of items to order";
+            // 
+            // txtNumbersOfItemstoOrder
+            // 
+            txtNumbersOfItemstoOrder.ImeMode = ImeMode.NoControl;
+            txtNumbersOfItemstoOrder.Location = new Point(86, 88);
+            txtNumbersOfItemstoOrder.Name = "txtNumbersOfItemstoOrder";
+            txtNumbersOfItemstoOrder.Size = new Size(253, 27);
+            txtNumbersOfItemstoOrder.TabIndex = 60;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Lucida Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(725, 37);
+            label16.Name = "label16";
+            label16.Size = new Size(127, 26);
+            label16.TabIndex = 65;
+            label16.Text = "Algorithm";
+            // 
+            // lsbAlgorithmSorting
+            // 
+            lsbAlgorithmSorting.Font = new Font("Segoe UI", 12F);
+            lsbAlgorithmSorting.FormattingEnabled = true;
+            lsbAlgorithmSorting.ItemHeight = 28;
+            lsbAlgorithmSorting.Location = new Point(553, 72);
+            lsbAlgorithmSorting.Margin = new Padding(3, 4, 3, 4);
+            lsbAlgorithmSorting.Name = "lsbAlgorithmSorting";
+            lsbAlgorithmSorting.Size = new Size(470, 368);
+            lsbAlgorithmSorting.TabIndex = 64;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(86, 137);
+            label17.Name = "label17";
+            label17.Size = new Size(114, 20);
+            label17.TabIndex = 67;
+            label17.Text = "Minimum range";
+            // 
+            // txtMinimumRangeAlgorithms
+            // 
+            txtMinimumRangeAlgorithms.ImeMode = ImeMode.NoControl;
+            txtMinimumRangeAlgorithms.Location = new Point(86, 160);
+            txtMinimumRangeAlgorithms.Name = "txtMinimumRangeAlgorithms";
+            txtMinimumRangeAlgorithms.Size = new Size(253, 27);
+            txtMinimumRangeAlgorithms.TabIndex = 66;
+            // 
+            // btnCantOfItemsAlgorithms
+            // 
+            btnCantOfItemsAlgorithms.Location = new Point(86, 295);
+            btnCantOfItemsAlgorithms.Name = "btnCantOfItemsAlgorithms";
+            btnCantOfItemsAlgorithms.Size = new Size(159, 40);
+            btnCantOfItemsAlgorithms.TabIndex = 62;
+            btnCantOfItemsAlgorithms.Text = "Add";
+            btnCantOfItemsAlgorithms.UseVisualStyleBackColor = true;
+            btnCantOfItemsAlgorithms.Click += btnCantOfItemsAlgorithms_Click;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(86, 213);
+            label18.Name = "label18";
+            label18.Size = new Size(117, 20);
+            label18.TabIndex = 69;
+            label18.Text = "Maximum range";
+            // 
+            // txtMaximumRangeAlgorithms
+            // 
+            txtMaximumRangeAlgorithms.ImeMode = ImeMode.NoControl;
+            txtMaximumRangeAlgorithms.Location = new Point(86, 236);
+            txtMaximumRangeAlgorithms.Name = "txtMaximumRangeAlgorithms";
+            txtMaximumRangeAlgorithms.Size = new Size(253, 27);
+            txtMaximumRangeAlgorithms.TabIndex = 68;
             // 
             // Form1
             // 
@@ -1052,6 +1168,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1127, 527);
+            Controls.Add(panel1);
             Controls.Add(pnlGraph);
             Controls.Add(pnlTree);
             Controls.Add(pnlQueues);
@@ -1088,6 +1205,8 @@
             pnlTree.PerformLayout();
             pnlGraph.ResumeLayout(false);
             pnlGraph.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1188,5 +1307,17 @@
         private Button btnStartQu;
         private GroupBox gbxQueueCircularM;
         private Label lblQueue;
+        private ToolStripMenuItem sortingAlgorithmsToolStripMenuItem;
+        private Panel panel1;
+        private Label label16;
+        private ListBox lsbAlgorithmSorting;
+        private Button button1;
+        private Label label15;
+        private TextBox txtNumbersOfItemstoOrder;
+        private Label label17;
+        private TextBox txtMinimumRangeAlgorithms;
+        private Button btnCantOfItemsAlgorithms;
+        private Label label18;
+        private TextBox txtMaximumRangeAlgorithms;
     }
 }

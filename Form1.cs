@@ -26,6 +26,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlGraph.Visible = false;
             gbxCircularQ.Visible = false;
             gbxPriorityQue.Visible = false;
+            lblBeggininMessage.Text = "Data structures and algorithms";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -625,6 +626,11 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             gbxCircularQ.Visible = false;
             gbxQueueCircularM.Visible = true;
             queues = new CircularQueue<object>(num);
+        }
+
+        private void btnCantOfItemsAlgorithms_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
