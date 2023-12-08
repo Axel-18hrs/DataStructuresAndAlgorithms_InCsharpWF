@@ -694,7 +694,27 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void binaryTreeSortToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            algorithm = Binarytreesort();
+            algorithm = new BinaryTreeSort();
+        }
+
+        private void bubbleSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new BubbleSort();
+        }
+
+        private void cocktailSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new BucketSort();
+        }
+
+        private void combSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Cocktailsort();
+        }
+
+        private void countingSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            algorithm = new Countingsort();
         }
     }
 }

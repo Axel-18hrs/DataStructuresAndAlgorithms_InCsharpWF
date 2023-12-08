@@ -14,9 +14,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
         }
     }
 
-    public class Binarytreesort : ImethodAlgorithms
+    public class BinaryTreeSort : ImethodAlgorithms
     {
-        public Binarytreesort() { }
+        public BinaryTreeSort() 
+        { 
+            
+        }
 
         private BinarytreeNode root;
 
