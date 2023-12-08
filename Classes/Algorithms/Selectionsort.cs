@@ -4,9 +4,22 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Selectionsort : ImethodAlgorithms
     {
+        private int iterations = 0;
+
         public Selectionsort() { }
 
-        public void Sort(int[] arr)
+        public void Sort(int[] arr, ListBox listBX)
+        {
+            SelectionSortAlgorithm(arr, listBX);
+            ShowIterations(listBX);
+        }
+
+        public void Sort(double[] arr)
+        {
+            // Implementación para ordenar un array de doubles
+        }
+
+        private void SelectionSortAlgorithm(int[] arr, ListBox listBX)
         {
             int n = arr.Length;
 
@@ -20,16 +33,14 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                     {
                         minIndex = j;
                     }
+                    iterations++; // Incrementar el número de iteraciones
+                    PrintArray(arr, listBX);
                 }
 
                 // Intercambiar el mínimo encontrado con el primer elemento del subarreglo no ordenado
                 Swap(ref arr[i], ref arr[minIndex]);
+                PrintArray(arr, listBX);
             }
-        }
-
-        public void Sort(double[] arr)
-        {
-
         }
 
         private static void Swap(ref int a, ref int b)
@@ -39,12 +50,22 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             b = temp;
         }
 
-        public void Sort(int[] array, ListBox listBX)
+        private void PrintArray(int[] array, ListBox listBX)
+        {
+            listBX.Items.Add("[ " + string.Join(", ", array) + " ]");
+        }
+
+        private void ShowIterations(ListBox listBX)
+        {
+            listBX.Items.Add($"Number of iterations: {iterations}");
+        }
+
+        public void Sort(double[] array, ListBox listBX)
         {
             throw new NotImplementedException();
         }
 
-        public void Sort(double[] array, ListBox listBX)
+        public void Sort(int[] array)
         {
             throw new NotImplementedException();
         }

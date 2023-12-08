@@ -671,7 +671,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
-            if (algorithm is Countingsort && minon < 0 )
+            if (algorithm is Countingsort || algorithm is Radixsort && minon < 0 )
             {
                 MessageBox.Show("Only numbers positives", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

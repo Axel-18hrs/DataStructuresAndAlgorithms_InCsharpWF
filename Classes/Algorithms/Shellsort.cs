@@ -5,81 +5,83 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Shellsort : ImethodAlgorithms
     {
+        private int iterations = 0;
+
         public Shellsort() { }
 
-        public void Sort(int[] arr) 
-        { 
-            ShellSort(arr);
+        public void Sort(int[] arr, ListBox listBX)
+        {
+            ShellSort(arr, listBX);
+            listBX.Items.Add($"Number of iterations: {iterations}");
         }
 
         public void Sort(double[] arr)
         {
-
+            // Implementation for sorting an array of doubles
         }
 
-        public void ShellSort(int[] array)
+        public void ShellSort(int[] array, ListBox listBX = null)
         {
-            // se obtiene la longitud del array
+            // Get the length of the array
             int n = array.Length;
-            // se obtiene el tamaño de espacio entre elementos
+            // Get the gap size between elements
             int gap = n / 2;
 
-            Console.WriteLine("\nInicio del algoritmo Shell Sort:");
+            Console.WriteLine("\nStart of Shell Sort algorithm:");
 
-            // Mientras el espacio entre elementos sea mayor que 0
+            // While the gap between elements is greater than 0
             while (gap > 0)
             {
-                Console.WriteLine($"\nGap actual: {gap}");
+                Console.WriteLine($"\nCurrent Gap: {gap}");
 
-                // Aplicar el algoritmo de inserción para cada "subarray" con el tamaño de gap
+                // Apply the insertion algorithm for each "subarray" with the gap size
                 for (int i = gap; i < n; i++)
                 {
-                    // Guardar el valor actual del elemento en una variable temporal
+                    // Save the current value of the element in a temporary variable
                     int temp = array[i];
                     int j = i;
 
-                    Console.WriteLine($"\nComparando {temp} con los elementos en su subarray:");
+                    Console.WriteLine($"\nComparing {temp} with the elements in its subarray:");
 
-                    // Realizar la inserción
+                    // Perform the insertion
                     while (j >= gap && array[j - gap] > temp)
                     {
-                        // Desplazar elementos hacia la derecha hasta encontrar la posición correcta
+                        // Shift elements to the right until finding the correct position
                         array[j] = array[j - gap];
                         j -= gap;
-
-                        PrintArray(array);
+                        listBX?.Items.Add("[ " + string.Join(", ", array) + " ]");
+                        iterations++; // Increment the number of iterations
                     }
 
-                    // Colocar el valor temporal en la posición correcta en el subarray
+                    // Place the temporary value in the correct position in the subarray
                     array[j] = temp;
-                    Console.WriteLine($"Insertar {temp} en la posición {j} del subarray:");
-                    PrintArray(array);
+                    Console.WriteLine($"Insert {temp} at position {j} in the subarray:");
+
+                    if (listBX != null)
+                    {
+                        listBX.Items.Add("[ " + string.Join(", ", array) + " ]");
+                    }
+
+                    iterations++; // Increment the number of iterations
                 }
 
-                // Reducir el espacio entre elementos a la mitad en cada iteración
+                // Reduce the gap between elements by half in each iteration
                 gap /= 2;
             }
 
-            Console.WriteLine("\nFin del algoritmo Shell Sort:");
-        }
-
-        private void PrintArray(int[] array)
-        {
-            foreach (var num in array)
-            {
-                Console.Write(num + " ");
-            }
-            Console.WriteLine();
-        }
-
-        public void Sort(int[] array, ListBox listBX)
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("\nEnd of Shell Sort algorithm:");
         }
 
         public void Sort(double[] array, ListBox listBX)
         {
             throw new NotImplementedException();
         }
+
+        public void Sort(int[] array)
+        {
+            throw new NotImplementedException();
+        }
     }
+
+
 }

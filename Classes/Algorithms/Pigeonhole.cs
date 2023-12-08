@@ -5,19 +5,22 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Pigeonhole : ImethodAlgorithms
     {
+        private static int iterations = 0;
+
         public Pigeonhole() { }
 
-        public void Sort(int[] arr)
+        public void Sort(int[] arr, ListBox listBX)
         {
-            PigeonholeSort(arr);
+            PigeonholeSort(arr, listBX);
+            listBX.Items.Add($"Number of iterations: {iterations}");
         }
-        
+
         public void Sort(double[] arr)
         {
-
+            // Implementación para ordenar un array de doubles
         }
 
-        public void PigeonholeSort(int[] arr)
+        public void PigeonholeSort(int[] arr, ListBox listBX)
         {
             int min = arr[0];
             int max = arr[0];
@@ -43,18 +46,27 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             index = 0;
 
             for (j = 0; j < range; j++)
+            {
                 while (pigeonholes[j]-- > 0)
+                {
                     arr[index++] = j + min;
-        }
 
-        public void Sort(int[] array, ListBox listBX)
-        {
-            throw new NotImplementedException();
+                    // Imprimir el arreglo completo en cada iteración
+                    listBX.Items.Add("[ " + string.Join(", ", arr) + " ]");
+                    iterations++; // Incrementa el número de iteraciones
+                }
+            }
         }
 
         public void Sort(double[] array, ListBox listBX)
         {
             throw new NotImplementedException();
         }
+
+        public void Sort(int[] array)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }
