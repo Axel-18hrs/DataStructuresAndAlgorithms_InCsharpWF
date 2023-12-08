@@ -353,7 +353,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlStacks.Visible = false;
             pnlTree.Visible = true;
             pnlAlgorithmsOfSorting.Visible = false;
-            pnlGraph.Visible = false
+            pnlGraph.Visible = false;
             tree = new BinaryTree();
 
         }

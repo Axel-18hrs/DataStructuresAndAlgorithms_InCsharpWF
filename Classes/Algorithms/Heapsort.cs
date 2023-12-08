@@ -4,16 +4,18 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Heapsort : ImethodAlgorithms
     {
+        private static int iterations = 0;
+
         public Heapsort() { }
 
-        public void Sort(int[] arr)
+        public void Sort(int[] arr, ListBox listBX)
         {
             int n = arr.Length;
 
             // Construir un heap (montículo) máximo
             for (int i = n / 2 - 1; i >= 0; i--)
             {
-                Heapify(arr, n, i);
+                Heapify(arr, n, i, listBX);
             }
 
             // Extraer elementos uno por uno del heap
@@ -23,16 +25,21 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                 Swap(ref arr[0], ref arr[i]);
 
                 // Llamar a heapify en el subárbol reducido
-                Heapify(arr, i, 0);
+                Heapify(arr, i, 0, listBX);
+
+                // Imprimir el arreglo completo en cada intercambio
+                listBX.Items.Add("[ " + string.Join(", ", arr) + " ]");
+                iterations++; // Incrementa el número de iteraciones
             }
+            listBX.Items.Add($"Number of iterations: {iterations}");
         }
 
         public void Sort(double[] arr)
         {
-
+            // Implementación para ordenar un array de doubles
         }
 
-        private static void Heapify(int[] arr, int n, int i)
+        private static void Heapify(int[] arr, int n, int i, ListBox listBX)
         {
             int largest = i;
             int left = 2 * i + 1;
@@ -56,8 +63,13 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                 Swap(ref arr[i], ref arr[largest]);
 
                 // Recursivamente heapify el subárbol afectado
-                Heapify(arr, n, largest);
+                Heapify(arr, n, largest, listBX);
+
+                // Imprimir el arreglo completo en cada intercambio
+                listBX.Items.Add("[ " + string.Join(", ", arr) + " ]");
+                iterations++; // Incrementa el número de iteraciones
             }
+            
         }
 
         private static void Swap(ref int a, ref int b)
@@ -67,12 +79,12 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             b = temp;
         }
 
-        public void Sort(int[] array, ListBox listBX)
+        public void Sort(double[] array, ListBox listBX)
         {
             throw new NotImplementedException();
         }
 
-        public void Sort(double[] array, ListBox listBX)
+        public void Sort(int[] array)
         {
             throw new NotImplementedException();
         }

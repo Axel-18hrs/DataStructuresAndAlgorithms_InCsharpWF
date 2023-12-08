@@ -9,9 +9,11 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 {
     public class Gnomesort : ImethodAlgorithms
     {
+        private static int iterations = 0;
+
         public Gnomesort() { }
 
-        public void Sort(int[] arr)
+        public void Sort(int[] arr, ListBox listBX)
         {
             int n = arr.Length;
             int index = 0;
@@ -30,18 +32,18 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
                 {
                     Swap(ref arr[index], ref arr[index - 1]);
                     index--;
+
+                    // Imprimir el arreglo completo en cada intercambio
+                    listBX.Items.Add("[ " + string.Join(", ", arr) + " ]");
+                    iterations++; // Incrementa el número de iteraciones
                 }
             }
+            listBX.Items.Add($"Number of iterations: {iterations}");
         }
 
         public void Sort(double[] arr)
         {
-            
-        }
-
-        public void Sort(int[] array, ListBox listBX)
-        {
-            throw new NotImplementedException();
+            // Implementación para ordenar un array de doubles
         }
 
         public void Sort(double[] array, ListBox listBX)
@@ -54,6 +56,16 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             int temp = a;
             a = b;
             b = temp;
+        }
+
+        private void ShowStatistics()
+        {
+            Console.WriteLine($"Number of iterations: {iterations}");
+        }
+
+        public void Sort(int[] array)
+        {
+            throw new NotImplementedException();
         }
     }
 }
