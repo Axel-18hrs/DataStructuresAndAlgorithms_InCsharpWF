@@ -28,12 +28,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
             {
                 elements[count] = element;
                 count++;
+                return;
             }
-            else
-            {
-                Console.WriteLine("The stack is full. Cannot add more elements.");
-
-            }
+            Console.WriteLine("The stack is full. Cannot add more elements.");
+            MessageBox.Show("The stack is full. Cannot add more elements.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public T Pop()
@@ -45,11 +43,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
                 elements[count] = default(T);
                 return element;
             }
-            else
-            {
-                Console.WriteLine("The stack is empty. Cannot pop more elements.");
-                return default(T);
-            }
+
+            Console.WriteLine("The stack is empty. Cannot pop more elements.");
+            MessageBox.Show("The stack is empty. Cannot pop more elements.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return default;
         }
 
         public T Peek()
@@ -58,11 +55,10 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Stacks
             {
                 return elements[count - 1];
             }
-            else
-            {
-                Console.WriteLine("The stack is empty. No elements to peek.");
-                return default(T);
-            }
+
+            Console.WriteLine("The stack is empty. No elements to peek.");
+            MessageBox.Show("The stack is empty. No elements to peek.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return default(T);
         }
         public int Count()
         {

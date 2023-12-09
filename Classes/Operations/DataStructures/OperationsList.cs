@@ -217,8 +217,8 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Operations
 
         public static void Deffault()
         {
-            Console.WriteLine("Invalid input. Please enter a valid number.");
-            Console.ReadKey();
+            //Console.WriteLine("Invalid input. Please enter a valid number.");
+            //Console.ReadKey();
         }
     }
 }

@@ -671,11 +671,12 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
-            if (algorithm is Countingsort || algorithm is Radixsort && minon < 0 )
+            if ((algorithm is Countingsort || algorithm is Radixsort) && minon < 0 )
             {
                 MessageBox.Show("Only numbers positives", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             if (algorithm is BucketSort)
             {
                 double[] arr = OperationsAlgorithm.GenerarVectorDouble(minon, length, values);
@@ -685,6 +686,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 algorithm.Sort(arr, lsbAlgorithmSorting);
                 lsbAlgorithmSorting.Items.Add("Sorted array: " + "[ " + string.Join(", ", arr) + " ]");
                 lsbAlgorithmSorting.Items.Add("Time: " + (DateTime.Now - startTime));
+                return;
             }
             else
             {
