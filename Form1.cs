@@ -117,7 +117,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             if (!int.TryParse(txtNumbers.Text, out var age))
             {
-                MessageBox.Show("Only numbers in the Age!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Only numbers in the Numbers box!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
