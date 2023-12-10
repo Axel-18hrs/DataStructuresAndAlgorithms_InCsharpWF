@@ -195,27 +195,27 @@
             // simpleListToolStripMenuItem
             // 
             simpleListToolStripMenuItem.Name = "simpleListToolStripMenuItem";
-            simpleListToolStripMenuItem.Size = new Size(220, 26);
+            simpleListToolStripMenuItem.Size = new Size(224, 26);
             simpleListToolStripMenuItem.Text = "Simple List";
             // 
             // circularListToolStripMenuItem
             // 
             circularListToolStripMenuItem.Name = "circularListToolStripMenuItem";
-            circularListToolStripMenuItem.Size = new Size(220, 26);
+            circularListToolStripMenuItem.Size = new Size(224, 26);
             circularListToolStripMenuItem.Text = "Circular List";
             circularListToolStripMenuItem.Click += circularListToolStripMenuItem_Click;
             // 
             // doublyListToolStripMenuItem
             // 
             doublyListToolStripMenuItem.Name = "doublyListToolStripMenuItem";
-            doublyListToolStripMenuItem.Size = new Size(220, 26);
+            doublyListToolStripMenuItem.Size = new Size(224, 26);
             doublyListToolStripMenuItem.Text = "Doubly List";
             doublyListToolStripMenuItem.Click += doublyListToolStripMenuItem_Click;
             // 
             // circularDoublyListToolStripMenuItem
             // 
             circularDoublyListToolStripMenuItem.Name = "circularDoublyListToolStripMenuItem";
-            circularDoublyListToolStripMenuItem.Size = new Size(220, 26);
+            circularDoublyListToolStripMenuItem.Size = new Size(224, 26);
             circularDoublyListToolStripMenuItem.Text = "Circular Doubly List";
             circularDoublyListToolStripMenuItem.Click += circularDoublyListToolStripMenuItem_Click;
             // 
@@ -230,14 +230,14 @@
             // staticStackToolStripMenuItem
             // 
             staticStackToolStripMenuItem.Name = "staticStackToolStripMenuItem";
-            staticStackToolStripMenuItem.Size = new Size(186, 26);
+            staticStackToolStripMenuItem.Size = new Size(224, 26);
             staticStackToolStripMenuItem.Text = "Static Stack";
             staticStackToolStripMenuItem.Click += staticStackToolStripMenuItem_Click;
             // 
             // dinamicStackToolStripMenuItem
             // 
             dinamicStackToolStripMenuItem.Name = "dinamicStackToolStripMenuItem";
-            dinamicStackToolStripMenuItem.Size = new Size(186, 26);
+            dinamicStackToolStripMenuItem.Size = new Size(224, 26);
             dinamicStackToolStripMenuItem.Text = "Dinamic Stack";
             dinamicStackToolStripMenuItem.Click += dinamicStackToolStripMenuItem_Click;
             // 
@@ -252,28 +252,28 @@
             // regularQueueToolStripMenuItem
             // 
             regularQueueToolStripMenuItem.Name = "regularQueueToolStripMenuItem";
-            regularQueueToolStripMenuItem.Size = new Size(190, 26);
+            regularQueueToolStripMenuItem.Size = new Size(224, 26);
             regularQueueToolStripMenuItem.Text = "Regular Queue";
             regularQueueToolStripMenuItem.Click += regularQueueToolStripMenuItem_Click;
             // 
             // doubleQueueToolStripMenuItem
             // 
             doubleQueueToolStripMenuItem.Name = "doubleQueueToolStripMenuItem";
-            doubleQueueToolStripMenuItem.Size = new Size(190, 26);
+            doubleQueueToolStripMenuItem.Size = new Size(224, 26);
             doubleQueueToolStripMenuItem.Text = "Double Queue";
             doubleQueueToolStripMenuItem.Click += doubleQueueToolStripMenuItem_Click;
             // 
             // priorityQueueToolStripMenuItem
             // 
             priorityQueueToolStripMenuItem.Name = "priorityQueueToolStripMenuItem";
-            priorityQueueToolStripMenuItem.Size = new Size(190, 26);
+            priorityQueueToolStripMenuItem.Size = new Size(224, 26);
             priorityQueueToolStripMenuItem.Text = "Priority Queue";
             priorityQueueToolStripMenuItem.Click += priorityQueueToolStripMenuItem_Click;
             // 
             // circularQueueToolStripMenuItem
             // 
             circularQueueToolStripMenuItem.Name = "circularQueueToolStripMenuItem";
-            circularQueueToolStripMenuItem.Size = new Size(190, 26);
+            circularQueueToolStripMenuItem.Size = new Size(224, 26);
             circularQueueToolStripMenuItem.Text = "Circular Queue";
             circularQueueToolStripMenuItem.Click += circularQueueToolStripMenuItem_Click;
             // 
@@ -302,112 +302,112 @@
             // binaryTreeSortToolStripMenuItem
             // 
             binaryTreeSortToolStripMenuItem.Name = "binaryTreeSortToolStripMenuItem";
-            binaryTreeSortToolStripMenuItem.Size = new Size(196, 26);
+            binaryTreeSortToolStripMenuItem.Size = new Size(224, 26);
             binaryTreeSortToolStripMenuItem.Text = "Binary Tree Sort";
             binaryTreeSortToolStripMenuItem.Click += binaryTreeSortToolStripMenuItem_Click;
             // 
             // bubbleSortToolStripMenuItem
             // 
             bubbleSortToolStripMenuItem.Name = "bubbleSortToolStripMenuItem";
-            bubbleSortToolStripMenuItem.Size = new Size(196, 26);
+            bubbleSortToolStripMenuItem.Size = new Size(224, 26);
             bubbleSortToolStripMenuItem.Text = "Bubble Sort";
             bubbleSortToolStripMenuItem.Click += bubbleSortToolStripMenuItem_Click;
             // 
             // bucketSortToolStripMenuItem
             // 
             bucketSortToolStripMenuItem.Name = "bucketSortToolStripMenuItem";
-            bucketSortToolStripMenuItem.Size = new Size(196, 26);
+            bucketSortToolStripMenuItem.Size = new Size(224, 26);
             bucketSortToolStripMenuItem.Text = "Bucket Sort";
             bucketSortToolStripMenuItem.Click += bucketSortToolStripMenuItem_Click;
             // 
             // cocktailSortToolStripMenuItem
             // 
             cocktailSortToolStripMenuItem.Name = "cocktailSortToolStripMenuItem";
-            cocktailSortToolStripMenuItem.Size = new Size(196, 26);
+            cocktailSortToolStripMenuItem.Size = new Size(224, 26);
             cocktailSortToolStripMenuItem.Text = "Cocktail Sort";
             cocktailSortToolStripMenuItem.Click += cocktailSortToolStripMenuItem_Click;
             // 
             // combSortToolStripMenuItem
             // 
             combSortToolStripMenuItem.Name = "combSortToolStripMenuItem";
-            combSortToolStripMenuItem.Size = new Size(196, 26);
+            combSortToolStripMenuItem.Size = new Size(224, 26);
             combSortToolStripMenuItem.Text = "Comb Sort";
             combSortToolStripMenuItem.Click += combSortToolStripMenuItem_Click;
             // 
             // countingSortToolStripMenuItem
             // 
             countingSortToolStripMenuItem.Name = "countingSortToolStripMenuItem";
-            countingSortToolStripMenuItem.Size = new Size(196, 26);
+            countingSortToolStripMenuItem.Size = new Size(224, 26);
             countingSortToolStripMenuItem.Text = "Counting Sort";
             countingSortToolStripMenuItem.Click += countingSortToolStripMenuItem_Click;
             // 
             // gnomeSortToolStripMenuItem
             // 
             gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
-            gnomeSortToolStripMenuItem.Size = new Size(196, 26);
+            gnomeSortToolStripMenuItem.Size = new Size(224, 26);
             gnomeSortToolStripMenuItem.Text = "Gnome Sort";
             gnomeSortToolStripMenuItem.Click += gnomeSortToolStripMenuItem_Click;
             // 
             // heapSortToolStripMenuItem
             // 
             heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
-            heapSortToolStripMenuItem.Size = new Size(196, 26);
+            heapSortToolStripMenuItem.Size = new Size(224, 26);
             heapSortToolStripMenuItem.Text = "Heap Sort";
             heapSortToolStripMenuItem.Click += heapSortToolStripMenuItem_Click;
             // 
             // insertionSortToolStripMenuItem
             // 
             insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
-            insertionSortToolStripMenuItem.Size = new Size(196, 26);
+            insertionSortToolStripMenuItem.Size = new Size(224, 26);
             insertionSortToolStripMenuItem.Text = "Insertion Sort";
             insertionSortToolStripMenuItem.Click += insertionSortToolStripMenuItem_Click;
             // 
             // mergeSortToolStripMenuItem
             // 
             mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
-            mergeSortToolStripMenuItem.Size = new Size(196, 26);
+            mergeSortToolStripMenuItem.Size = new Size(224, 26);
             mergeSortToolStripMenuItem.Text = "Merge Sort";
             mergeSortToolStripMenuItem.Click += mergeSortToolStripMenuItem_Click;
             // 
             // pigeoholeToolStripMenuItem
             // 
             pigeoholeToolStripMenuItem.Name = "pigeoholeToolStripMenuItem";
-            pigeoholeToolStripMenuItem.Size = new Size(196, 26);
+            pigeoholeToolStripMenuItem.Size = new Size(224, 26);
             pigeoholeToolStripMenuItem.Text = "Pigeohole";
             pigeoholeToolStripMenuItem.Click += pigeoholeToolStripMenuItem_Click;
             // 
             // quickSortToolStripMenuItem
             // 
             quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
-            quickSortToolStripMenuItem.Size = new Size(196, 26);
+            quickSortToolStripMenuItem.Size = new Size(224, 26);
             quickSortToolStripMenuItem.Text = "Quick Sort";
             quickSortToolStripMenuItem.Click += quickSortToolStripMenuItem_Click;
             // 
             // radixSortToolStripMenuItem
             // 
             radixSortToolStripMenuItem.Name = "radixSortToolStripMenuItem";
-            radixSortToolStripMenuItem.Size = new Size(196, 26);
+            radixSortToolStripMenuItem.Size = new Size(224, 26);
             radixSortToolStripMenuItem.Text = "Radix Sort";
             radixSortToolStripMenuItem.Click += radixSortToolStripMenuItem_Click;
             // 
             // selectionSortToolStripMenuItem
             // 
             selectionSortToolStripMenuItem.Name = "selectionSortToolStripMenuItem";
-            selectionSortToolStripMenuItem.Size = new Size(196, 26);
+            selectionSortToolStripMenuItem.Size = new Size(224, 26);
             selectionSortToolStripMenuItem.Text = "Selection Sort";
             selectionSortToolStripMenuItem.Click += selectionSortToolStripMenuItem_Click;
             // 
             // shellSortToolStripMenuItem
             // 
             shellSortToolStripMenuItem.Name = "shellSortToolStripMenuItem";
-            shellSortToolStripMenuItem.Size = new Size(196, 26);
+            shellSortToolStripMenuItem.Size = new Size(224, 26);
             shellSortToolStripMenuItem.Text = "Shell Sort";
             shellSortToolStripMenuItem.Click += shellSortToolStripMenuItem_Click;
             // 
             // smoothSortToolStripMenuItem
             // 
             smoothSortToolStripMenuItem.Name = "smoothSortToolStripMenuItem";
-            smoothSortToolStripMenuItem.Size = new Size(196, 26);
+            smoothSortToolStripMenuItem.Size = new Size(224, 26);
             smoothSortToolStripMenuItem.Text = "Smooth Sort";
             smoothSortToolStripMenuItem.Click += smoothSortToolStripMenuItem_Click;
             // 
@@ -510,9 +510,9 @@
             pnlStacks.Controls.Add(gbxMenuStackAll);
             pnlStacks.Controls.Add(gbxMenuStatickStack);
             pnlStacks.Controls.Add(lsbStacks);
-            pnlStacks.Location = new Point(3, 34);
+            pnlStacks.Location = new Point(432, 209);
             pnlStacks.Name = "pnlStacks";
-            pnlStacks.Size = new Size(1124, 495);
+            pnlStacks.Size = new Size(695, 320);
             pnlStacks.TabIndex = 14;
             // 
             // gbxMenuStackAll
@@ -642,9 +642,9 @@
             pnlQueues.Controls.Add(gbxCircularQLenght);
             pnlQueues.Controls.Add(gbxPriorityQue);
             pnlQueues.Controls.Add(lsbQueues);
-            pnlQueues.Location = new Point(0, 37);
+            pnlQueues.Location = new Point(767, 311);
             pnlQueues.Name = "pnlQueues";
-            pnlQueues.Size = new Size(1127, 489);
+            pnlQueues.Size = new Size(360, 215);
             pnlQueues.TabIndex = 15;
             pnlQueues.Paint += pnlQueues_Paint;
             // 
@@ -852,9 +852,9 @@
             pnlTree.Controls.Add(btnAdd);
             pnlTree.Controls.Add(label4);
             pnlTree.Controls.Add(txtNumberBinaryTree);
-            pnlTree.Location = new Point(0, 34);
+            pnlTree.Location = new Point(822, 350);
             pnlTree.Name = "pnlTree";
-            pnlTree.Size = new Size(1134, 495);
+            pnlTree.Size = new Size(312, 179);
             pnlTree.TabIndex = 16;
             pnlTree.Paint += pnlTree_Paint;
             // 
@@ -1007,9 +1007,9 @@
             pnlGraph.Controls.Add(txtNumberGraph);
             pnlGraph.Controls.Add(label8);
             pnlGraph.Controls.Add(lsbGraph);
-            pnlGraph.Location = new Point(0, 31);
+            pnlGraph.Location = new Point(895, 394);
             pnlGraph.Name = "pnlGraph";
-            pnlGraph.Size = new Size(1133, 495);
+            pnlGraph.Size = new Size(238, 132);
             pnlGraph.TabIndex = 17;
             pnlGraph.Paint += panel1_Paint;
             // 
@@ -1205,9 +1205,9 @@
             pnlAlgorithmsOfSorting.Controls.Add(btnCantOfItemsAlgorithms);
             pnlAlgorithmsOfSorting.Controls.Add(label15);
             pnlAlgorithmsOfSorting.Controls.Add(txtNumbersOfItemstoOrder);
-            pnlAlgorithmsOfSorting.Location = new Point(0, 31);
+            pnlAlgorithmsOfSorting.Location = new Point(963, 432);
             pnlAlgorithmsOfSorting.Name = "pnlAlgorithmsOfSorting";
-            pnlAlgorithmsOfSorting.Size = new Size(1134, 498);
+            pnlAlgorithmsOfSorting.Size = new Size(171, 97);
             pnlAlgorithmsOfSorting.TabIndex = 18;
             // 
             // label18

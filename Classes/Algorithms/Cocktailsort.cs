@@ -11,8 +11,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
 
         public void Sort(int[] arr)
         {
-            CocktailSort_Int(arr);
-            ShowStatistics();
+
         }
 
         public void Sort(double[] arr)
@@ -82,20 +81,6 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             int temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
-        }
-
-        private void PrintArray(int[] array, ListBox listBX)
-        {
-            listBX.Items.Clear();
-            foreach (var value in array)
-            {
-                listBX.Items.Add(value);
-            }
-        }
-
-        private void ShowStatistics()
-        {
-            Console.WriteLine($"Number of iterations: {iterations}");
         }
     }
 }

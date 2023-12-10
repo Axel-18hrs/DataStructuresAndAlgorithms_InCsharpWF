@@ -84,11 +84,5 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             }
             return max;
         }
-
-        private void ShowStatistics()
-        {
-            Console.WriteLine($"Number of iterations: {iterations}");
-        }
     }
-
 }

@@ -69,11 +69,6 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Algorithms
             b = temp;
         }
 
-        private void ShowStatistics()
-        {
-            Console.WriteLine($"Number of iterations: {iterations}");
-        }
-
         public void Sort(int[] array)
         {
             throw new NotImplementedException();

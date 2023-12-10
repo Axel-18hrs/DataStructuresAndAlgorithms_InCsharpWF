@@ -65,7 +65,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
             list.Add(int.Parse(txtNumbers.Text));
             ShowLists();
-            ClearTxtList();
+            txtNumbers.ResetText();
 
         }
         public void ShowLists()
@@ -122,10 +122,6 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             }
 
             list.Search(int.Parse(txtNumbers.Text));
-            ClearTxtList();
-        }
-        public void ClearTxtList()
-        {
             txtNumbers.ResetText();
         }
 
