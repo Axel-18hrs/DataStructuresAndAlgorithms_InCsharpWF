@@ -16,7 +16,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 {
     public partial class Form1 : Form
     {
-        private ImethodLists<object> list;
+        private ImethodLists<object> lists;
         private ImethodStacks<object> stacks;
         private ImethodQueues<object> queues;
         private ImethodAlgorithms algorithm;
@@ -51,7 +51,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
             pnlTree.Visible = false;
             pnlGraph.Visible = false;
             pnlAlgorithmsOfSorting.Visible = false;
-            list = new SimpleList<object>();
+            lists = new SimpleList<object>();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
-            list.Add(int.Parse(txtNumbers.Text));
+            lists.Add(int.Parse(txtNumbers.Text));
             ShowLists();
             txtNumbers.ResetText();
 
@@ -71,7 +71,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
         public void ShowLists()
         {
             listLista.Items.Clear();
-            foreach (var n in list.Show())
+            foreach (var n in lists.Show())
             {
 
                 listLista.Items.Add(n);
@@ -80,14 +80,14 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void btnShowReverse_Click(object sender, EventArgs e)
         {
-            if (list.IsEmpty())
+            if (lists.IsEmpty())
             {
-                MessageBox.Show("The list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The lists is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             listLista.Items.Clear();
-            foreach (var n in list.ShowRevers())
+            foreach (var n in lists.ShowRevers())
             {
 
                 listLista.Items.Add(n);
@@ -96,19 +96,19 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
 
         private void circularListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            list = new CircularList<object>();
+            lists = new CircularList<object>();
             pnlLists.Visible = true;
         }
 
         private void doublyListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            list = new DoublyListLinked<object>();
+            lists = new DoublyListLinked<object>();
             pnlLists.Visible = true;
         }
 
         private void circularDoublyListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            list = new CircularDoublyLinkedList<object>();
+            lists = new CircularDoublyLinkedList<object>();
             pnlLists.Visible = true;
         }
 
@@ -121,14 +121,14 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
-            list.Search(int.Parse(txtNumbers.Text));
+            lists.Search(int.Parse(txtNumbers.Text));
             txtNumbers.ResetText();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             listLista.Items.Clear();
-            list.Clear();
+            lists.Clear();
             ShowLists();
         }
 
@@ -141,7 +141,7 @@ namespace DataStructuresAndAlgorithms_InCsharpWF
                 return;
             }
 
-            list.Delete(int.Parse(txtNumbers.Text));
+            lists.Delete(int.Parse(txtNumbers.Text));
             listLista.Items.Clear();
             ShowLists();
         }

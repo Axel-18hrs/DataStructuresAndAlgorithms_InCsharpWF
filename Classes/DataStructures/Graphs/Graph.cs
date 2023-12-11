@@ -105,7 +105,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Graphs
                     }
                 }
 
-                // Add the current step to the list of steps
+                // Add the current step to the lists of steps
                 steps.Add(new List<T>(currentStep));
             }
 

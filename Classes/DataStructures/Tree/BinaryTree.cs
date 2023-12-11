@@ -141,7 +141,7 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Tree
 
             if (valor == nodo.Data)
             {
-                MessageBox.Show($"The value exist in the list", "Founded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"The value exist in the lists", "Founded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
 

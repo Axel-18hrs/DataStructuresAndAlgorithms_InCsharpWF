@@ -88,11 +88,11 @@ namespace DataStructuresAndAlgorithms_InCSharp.Classes.Operations
             do
             {
                 Console.Clear();
-                Console.WriteLine($"{listTypeMessage} list \n"
+                Console.WriteLine($"{listTypeMessage} lists \n"
                     + "1. Add value \n"
                     + "2. Delete value \n"
                     + "3. Search value \n"
-                    + "4. Show list \n"
+                    + "4. Show lists \n"
                     + "5. Show reverse \n"
                     + "6. Clear \n"
                     + "7. Exit \n");
